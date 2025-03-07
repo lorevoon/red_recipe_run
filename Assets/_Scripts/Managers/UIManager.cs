@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

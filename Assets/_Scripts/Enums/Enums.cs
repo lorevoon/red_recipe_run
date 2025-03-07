@@ -4,5 +4,14 @@ using UnityEngine;
 public enum ESceneType
 {
     MainMenu,
-    MainScene
+    RecipeRunMap,
+    GrandmasHouse
+}
+
+public enum Grid
+{
+    Bush,
+    Item,
+    Wall,
+    Empty
 }
