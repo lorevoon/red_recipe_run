@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
 
-public enum ESceneType
+public enum ECamera
 {
     MainMenu,
-    RecipeRunMap,
+    RecipeRun,
     GrandmasHouse
 }
 
@@ -14,4 +14,16 @@ public enum Grid
     Item,
     Wall,
     Empty
+}
+
+public enum Ingredients // placeholder
+{
+    Apple,
+    Avocado,
+    Potato,
+    Turnip,
+    Eggplant,
+    Onion,
+    Melon,
+    PigHead
 }
