@@ -8,7 +8,7 @@ public enum ECamera
     GrandmasHouse
 }
 
-public enum Grid
+public enum EGrid
 {
     Bush,
     Item,
@@ -16,7 +16,7 @@ public enum Grid
     Empty
 }
 
-public enum Ingredients // placeholder
+public enum EIngredient // placeholder
 {
     Apple,
     Avocado,
@@ -26,4 +26,12 @@ public enum Ingredients // placeholder
     Onion,
     Melon,
     PigHead
+}
+
+public enum EBushLevel
+{
+    Level1,
+    Level2,
+    Level3,
+    Level4
 }
