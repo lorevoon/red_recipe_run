@@ -18,7 +18,7 @@ public class wolf_script : MonoBehaviour
 
     // other necessary variables
     private Vector2 v;
-    private SpriteRenderer sr;  // extra: flip sprite
+    // private SpriteRenderer sr;  // extra: flip sprite
     private GameObject player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,44 +27,29 @@ public class wolf_script : MonoBehaviour
         // assign values to necessary wolf variables
         rb = GetComponent<Rigidbody2D>();
         v = rb.linearVelocity;
-        currentState = states.Wander;
+        currentState = states.Chase;
 
-        sr = GetComponent<SpriteRenderer>();
+        // sr = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        // FOR TEST / wolf control
-        if (Input.GetKey(KeyCode.LeftArrow))
+        // wolf follows player
+        if (currentState == states.Chase)
         {
-            v.x = -speed;
+            Invoke(nameof(Chase), 0);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            v.x = speed;
-        }
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {
-            v.y = speed;
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            v.y = -speed;
-        }
-        else
-        {
-            v.x = 0;
-            v.y = 0;
-        }
-        rb.linearVelocity = v;
+        // v.x = 0;
+        // v.y = 0;
+        // transform.position = v;
 
         // flip sprite
-        if (v.x != 0)
-        {
-            sr.flipX = v.x < 0f;
-        }
+        // if (v.x != 0)
+        // {
+        //     sr.flipX = v.x < 0f;
+        // }
     }
 
     void OnTriggerEnter2D(Collider2D obj)
@@ -83,5 +68,11 @@ public class wolf_script : MonoBehaviour
     private void Bite()
     {
         Debug.Log("Bite player function");
+    }
+
+    private void Chase()
+    {
+        v = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        transform.position = v;
     }
 }
