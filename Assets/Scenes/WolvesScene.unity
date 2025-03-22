@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 964082684}
   - component: {fileID: 964082683}
   - component: {fileID: 964082682}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}

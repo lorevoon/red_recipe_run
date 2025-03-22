@@ -14,12 +14,13 @@ public class wolf_script : MonoBehaviour
     // actual wolf variables
     public int speed = 10;
     private Rigidbody2D rb;
-    private states currentState;
+    private states currentState = states.Wander;
+    private bool seesPlayer = false;
 
     // other necessary variables
     private Vector2 v;
-    // private SpriteRenderer sr;  // extra: flip sprite
     private GameObject player;
+    // private SpriteRenderer sr;  // extra: flip sprite
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,29 +28,49 @@ public class wolf_script : MonoBehaviour
         // assign values to necessary wolf variables
         rb = GetComponent<Rigidbody2D>();
         v = rb.linearVelocity;
-        currentState = states.Chase;
 
-        // sr = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
+        // sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // wolf follows player
-        if (currentState == states.Chase)
+        if (seesPlayer)
         {
-            Invoke(nameof(Chase), 0);
+            currentState = states.Chase;
+            Chase();
         }
-        // v.x = 0;
-        // v.y = 0;
-        // transform.position = v;
 
         // flip sprite
         // if (v.x != 0)
         // {
         //     sr.flipX = v.x < 0f;
         // }
+    }
+
+    private void FixedUpdate()
+    {
+        // create ray from wolf to player
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
+        
+        // ray hits something
+        if (ray.collider != null)
+        {
+            // update bool if sees player
+            seesPlayer = ray.collider.CompareTag("Player");
+            
+            // for testing purpose (see green/red line depending on if wolf can see player)
+            if (seesPlayer)
+            {
+                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
+            }
+            else
+            {
+                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D obj)
@@ -60,7 +81,7 @@ public class wolf_script : MonoBehaviour
         if (objTag == "Player")
         {
             currentState = states.Bite;
-            Invoke(nameof(Bite), 0);
+            Bite();
             currentState = states.Wander;
         }
     }
