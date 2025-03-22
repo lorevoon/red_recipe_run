@@ -42,6 +42,13 @@ public class wolf_script : MonoBehaviour
             currentState = states.Chase;
             Chase();
         }
+        else
+        {
+            currentState = states.Wander;
+            Wander();
+        }
+
+        // Debug.Log(currentState);
 
         // flip sprite
         // if (v.x != 0)
@@ -73,7 +80,7 @@ public class wolf_script : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D obj)
+    private void OnTriggerEnter2D(Collider2D obj)
     {
         string objTag = obj.gameObject.tag;
 
@@ -82,18 +89,22 @@ public class wolf_script : MonoBehaviour
         {
             currentState = states.Bite;
             Bite();
-            currentState = states.Wander;
         }
     }
 
     private void Bite()
     {
-        Debug.Log("Bite player function");
+        Debug.Log("Bite player");
     }
 
     private void Chase()
     {
         v = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         transform.position = v;
+    }
+
+    private void Wander()
+    {
+
     }
 }
