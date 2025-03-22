@@ -16,6 +16,8 @@ public class wolf_script : MonoBehaviour
     private Rigidbody2D rb;
     private states currentState = states.Wander;
     private bool seesPlayer = false;
+    private float distToPlayer;
+    public float viewRadius = 5;
 
     // other necessary variables
     private Vector2 v;
@@ -36,8 +38,10 @@ public class wolf_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // wolf follows player
-        if (seesPlayer)
+        float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        
+        // wolf follows player and is close
+        if (seesPlayer && distToPlayer <= viewRadius)
         {
             currentState = states.Chase;
             Chase();
@@ -49,6 +53,7 @@ public class wolf_script : MonoBehaviour
         }
 
         // Debug.Log(currentState);
+        // Debug.Log(distToPlayer);
 
         // flip sprite
         // if (v.x != 0)
