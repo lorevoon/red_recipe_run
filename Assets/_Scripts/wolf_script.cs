@@ -14,11 +14,14 @@ public class wolf_script : MonoBehaviour
     // actual wolf variables
     public int speed = 10;
     private Rigidbody2D rb;
+
     private states currentState = states.Wander;
+
     private bool seesPlayer = false;
     private float distToPlayer;
     public float viewRadius = 5;
-    private bool isFlipped = false;
+
+    public int pauseAfterBite = 2;
 
     // other necessary variables
     private Vector2 v;
@@ -45,8 +48,11 @@ public class wolf_script : MonoBehaviour
         // wolf follows player and is close
         if (seesPlayer && distToPlayer <= viewRadius)
         {
-            currentState = states.Chase;
-            Chase();
+            if (currentState != states.Bite)
+            {
+                currentState = states.Chase;
+                Chase();
+            }
         }
         else
         {
@@ -60,6 +66,8 @@ public class wolf_script : MonoBehaviour
             sr.flipX = v.x < prevvx;
         }
         prevvx = v.x;
+
+        Debug.Log(currentState);
     }
 
     private void FixedUpdate()
@@ -93,13 +101,20 @@ public class wolf_script : MonoBehaviour
         if (objTag == "Player")
         {
             currentState = states.Bite;
-            Bite();
+            StartCoroutine(Bite());
         }
     }
 
-    private void Bite()
+    IEnumerator Bite()
     {
+        // replace this with bite logic
         Debug.Log("Bite player");
+
+        yield return new WaitForSeconds(pauseAfterBite);
+
+        // go back to chase
+        currentState = states.Chase;
+        Chase();
     }
 
     private void Chase()
