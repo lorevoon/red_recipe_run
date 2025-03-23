@@ -73,7 +73,25 @@ public class wolf_script : MonoBehaviour
 
         Debug.Log(currentState);
 
-        
+        // stop from moving out of window
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        if (screenPos.x <= 0)
+        {
+            screenPos.x = 0;
+        }
+        else if (screenPos.y <= 0)
+        {
+            screenPos.y = 0;
+        }
+        else if (screenPos.x >= Screen.width)
+        {
+            screenPos.x = Screen.width;
+        }
+        else if (screenPos.y >= Screen.height)
+        {
+            screenPos.y = Screen.height;
+        }
+        transform.position = Camera.main.ScreenToWorldPoint(screenPos);
 
     }
 
