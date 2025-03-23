@@ -12,7 +12,8 @@ public enum states
 public class wolf_script : MonoBehaviour
 {
     // actual wolf variables
-    public int speed = 10;
+    public int chaseSpeed = 5;
+    public int wanderSpeed = 2;
     private Rigidbody2D rb;
 
     private states currentState = states.Wander;
@@ -28,6 +29,7 @@ public class wolf_script : MonoBehaviour
     private GameObject player;
     private SpriteRenderer sr;  // extra: flip sprite
     private float prevvx = 0f; // flip sprite
+    private Vector2 w;  // wander point
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,12 +40,14 @@ public class wolf_script : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         sr = GetComponent<SpriteRenderer>();
+
+        InvokeRepeating(nameof(newWanderPoint), 0, 5);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         
         // wolf follows player and is close
         if (seesPlayer && distToPlayer <= viewRadius)
@@ -57,7 +61,7 @@ public class wolf_script : MonoBehaviour
         else
         {
             currentState = states.Wander;
-            Wander();
+            StartCoroutine(Wander());
         }
 
         // flip sprite
@@ -68,6 +72,9 @@ public class wolf_script : MonoBehaviour
         prevvx = v.x;
 
         Debug.Log(currentState);
+
+        
+
     }
 
     private void FixedUpdate()
@@ -119,12 +126,22 @@ public class wolf_script : MonoBehaviour
 
     private void Chase()
     {
-        v = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        v = Vector2.MoveTowards(transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
         transform.position = v;
     }
 
-    private void Wander()
+    IEnumerator Wander()
     {
+        Debug.Log(w);
+        v = Vector2.MoveTowards(transform.position, w, wanderSpeed * Time.deltaTime);
+        transform.position = v;
 
+        yield return new WaitForSeconds(3);
+    }
+
+    private void newWanderPoint()
+    {
+        w.x = transform.position.x + Random.Range(-10, 10);
+        w.y = transform.position.y + Random.Range(-10, 10);
     }
 }
