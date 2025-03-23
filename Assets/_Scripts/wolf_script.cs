@@ -40,7 +40,7 @@ public class wolf_script : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         sr = GetComponent<SpriteRenderer>();
-
+        
         InvokeRepeating(nameof(newWanderPoint), 0, 5);
     }
 
@@ -71,25 +71,25 @@ public class wolf_script : MonoBehaviour
         }
         prevvx = v.x;
 
-        Debug.Log(currentState);
+        // Debug.Log(currentState);
 
         // stop from moving out of window
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-        if (screenPos.x <= 0)
+        if (screenPos.x <= 0 - 50)
         {
-            screenPos.x = 0;
+            screenPos.x = 0 - 50;
         }
-        else if (screenPos.y <= 0)
+        else if (screenPos.y <= 0 - 50)
         {
-            screenPos.y = 0;
+            screenPos.y = 0 - 50;
         }
-        else if (screenPos.x >= Screen.width)
+        else if (screenPos.x >= Screen.width + 50)
         {
-            screenPos.x = Screen.width;
+            screenPos.x = Screen.width + 50;
         }
-        else if (screenPos.y >= Screen.height)
+        else if (screenPos.y >= Screen.height + 50)
         {
-            screenPos.y = Screen.height;
+            screenPos.y = Screen.height + 50;
         }
         transform.position = Camera.main.ScreenToWorldPoint(screenPos);
 
@@ -128,6 +128,10 @@ public class wolf_script : MonoBehaviour
             currentState = states.Bite;
             StartCoroutine(Bite());
         }
+        else
+        {
+            Debug.Log(objTag);
+        }
     }
 
     IEnumerator Bite()
@@ -150,7 +154,6 @@ public class wolf_script : MonoBehaviour
 
     IEnumerator Wander()
     {
-        Debug.Log(w);
         v = Vector2.MoveTowards(transform.position, w, wanderSpeed * Time.deltaTime);
         transform.position = v;
 
