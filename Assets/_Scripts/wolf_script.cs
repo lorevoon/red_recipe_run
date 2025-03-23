@@ -18,11 +18,13 @@ public class wolf_script : MonoBehaviour
     private bool seesPlayer = false;
     private float distToPlayer;
     public float viewRadius = 5;
+    private bool isFlipped = false;
 
     // other necessary variables
     private Vector2 v;
     private GameObject player;
-    // private SpriteRenderer sr;  // extra: flip sprite
+    private SpriteRenderer sr;  // extra: flip sprite
+    private float prevvx = 0f; // flip sprite
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,7 +34,7 @@ public class wolf_script : MonoBehaviour
         v = rb.linearVelocity;
 
         player = GameObject.FindGameObjectWithTag("Player");
-        // sr = GetComponent<SpriteRenderer>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -52,14 +54,12 @@ public class wolf_script : MonoBehaviour
             Wander();
         }
 
-        // Debug.Log(currentState);
-        // Debug.Log(distToPlayer);
-
         // flip sprite
-        // if (v.x != 0)
-        // {
-        //     sr.flipX = v.x < 0f;
-        // }
+        if (v.x != 0)
+        {
+            sr.flipX = v.x < prevvx;
+        }
+        prevvx = v.x;
     }
 
     private void FixedUpdate()
