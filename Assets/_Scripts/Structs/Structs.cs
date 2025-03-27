@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Serialization;
+
+public struct SIngredientData
+{
+    public int ID;
+    public EIngredient Name;
+    public int GenLevel;
+    public int AvgVeinSize;
+    public string Description;
+    public string PrefabPath;
+}
+
+public struct SBushLevelData
+{
+    public EBushLevel Level;
+    public float MaxDurability;
+    public float Percentage;
+    public float GapPercentage;
+    public string ColorHex;
+}
