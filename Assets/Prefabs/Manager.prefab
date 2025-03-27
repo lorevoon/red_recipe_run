@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1006557042608071793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2640780760402614174}
+  - component: {fileID: 8997164699135265689}
+  m_Layer: 0
+  m_Name: MapGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2640780760402614174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006557042608071793}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6611727452595626512}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8997164699135265689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006557042608071793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf65af2a52274564a69383159bcbc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bushRuleTile: {fileID: 11400000, guid: 90d7634073c4147b496f5e0e0191b8a1, type: 2}
+  _ingredientRuleTiles:
+  - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
+  - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
+  - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
+  _wallRuleTile: {fileID: 11400000, guid: 827c75ea0be6c43e58917743c0f3b030, type: 2}
+  _tileMap: {fileID: 0}
 --- !u!1 &4109576382123700487
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,6 +64,7 @@ GameObject:
   - component: {fileID: 1239880417074841022}
   - component: {fileID: 814528213730365016}
   - component: {fileID: -7615506851018843134}
+  - component: {fileID: 3429022552486852450}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -32,7 +84,8 @@ Transform:
   m_LocalPosition: {x: 0.2969446, y: -0.6495664, z: -9.920754}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2640780760402614174}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-1025058324329470736
@@ -81,5 +134,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74e7d8af12e5b4c9fa6a61404607d3ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3429022552486852450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109576382123700487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14cf5b7bd3f894576bdc1ae557a785e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
