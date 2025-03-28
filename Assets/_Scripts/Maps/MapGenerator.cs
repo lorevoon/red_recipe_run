@@ -57,7 +57,7 @@ public class MapGenerator : MonoBehaviour
         {
             for (int y = 0; y < _mapHeight; y++)
             {
-                _mapManager.BushTypeGrid[x, y] = EGrid.Empty;
+                _mapManager.BushTypeGrid[x, y] = EGrid.Unreachable;
                 _mapManager.BushDurabilityGrid[x, y] = -1f;
             }
         }
@@ -119,19 +119,19 @@ public class MapGenerator : MonoBehaviour
             {
                 if (_mapManager.BushTypeGrid[x, y] != EGrid.Bush) continue;
                 
-                if (_mapManager.BushTypeGrid[x + 1, y] == EGrid.Empty)
+                if (_mapManager.BushTypeGrid[x + 1, y] == EGrid.Unreachable)
                 {
                     _tileMap.SetTile(new Vector3Int(x+1, y, 0), _wallRuleTile);
                     _mapManager.BushTypeGrid[x + 1, y] = EGrid.Wall;
                 }
 
-                if (_mapManager.BushTypeGrid[x - 1, y] == EGrid.Empty)
+                if (_mapManager.BushTypeGrid[x - 1, y] == EGrid.Unreachable)
                 {
                     _tileMap.SetTile(new Vector3Int(x-1, y, 0), _wallRuleTile);
                     _mapManager.BushTypeGrid[x - 1, y] = EGrid.Wall;
                 }
                     
-                if (_mapManager.BushTypeGrid[x, y+1] == EGrid.Empty)
+                if (_mapManager.BushTypeGrid[x, y+1] == EGrid.Unreachable)
                 {
                     _tileMap.SetTile(new Vector3Int(x, y+1, 0), _wallRuleTile);
                     _mapManager.BushTypeGrid[x, y+1] = EGrid.Wall;
@@ -139,7 +139,7 @@ public class MapGenerator : MonoBehaviour
                     _topWalls.Add(new Vector3Int(x, y+1, 0));
                 }
                     
-                if (_mapManager.BushTypeGrid[x, y-1] == EGrid.Empty)
+                if (_mapManager.BushTypeGrid[x, y-1] == EGrid.Unreachable)
                 {
                     _tileMap.SetTile(new Vector3Int(x, y-1, 0), _wallRuleTile);
                     _mapManager.BushTypeGrid[x, y-1] = EGrid.Wall;

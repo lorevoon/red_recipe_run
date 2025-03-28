@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-// public enum ECamera 
 // public class EIngredient
 // {
 //     Cookie, Brownie, Stein, Moonshine, Whiskey, Tart, Sushi, Sashimi, Saki, Boar, Marmalade, Jam, Apple, AppleWorm, Turnip, Potato, Eggs, Honeycomb, Pineapple, Bacon, Beer, Steak, Wine, Fish, Cheese, Chicken, Bread, Eggplant, PepperRed, PepperGreen, Grubs, Grub, Tomato, Strawberry, Peach, Lemon, PiePumpkin, PieLemon, PieApple, Pickle, Pretzel, Pepperoni, FishFillet, Honey, Jerky, PotatoRed, MelonHoneydew, MelonCantaloupe, MelonWater, Waffles, ChickenLeg, Cherry, Ribs, Sardines, DragonFruit, Sausages, Avocado, FishSteak, Bug, Olive, PickledEggs, Roll, Onion
@@ -98,8 +97,8 @@ using UnityEngine;
 //             default:
 //                 return ("", "", new int[]{});
 // }
-
-public enum ESceneType
+    
+public enum ECamera
 {
     MainMenu,
     RecipeRun,
@@ -111,7 +110,8 @@ public enum EGrid
     Bush,
     Item,
     Wall,
-    Empty
+    Empty,
+    Unreachable
 }
 
 public enum EIngredient // placeholder
@@ -132,4 +132,11 @@ public enum EBushLevel
     Level2,
     Level3,
     Level4
+}
+
+public enum EWolfStates
+{
+    Wander,
+    Chase,
+    Bite
 }
