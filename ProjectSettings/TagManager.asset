@@ -3,18 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-<<<<<<< HEAD
-  tags: []
-=======
   tags:
   - Tool
   - Ingredient
->>>>>>> 599d456666cab2b9053e3f4c8e06fc3d4c369122
+  - Wolf
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Lantern
+  - 
   - Water
   - UI
   - 
@@ -50,11 +47,5 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
-  - name: Foreground
-    uniqueID: 1836573643
-    locked: 0
-=======
->>>>>>> 599d456666cab2b9053e3f4c8e06fc3d4c369122
   m_RenderingLayers:
   - Default
