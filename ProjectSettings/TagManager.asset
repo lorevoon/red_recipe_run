@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Tool
+  - Ingredient
+>>>>>>> 599d456666cab2b9053e3f4c8e06fc3d4c369122
   layers:
   - Default
   - TransparentFX
@@ -38,11 +44,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 2054030679
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: Foreground
     uniqueID: 1836573643
     locked: 0
+=======
+>>>>>>> 599d456666cab2b9053e3f4c8e06fc3d4c369122
   m_RenderingLayers:
   - Default
