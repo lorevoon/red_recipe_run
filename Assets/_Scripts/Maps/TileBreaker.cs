@@ -8,7 +8,7 @@ public class TileBreaker : MonoBehaviour
     private MapManager _mapManager;
     private PlayerController _player;
     
-    private void Awake()
+    private void Start()
     {
         _tileMap = GetComponent<Tilemap>();
         _mapManager = MapManager.Instance;

@@ -1,0 +1,5291 @@
+fileFormatVersion: 2
+guid: e19405f7df14843399ba7ddbd05a9f20
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4905425108131268637
+    second: PlayerPassiveSpritesheet_0
+  - first:
+      213: 66728549314582650
+    second: PlayerPassiveSpritesheet_1
+  - first:
+      213: -7953614711884800158
+    second: PlayerPassiveSpritesheet_2
+  - first:
+      213: -5216976230985679191
+    second: PlayerPassiveSpritesheet_3
+  - first:
+      213: -5136525874458218394
+    second: PlayerPassiveSpritesheet_4
+  - first:
+      213: -1342719331554506674
+    second: PlayerPassiveSpritesheet_5
+  - first:
+      213: 4075805055062868763
+    second: PlayerPassiveSpritesheet_6
+  - first:
+      213: -603359147165798208
+    second: PlayerPassiveSpritesheet_7
+  - first:
+      213: -158287864866222884
+    second: PlayerPassiveSpritesheet_8
+  - first:
+      213: -8372939616574282297
+    second: PlayerPassiveSpritesheet_9
+  - first:
+      213: 8424568544114533735
+    second: PlayerPassiveSpritesheet_10
+  - first:
+      213: -8988210993564523455
+    second: PlayerPassiveSpritesheet_11
+  - first:
+      213: -5028813722142480827
+    second: PlayerPassiveSpritesheet_12
+  - first:
+      213: -1193935115869698452
+    second: PlayerPassiveSpritesheet_13
+  - first:
+      213: 7885112054261595096
+    second: PlayerPassiveSpritesheet_14
+  - first:
+      213: -948306105492628345
+    second: PlayerPassiveSpritesheet_15
+  - first:
+      213: 3765910242434338945
+    second: PlayerPassiveSpritesheet_16
+  - first:
+      213: 3630972652433012573
+    second: PlayerPassiveSpritesheet_17
+  - first:
+      213: -4764639519378084062
+    second: PlayerPassiveSpritesheet_18
+  - first:
+      213: -74520633899911311
+    second: PlayerPassiveSpritesheet_19
+  - first:
+      213: 2790163745153916310
+    second: PlayerPassiveSpritesheet_20
+  - first:
+      213: 7577668378503842056
+    second: PlayerPassiveSpritesheet_21
+  - first:
+      213: -7778584740039499802
+    second: PlayerPassiveSpritesheet_22
+  - first:
+      213: -1788295567435989393
+    second: PlayerPassiveSpritesheet_23
+  - first:
+      213: -3790122178266266371
+    second: PlayerPassiveSpritesheet_24
+  - first:
+      213: 7073514808128838929
+    second: PlayerPassiveSpritesheet_25
+  - first:
+      213: 6322463650357496284
+    second: PlayerPassiveSpritesheet_26
+  - first:
+      213: -6202802975052950501
+    second: PlayerPassiveSpritesheet_27
+  - first:
+      213: 2383011087861032081
+    second: PlayerPassiveSpritesheet_28
+  - first:
+      213: 2563958866903351768
+    second: PlayerPassiveSpritesheet_29
+  - first:
+      213: 2961774974120051002
+    second: PlayerPassiveSpritesheet_30
+  - first:
+      213: -7983772960539610468
+    second: PlayerPassiveSpritesheet_31
+  - first:
+      213: -3037856181819369184
+    second: PlayerPassiveSpritesheet_32
+  - first:
+      213: 6607632459851269900
+    second: PlayerPassiveSpritesheet_33
+  - first:
+      213: 8782133320281972415
+    second: PlayerPassiveSpritesheet_34
+  - first:
+      213: 47490696155193417
+    second: PlayerPassiveSpritesheet_35
+  - first:
+      213: 8485014735036157156
+    second: PlayerPassiveSpritesheet_36
+  - first:
+      213: 4057218925991787944
+    second: PlayerPassiveSpritesheet_37
+  - first:
+      213: -435845962631207167
+    second: PlayerPassiveSpritesheet_38
+  - first:
+      213: -6045742523042559313
+    second: PlayerPassiveSpritesheet_39
+  - first:
+      213: 6414110036378476270
+    second: PlayerPassiveSpritesheet_40
+  - first:
+      213: 674677353826031825
+    second: PlayerPassiveSpritesheet_41
+  - first:
+      213: -5902648265236068255
+    second: PlayerPassiveSpritesheet_42
+  - first:
+      213: -8695750943279566761
+    second: PlayerPassiveSpritesheet_43
+  - first:
+      213: -8504572045275880019
+    second: PlayerPassiveSpritesheet_44
+  - first:
+      213: -17123846799488988
+    second: PlayerPassiveSpritesheet_45
+  - first:
+      213: -4313289330799007995
+    second: PlayerPassiveSpritesheet_46
+  - first:
+      213: 7848010901842066523
+    second: PlayerPassiveSpritesheet_47
+  - first:
+      213: 8137036353056108682
+    second: PlayerPassiveSpritesheet_48
+  - first:
+      213: 2121001561939939622
+    second: PlayerPassiveSpritesheet_49
+  - first:
+      213: -1082288235568049414
+    second: PlayerPassiveSpritesheet_50
+  - first:
+      213: 1548313101431509565
+    second: PlayerPassiveSpritesheet_51
+  - first:
+      213: -4476878765187023758
+    second: PlayerPassiveSpritesheet_52
+  - first:
+      213: -4391888670345812860
+    second: PlayerPassiveSpritesheet_53
+  - first:
+      213: 3196033051997622196
+    second: PlayerPassiveSpritesheet_54
+  - first:
+      213: 4254499410668106390
+    second: PlayerPassiveSpritesheet_55
+  - first:
+      213: -7360552646349666492
+    second: PlayerPassiveSpritesheet_56
+  - first:
+      213: 6114050609807270713
+    second: PlayerPassiveSpritesheet_57
+  - first:
+      213: -2746098802267627814
+    second: PlayerPassiveSpritesheet_58
+  - first:
+      213: -8006493150429192099
+    second: PlayerPassiveSpritesheet_59
+  - first:
+      213: -4219439614654175529
+    second: PlayerPassiveSpritesheet_60
+  - first:
+      213: -876320168986766794
+    second: PlayerPassiveSpritesheet_61
+  - first:
+      213: -8217256234717941543
+    second: PlayerPassiveSpritesheet_62
+  - first:
+      213: -1125108776936848769
+    second: PlayerPassiveSpritesheet_63
+  - first:
+      213: -1312351415000736449
+    second: PlayerPassiveSpritesheet_64
+  - first:
+      213: 1307608351643724574
+    second: PlayerPassiveSpritesheet_65
+  - first:
+      213: 3905438675950117723
+    second: PlayerPassiveSpritesheet_66
+  - first:
+      213: 8800000730495407454
+    second: PlayerPassiveSpritesheet_67
+  - first:
+      213: -5496809524032988816
+    second: PlayerPassiveSpritesheet_68
+  - first:
+      213: -4977873283868057192
+    second: PlayerPassiveSpritesheet_69
+  - first:
+      213: -1140159623404678957
+    second: PlayerPassiveSpritesheet_70
+  - first:
+      213: -5369272445570627475
+    second: PlayerPassiveSpritesheet_71
+  - first:
+      213: 7975639825887543647
+    second: PlayerPassiveSpritesheet_72
+  - first:
+      213: 2862123747653400655
+    second: PlayerPassiveSpritesheet_73
+  - first:
+      213: -2454239604564639382
+    second: PlayerPassiveSpritesheet_74
+  - first:
+      213: 1503115345733090164
+    second: PlayerPassiveSpritesheet_75
+  - first:
+      213: 690262379056722174
+    second: PlayerPassiveSpritesheet_76
+  - first:
+      213: -7036540882106343544
+    second: PlayerPassiveSpritesheet_77
+  - first:
+      213: 2422794685405339380
+    second: PlayerPassiveSpritesheet_78
+  - first:
+      213: 3425435162384492828
+    second: PlayerPassiveSpritesheet_79
+  - first:
+      213: -3864370077303859693
+    second: PlayerPassiveSpritesheet_80
+  - first:
+      213: -693421339287993775
+    second: PlayerPassiveSpritesheet_81
+  - first:
+      213: -7092667556837892138
+    second: PlayerPassiveSpritesheet_82
+  - first:
+      213: -5195322536605227705
+    second: PlayerPassiveSpritesheet_83
+  - first:
+      213: 9049667919514215488
+    second: PlayerPassiveSpritesheet_84
+  - first:
+      213: 414005092427631083
+    second: PlayerPassiveSpritesheet_85
+  - first:
+      213: -1584946774947153295
+    second: PlayerPassiveSpritesheet_86
+  - first:
+      213: 2966624683841258768
+    second: PlayerPassiveSpritesheet_87
+  - first:
+      213: 7437136702185522292
+    second: PlayerPassiveSpritesheet_88
+  - first:
+      213: 5138245638135315185
+    second: PlayerPassiveSpritesheet_89
+  - first:
+      213: 5359557170074589241
+    second: PlayerPassiveSpritesheet_90
+  - first:
+      213: 5679471681909114977
+    second: PlayerPassiveSpritesheet_91
+  - first:
+      213: 4523944577736009321
+    second: PlayerPassiveSpritesheet_92
+  - first:
+      213: 4965899115041389233
+    second: PlayerPassiveSpritesheet_93
+  - first:
+      213: 8062462864380142147
+    second: PlayerPassiveSpritesheet_94
+  - first:
+      213: -877234095579862902
+    second: PlayerPassiveSpritesheet_95
+  - first:
+      213: 8870609624617010159
+    second: PlayerPassiveSpritesheet_96
+  - first:
+      213: -3159996713914678935
+    second: PlayerPassiveSpritesheet_97
+  - first:
+      213: 2217827658296191327
+    second: PlayerPassiveSpritesheet_98
+  - first:
+      213: 1767602264632520555
+    second: PlayerPassiveSpritesheet_99
+  - first:
+      213: -2558728333187659403
+    second: PlayerPassiveSpritesheet_100
+  - first:
+      213: 3923748970402928216
+    second: PlayerPassiveSpritesheet_101
+  - first:
+      213: 9212687672745503939
+    second: PlayerPassiveSpritesheet_102
+  - first:
+      213: -8300919062417519896
+    second: PlayerPassiveSpritesheet_103
+  - first:
+      213: 2683305600702877515
+    second: PlayerPassiveSpritesheet_104
+  - first:
+      213: 6095271526679677503
+    second: PlayerPassiveSpritesheet_105
+  - first:
+      213: 1691418711765062012
+    second: PlayerPassiveSpritesheet_106
+  - first:
+      213: 8892850658273226406
+    second: PlayerPassiveSpritesheet_107
+  - first:
+      213: 8773261001897576365
+    second: PlayerPassiveSpritesheet_108
+  - first:
+      213: 6132319711064341928
+    second: PlayerPassiveSpritesheet_109
+  - first:
+      213: -6912486217326120655
+    second: PlayerPassiveSpritesheet_110
+  - first:
+      213: 2485439911963717136
+    second: PlayerPassiveSpritesheet_111
+  - first:
+      213: 1659089388565655027
+    second: PlayerPassiveSpritesheet_112
+  - first:
+      213: 5205268794951727834
+    second: PlayerPassiveSpritesheet_113
+  - first:
+      213: 3488443823309590283
+    second: PlayerPassiveSpritesheet_114
+  - first:
+      213: -4143657140849447
+    second: PlayerPassiveSpritesheet_115
+  - first:
+      213: 4603474639248232784
+    second: PlayerPassiveSpritesheet_116
+  - first:
+      213: 7154976860816846491
+    second: PlayerPassiveSpritesheet_117
+  - first:
+      213: 6172475727843187930
+    second: PlayerPassiveSpritesheet_118
+  - first:
+      213: -3955928610626960319
+    second: PlayerPassiveSpritesheet_119
+  - first:
+      213: -683098618976052073
+    second: PlayerPassiveSpritesheet_120
+  - first:
+      213: -2625772829293392443
+    second: PlayerPassiveSpritesheet_121
+  - first:
+      213: 3072305953350569729
+    second: PlayerPassiveSpritesheet_122
+  - first:
+      213: 3139452633426753077
+    second: PlayerPassiveSpritesheet_123
+  - first:
+      213: 438084902677076144
+    second: PlayerPassiveSpritesheet_124
+  - first:
+      213: -3632033471685494981
+    second: PlayerPassiveSpritesheet_125
+  - first:
+      213: -1593208925942068153
+    second: PlayerPassiveSpritesheet_126
+  - first:
+      213: -6092740833138782892
+    second: PlayerPassiveSpritesheet_127
+  - first:
+      213: 1932502815282476615
+    second: PlayerPassiveSpritesheet_128
+  - first:
+      213: 249500091487765063
+    second: PlayerPassiveSpritesheet_129
+  - first:
+      213: -1082489710146330306
+    second: PlayerPassiveSpritesheet_130
+  - first:
+      213: -4059010030030954082
+    second: PlayerPassiveSpritesheet_131
+  - first:
+      213: 846151732941325295
+    second: PlayerPassiveSpritesheet_132
+  - first:
+      213: -1434133449782225737
+    second: PlayerPassiveSpritesheet_133
+  - first:
+      213: -516937469615940872
+    second: PlayerPassiveSpritesheet_134
+  - first:
+      213: 6869914123790020738
+    second: PlayerPassiveSpritesheet_135
+  - first:
+      213: -6626218952135937322
+    second: PlayerPassiveSpritesheet_136
+  - first:
+      213: -7504553958535071045
+    second: PlayerPassiveSpritesheet_137
+  - first:
+      213: 2549080128354314550
+    second: PlayerPassiveSpritesheet_138
+  - first:
+      213: -7724003868226633165
+    second: PlayerPassiveSpritesheet_139
+  - first:
+      213: 4805065752215958144
+    second: PlayerPassiveSpritesheet_140
+  - first:
+      213: -937877947898585276
+    second: PlayerPassiveSpritesheet_141
+  - first:
+      213: 5047534870834633255
+    second: PlayerPassiveSpritesheet_142
+  - first:
+      213: 7831037477569751501
+    second: PlayerPassiveSpritesheet_143
+  - first:
+      213: 4604875859293699602
+    second: PlayerPassiveSpritesheet_144
+  - first:
+      213: -2830482677411541711
+    second: PlayerPassiveSpritesheet_145
+  - first:
+      213: 2398867257614478066
+    second: PlayerPassiveSpritesheet_146
+  - first:
+      213: 158293981321222487
+    second: PlayerPassiveSpritesheet_147
+  - first:
+      213: 6022824339895865156
+    second: PlayerPassiveSpritesheet_148
+  - first:
+      213: -2239252185305963528
+    second: PlayerPassiveSpritesheet_149
+  - first:
+      213: -6051268007356678953
+    second: PlayerPassiveSpritesheet_150
+  - first:
+      213: 8974237556035732430
+    second: PlayerPassiveSpritesheet_151
+  - first:
+      213: -4662363324475504385
+    second: PlayerPassiveSpritesheet_152
+  - first:
+      213: -8906244628762677334
+    second: PlayerPassiveSpritesheet_153
+  - first:
+      213: 6643690921164905823
+    second: PlayerPassiveSpritesheet_154
+  - first:
+      213: -7131487505635725760
+    second: PlayerPassiveSpritesheet_155
+  - first:
+      213: 5597264472991451379
+    second: PlayerPassiveSpritesheet_156
+  - first:
+      213: 8719620182552347016
+    second: PlayerPassiveSpritesheet_157
+  - first:
+      213: 4620689602091677410
+    second: PlayerPassiveSpritesheet_158
+  - first:
+      213: 1132805960706919433
+    second: PlayerPassiveSpritesheet_159
+  - first:
+      213: -1267902866627748349
+    second: PlayerPassiveSpritesheet_160
+  - first:
+      213: -4755099080160668583
+    second: PlayerPassiveSpritesheet_161
+  - first:
+      213: 6568068969855486572
+    second: PlayerPassiveSpritesheet_162
+  - first:
+      213: -8140167739397287063
+    second: PlayerPassiveSpritesheet_163
+  - first:
+      213: -566602945113489958
+    second: PlayerPassiveSpritesheet_164
+  - first:
+      213: -7474303619887878075
+    second: PlayerPassiveSpritesheet_165
+  - first:
+      213: 4836914886254210208
+    second: PlayerPassiveSpritesheet_166
+  - first:
+      213: 1332516549112041268
+    second: PlayerPassiveSpritesheet_167
+  - first:
+      213: -992386004053969614
+    second: PlayerPassiveSpritesheet_168
+  - first:
+      213: -2160939738182779472
+    second: PlayerPassiveSpritesheet_169
+  - first:
+      213: -6868865323949171971
+    second: PlayerPassiveSpritesheet_170
+  - first:
+      213: -5436949686941169052
+    second: PlayerPassiveSpritesheet_171
+  - first:
+      213: 1732458584696325702
+    second: PlayerPassiveSpritesheet_172
+  - first:
+      213: 6956226713593525526
+    second: PlayerPassiveSpritesheet_173
+  - first:
+      213: 3371203841496328092
+    second: PlayerPassiveSpritesheet_174
+  - first:
+      213: -289699601218483424
+    second: PlayerPassiveSpritesheet_175
+  - first:
+      213: 7448607998472289784
+    second: PlayerPassiveSpritesheet_176
+  - first:
+      213: -7412296846309017959
+    second: PlayerPassiveSpritesheet_177
+  - first:
+      213: -2943396961891315845
+    second: PlayerPassiveSpritesheet_178
+  - first:
+      213: 5513863848478624423
+    second: PlayerPassiveSpritesheet_179
+  - first:
+      213: 3851402857001051651
+    second: PlayerPassiveSpritesheet_180
+  - first:
+      213: 5731391394594698354
+    second: PlayerPassiveSpritesheet_181
+  - first:
+      213: -4900408532919740909
+    second: PlayerPassiveSpritesheet_182
+  - first:
+      213: 7711611246301507589
+    second: PlayerPassiveSpritesheet_183
+  - first:
+      213: -3591522910804687893
+    second: PlayerPassiveSpritesheet_184
+  - first:
+      213: 8426538305079539412
+    second: PlayerPassiveSpritesheet_185
+  - first:
+      213: -7742585712448020504
+    second: PlayerPassiveSpritesheet_186
+  - first:
+      213: -960463026807215267
+    second: PlayerPassiveSpritesheet_187
+  - first:
+      213: 3150298057784787346
+    second: PlayerPassiveSpritesheet_188
+  - first:
+      213: 4680703198975054282
+    second: PlayerPassiveSpritesheet_189
+  - first:
+      213: 1356029057804906945
+    second: PlayerPassiveSpritesheet_190
+  - first:
+      213: -4787228817765600319
+    second: PlayerPassiveSpritesheet_191
+  - first:
+      213: -1082108242224380954
+    second: PlayerPassiveSpritesheet_192
+  - first:
+      213: -5663445950178430493
+    second: PlayerPassiveSpritesheet_193
+  - first:
+      213: -3196949365698248244
+    second: PlayerPassiveSpritesheet_194
+  - first:
+      213: -8795302730809361886
+    second: PlayerPassiveSpritesheet_195
+  - first:
+      213: 8511179233124221922
+    second: PlayerPassiveSpritesheet_196
+  - first:
+      213: 1039600643960569180
+    second: PlayerPassiveSpritesheet_197
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e7bd8daadd6cebb0800000000000000
+      internalID: -4905425108131268637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a78d54613411de000800000000000000
+      internalID: 66728549314582650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f19c14f851f9190800000000000000
+      internalID: -7953614711884800158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae317632c39997b0800000000000000
+      internalID: -5216976230985679191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 660b0518ee467b8b0800000000000000
+      internalID: -5136525874458218394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48c4a9c1e3bd5de0800000000000000
+      internalID: -1342719331554506674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1383c06a1b209830800000000000000
+      internalID: 4075805055062868763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c033396d0070a7f0800000000000000
+      internalID: -603359147165798208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdcc46a8606adcdf0800000000000000
+      internalID: -158287864866222884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c56b4cc7c75dcb80800000000000000
+      internalID: -8372939616574282297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76560e1a4741ae470800000000000000
+      internalID: 8424568544114533735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144635219b5734380800000000000000
+      internalID: -8988210993564523455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54666124090163ab0800000000000000
+      internalID: -5028813722142480827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66c8bd765a4e6fe0800000000000000
+      internalID: -1193935115869698452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dbb960e2ab8d6d60800000000000000
+      internalID: 7885112054261595096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78c17c31f90f6d2f0800000000000000
+      internalID: -948306105492628345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180dd40b963334430800000000000000
+      internalID: 3765910242434338945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d577d61c36ec36230800000000000000
+      internalID: 3630972652433012573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 336
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f6eace99990edb0800000000000000
+      internalID: -4764639519378084062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17775f7d0ef37fef0800000000000000
+      internalID: -74520633899911311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d921fa427a8b620800000000000000
+      internalID: 2790163745153916310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8098e66fd39492960800000000000000
+      internalID: 7577668378503842056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6efdba2446aec0490800000000000000
+      internalID: -7778584740039499802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e729df7a2be27e0800000000000000
+      internalID: -1788295567435989393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df40c15b5f7c66bc0800000000000000
+      internalID: -3790122178266266371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11d1cfbad3c2a2260800000000000000
+      internalID: 7073514808128838929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9c0e03137edb750800000000000000
+      internalID: 6322463650357496284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b149b3cde873be9a0800000000000000
+      internalID: -6202802975052950501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19426cb65f7221120800000000000000
+      internalID: 2383011087861032081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d1cc784103059320800000000000000
+      internalID: 2563958866903351768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a31411595a65a1920800000000000000
+      internalID: 2961774974120051002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c92faafcac0f33190800000000000000
+      internalID: -7983772960539610468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0299eebd5ed57d5d0800000000000000
+      internalID: -3037856181819369184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0786c7a6b603bb50800000000000000
+      internalID: 6607632459851269900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbe578d99b760e970800000000000000
+      internalID: 8782133320281972415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940677a5988b8a000800000000000000
+      internalID: 47490696155193417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec09cb22f3d0c570800000000000000
+      internalID: 8485014735036157156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad7bbbfd132e4830800000000000000
+      internalID: 4057218925991787944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107249cf76093f9f0800000000000000
+      internalID: -435845962631207167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 288
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa039ef435391ca0800000000000000
+      internalID: -6045742523042559313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eee5b9c381f730950800000000000000
+      internalID: 6414110036378476270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d81dcc8a7fec5900800000000000000
+      internalID: 674677353826031825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16847842da4951ea0800000000000000
+      internalID: -5902648265236068255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750bd82d69c725780800000000000000
+      internalID: -8695750943279566761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da52d92b8c0b9f980800000000000000
+      internalID: -8504572045275880019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428045ab3f923cff0800000000000000
+      internalID: -17123846799488988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5072e38d43e1424c0800000000000000
+      internalID: -4313289330799007995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5c70bda55cb9ec60800000000000000
+      internalID: 7848010901842066523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a807954837f8ce070800000000000000
+      internalID: 8137036353056108682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6219a7bdeaf4f6d10800000000000000
+      internalID: 2121001561939939622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af2d16e7590faf0f0800000000000000
+      internalID: -1082288235568049414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3298ebff86bc7510800000000000000
+      internalID: 1548313101431509565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27cb98a8b7eeed1c0800000000000000
+      internalID: -4476878765187023758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 484a9f60680ec03c0800000000000000
+      internalID: -4391888670345812860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bfc9b2a0279a5c20800000000000000
+      internalID: 3196033051997622196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6923bf53ca40b0b30800000000000000
+      internalID: 4254499410668106390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44744c3bd501ad990800000000000000
+      internalID: -7360552646349666492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933a250d2a879d450800000000000000
+      internalID: 6114050609807270713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade56b450b5e3e9d0800000000000000
+      internalID: -2746098802267627814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d50e11066e833e090800000000000000
+      internalID: -8006493150429192099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d6a359a60a8175c0800000000000000
+      internalID: -4219439614654175529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6329802037fa6d3f0800000000000000
+      internalID: -876320168986766794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0f54dcdf076fd80800000000000000
+      internalID: -8217256234717941543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f724109478fc260f0800000000000000
+      internalID: -1125108776936848769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3d5668575799cde0800000000000000
+      internalID: -1312351415000736449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1bee092ede852210800000000000000
+      internalID: 1307608351643724574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53241ca8c7e23630800000000000000
+      internalID: 3905438675950117723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e555b5c3a02ef1a70800000000000000
+      internalID: 8800000730495407454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 079970a7cd867b3b0800000000000000
+      internalID: -5496809524032988816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 891232a4f9a0beab0800000000000000
+      internalID: -4977873283868057192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d098b30dd65d20f0800000000000000
+      internalID: -1140159623404678957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68487b88238c75b0800000000000000
+      internalID: -5369272445570627475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f514c763a2a2fae60800000000000000
+      internalID: 7975639825887543647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f483712626e48b720800000000000000
+      internalID: 2862123747653400655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a61ca30351ac0fdd0800000000000000
+      internalID: -2454239604564639382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47bfbde61732cd410800000000000000
+      internalID: 1503115345733090164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef0fd710afd449900800000000000000
+      internalID: 690262379056722174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f9982595f295e90800000000000000
+      internalID: -7036540882106343544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe1a4b0eee7f9120800000000000000
+      internalID: 2422794685405339380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c196f07a127998f20800000000000000
+      internalID: 3425435162384492828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_80
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31697a593effe5ac0800000000000000
+      internalID: -3864370077303859693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_81
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152401047f87066f0800000000000000
+      internalID: -693421339287993775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_82
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df5db48f68c19d90800000000000000
+      internalID: -7092667556837892138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_83
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7456010dda186e7b0800000000000000
+      internalID: -5195322536605227705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_84
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 044a4ed8601e69d70800000000000000
+      internalID: 9049667919514215488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_85
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be90a552077deb500800000000000000
+      internalID: 414005092427631083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_86
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17abf5b3e43210ae0800000000000000
+      internalID: -1584946774947153295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_87
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015834e9e619b2920800000000000000
+      internalID: 2966624683841258768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_88
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474c9cf4d64063760800000000000000
+      internalID: 7437136702185522292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_89
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa71cd2f27be4740800000000000000
+      internalID: 5138245638135315185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_90
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93891bb99d8f06a40800000000000000
+      internalID: 5359557170074589241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_91
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1684510576981de40800000000000000
+      internalID: 5679471681909114977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_92
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9666283ef9748ce30800000000000000
+      internalID: 4523944577736009321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_93
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1baf7764fea6ae440800000000000000
+      internalID: 4965899115041389233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_94
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3422826224f93ef60800000000000000
+      internalID: 8062462864380142147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_95
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a88e914ec3073d3f0800000000000000
+      internalID: -877234095579862902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_96
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe34570847cba1b70800000000000000
+      internalID: 8870609624617010159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_97
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 961c6b72bbf6524d0800000000000000
+      internalID: -3159996713914678935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_98
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f59e7c1318e47ce10800000000000000
+      internalID: 2217827658296191327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_99
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6fe89ff4e8c78810800000000000000
+      internalID: 1767602264632520555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_100
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5794f9f33229d7cd0800000000000000
+      internalID: -2558728333187659403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_101
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856dba056e4f37630800000000000000
+      internalID: 3923748970402928216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_102
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ccad90a0aa0adf70800000000000000
+      internalID: 9212687672745503939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_103
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eac557c7163dcc80800000000000000
+      internalID: -8300919062417519896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_104
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f06b12a340d3520800000000000000
+      internalID: 2683305600702877515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_105
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a8b4dc821c69450800000000000000
+      internalID: 6095271526679677503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_106
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7194395b50297710800000000000000
+      internalID: 1691418711765062012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_107
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae69feae80c96b70800000000000000
+      internalID: 8892850658273226406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_108
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da784e30662e0c970800000000000000
+      internalID: 8773261001897576365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_109
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8adbd1b69406a1550800000000000000
+      internalID: 6132319711064341928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_110
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1313e75c86ae110a0800000000000000
+      internalID: -6912486217326120655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_111
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01eec277e6e0e7220800000000000000
+      internalID: 2485439911963717136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_112
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fd63183205460710800000000000000
+      internalID: 1659089388565655027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_113
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adaf58be364dc3840800000000000000
+      internalID: 5205268794951727834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_114
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f064bbc21796030800000000000000
+      internalID: 3488443823309590283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_115
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d47c04ad5741fff0800000000000000
+      internalID: -4143657140849447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_116
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05119ec4bc3d2ef30800000000000000
+      internalID: 4603474639248232784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_117
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ea025db859b4360800000000000000
+      internalID: 7154976860816846491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_118
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc50d6a8f909a550800000000000000
+      internalID: 6172475727843187930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_119
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14486c653e7b919c0800000000000000
+      internalID: -3955928610626960319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_120
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c5f5ddc652586f0800000000000000
+      internalID: -683098618976052073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_121
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cd481116816f8bd0800000000000000
+      internalID: -2625772829293392443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_122
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10f47ce9cf503aa20800000000000000
+      internalID: 3072305953350569729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_123
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536f09c5983919b20800000000000000
+      internalID: 3139452633426753077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_124
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8578dd5e3641600800000000000000
+      internalID: 438084902677076144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_125
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b377bd30dcc689dc0800000000000000
+      internalID: -3632033471685494981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_126
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ccd3c4ce8c3e9e0800000000000000
+      internalID: -1593208925942068153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_127
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45dce343e7c327ba0800000000000000
+      internalID: -6092740833138782892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_128
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746ba585211a1da10800000000000000
+      internalID: 1932502815282476615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_129
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7424e84e207667300800000000000000
+      internalID: 249500091487765063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_130
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3166b908593af0f0800000000000000
+      internalID: -1082489710146330306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_131
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91e14c12ef7ba7c0800000000000000
+      internalID: -4059010030030954082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_132
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe38c0c94822ebb00800000000000000
+      internalID: 846151732941325295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_133
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4993dc93fe81ce0800000000000000
+      internalID: -1434133449782225737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_134
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fad3783c1873d8f0800000000000000
+      internalID: -516937469615940872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_135
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28071f94f76d65f50800000000000000
+      internalID: 6869914123790020738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_136
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d2f9f168f0fa04a0800000000000000
+      internalID: -6626218952135937322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_137
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbaf3cf7fe77ad790800000000000000
+      internalID: -7504553958535071045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_138
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 639e0920fd6206320800000000000000
+      internalID: 2549080128354314550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_139
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 332cb96c763dec490800000000000000
+      internalID: -7724003868226633165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_140
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0823a33e7d50fa240800000000000000
+      internalID: 4805065752215958144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_141
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44f15d8b9fcfbf2f0800000000000000
+      internalID: -937877947898585276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_142
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ade77d8327c0640800000000000000
+      internalID: 5047534870834633255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_143
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9e051681f6dac60800000000000000
+      internalID: 7831037477569751501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_144
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21ef8f3423ec7ef30800000000000000
+      internalID: 4604875859293699602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_145
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d0dfd500b18b8d0800000000000000
+      internalID: -2830482677411541711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_146
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa2d61af0d7a4120800000000000000
+      internalID: 2398867257614478066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_147
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759dbbe898f523200800000000000000
+      internalID: 158293981321222487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_148
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44fc11ca3de559350800000000000000
+      internalID: 6022824339895865156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_149
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f3225460049ce0e0800000000000000
+      internalID: -2239252185305963528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_150
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dcb1dceec3950ca0800000000000000
+      internalID: -6051268007356678953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_151
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec3ca797285ea8c70800000000000000
+      internalID: 8974237556035732430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_152
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff804d63245fb4fb0800000000000000
+      internalID: -4662363324475504385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_153
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aafaedb82b9a66480800000000000000
+      internalID: -8906244628762677334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_154
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5d958961b1233c50800000000000000
+      internalID: 6643690921164905823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_155
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04e227ad5edd70d90800000000000000
+      internalID: -7131487505635725760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_156
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f8c192f16a7dad40800000000000000
+      internalID: 5597264472991451379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_157
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8810c558b50520970800000000000000
+      internalID: 8719620182552347016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_158
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e6f30e26bcff1040800000000000000
+      internalID: 4620689602091677410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_159
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c8167f40988bf00800000000000000
+      internalID: 1132805960706919433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_160
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30e14f87f01876ee0800000000000000
+      internalID: -1267902866627748349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_161
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9549c37849e720eb0800000000000000
+      internalID: -4755099080160668583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_162
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6a8080dde7762b50800000000000000
+      internalID: 6568068969855486572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_163
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9635129c190580f80800000000000000
+      internalID: -8140167739397287063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_164
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: addf1d79f950328f0800000000000000
+      internalID: -566602945113489958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_165
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 540ba215570f54890800000000000000
+      internalID: -7474303619887878075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_166
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ac2bf3467c202340800000000000000
+      internalID: 4836914886254210208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_167
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f072fcdbc0e7210800000000000000
+      internalID: 1332516549112041268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_168
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2353b4cef265a32f0800000000000000
+      internalID: -992386004053969614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_169
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bdf69cd1ccc202e0800000000000000
+      internalID: -2160939738182779472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_170
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfad2047163eca0a0800000000000000
+      internalID: -6868865323949171971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_171
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46a4330e0131c84b0800000000000000
+      internalID: -5436949686941169052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_172
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64686e067edea0810800000000000000
+      internalID: 1732458584696325702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_173
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61533d0275b798060800000000000000
+      internalID: 6956226713593525526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_174
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9722dd480ce8ce20800000000000000
+      internalID: 3371203841496328092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_175
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02bccc16fb7cafbf0800000000000000
+      internalID: -289699601218483424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_176
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fdf21c9285ce5760800000000000000
+      internalID: 7448607998472289784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_177
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 996b0025a4b322990800000000000000
+      internalID: -7412296846309017959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_178
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f0185de04f627d0800000000000000
+      internalID: -2943396961891315845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_179
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aacf6cd4fd258c40800000000000000
+      internalID: 5513863848478624423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_180
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 306e87a2e7ee27530800000000000000
+      internalID: 3851402857001051651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_181
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2743c8f6b1ef98f40800000000000000
+      internalID: 5731391394594698354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_182
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 316960d17604efbb0800000000000000
+      internalID: -4900408532919740909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_183
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50075b51295250b60800000000000000
+      internalID: 7711611246301507589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_184
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be34fcaf0f8582ec0800000000000000
+      internalID: -3591522910804687893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_185
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d6fc7851f311f470800000000000000
+      internalID: 8426538305079539412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_186
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef5586015fcc8490800000000000000
+      internalID: -7742585712448020504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_187
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5b624347ffbba2f0800000000000000
+      internalID: -960463026807215267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_188
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2918dde746b18bb20800000000000000
+      internalID: 3150298057784787346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_189
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac151f192c235f040800000000000000
+      internalID: 4680703198975054282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_190
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c1b1975e3591d210800000000000000
+      internalID: 1356029057804906945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_191
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c3719a01c8509db0800000000000000
+      internalID: -4787228817765600319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_192
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e381b579449bf0f0800000000000000
+      internalID: -1082108242224380954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_193
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e17dfe1ae56761b0800000000000000
+      internalID: -5663445950178430493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_194
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc145a47d7722a3d0800000000000000
+      internalID: -3196949365698248244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_195
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ab51e04cec0f580800000000000000
+      internalID: -8795302730809361886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_196
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e30d0a1b68cd1670800000000000000
+      internalID: 8511179233124221922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerPassiveSpritesheet_197
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d798317476d6e00800000000000000
+      internalID: 1039600643960569180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PlayerPassiveSpritesheet_0: -4905425108131268637
+      PlayerPassiveSpritesheet_1: 66728549314582650
+      PlayerPassiveSpritesheet_10: 8424568544114533735
+      PlayerPassiveSpritesheet_100: -2558728333187659403
+      PlayerPassiveSpritesheet_101: 3923748970402928216
+      PlayerPassiveSpritesheet_102: 9212687672745503939
+      PlayerPassiveSpritesheet_103: -8300919062417519896
+      PlayerPassiveSpritesheet_104: 2683305600702877515
+      PlayerPassiveSpritesheet_105: 6095271526679677503
+      PlayerPassiveSpritesheet_106: 1691418711765062012
+      PlayerPassiveSpritesheet_107: 8892850658273226406
+      PlayerPassiveSpritesheet_108: 8773261001897576365
+      PlayerPassiveSpritesheet_109: 6132319711064341928
+      PlayerPassiveSpritesheet_11: -8988210993564523455
+      PlayerPassiveSpritesheet_110: -6912486217326120655
+      PlayerPassiveSpritesheet_111: 2485439911963717136
+      PlayerPassiveSpritesheet_112: 1659089388565655027
+      PlayerPassiveSpritesheet_113: 5205268794951727834
+      PlayerPassiveSpritesheet_114: 3488443823309590283
+      PlayerPassiveSpritesheet_115: -4143657140849447
+      PlayerPassiveSpritesheet_116: 4603474639248232784
+      PlayerPassiveSpritesheet_117: 7154976860816846491
+      PlayerPassiveSpritesheet_118: 6172475727843187930
+      PlayerPassiveSpritesheet_119: -3955928610626960319
+      PlayerPassiveSpritesheet_12: -5028813722142480827
+      PlayerPassiveSpritesheet_120: -683098618976052073
+      PlayerPassiveSpritesheet_121: -2625772829293392443
+      PlayerPassiveSpritesheet_122: 3072305953350569729
+      PlayerPassiveSpritesheet_123: 3139452633426753077
+      PlayerPassiveSpritesheet_124: 438084902677076144
+      PlayerPassiveSpritesheet_125: -3632033471685494981
+      PlayerPassiveSpritesheet_126: -1593208925942068153
+      PlayerPassiveSpritesheet_127: -6092740833138782892
+      PlayerPassiveSpritesheet_128: 1932502815282476615
+      PlayerPassiveSpritesheet_129: 249500091487765063
+      PlayerPassiveSpritesheet_13: -1193935115869698452
+      PlayerPassiveSpritesheet_130: -1082489710146330306
+      PlayerPassiveSpritesheet_131: -4059010030030954082
+      PlayerPassiveSpritesheet_132: 846151732941325295
+      PlayerPassiveSpritesheet_133: -1434133449782225737
+      PlayerPassiveSpritesheet_134: -516937469615940872
+      PlayerPassiveSpritesheet_135: 6869914123790020738
+      PlayerPassiveSpritesheet_136: -6626218952135937322
+      PlayerPassiveSpritesheet_137: -7504553958535071045
+      PlayerPassiveSpritesheet_138: 2549080128354314550
+      PlayerPassiveSpritesheet_139: -7724003868226633165
+      PlayerPassiveSpritesheet_14: 7885112054261595096
+      PlayerPassiveSpritesheet_140: 4805065752215958144
+      PlayerPassiveSpritesheet_141: -937877947898585276
+      PlayerPassiveSpritesheet_142: 5047534870834633255
+      PlayerPassiveSpritesheet_143: 7831037477569751501
+      PlayerPassiveSpritesheet_144: 4604875859293699602
+      PlayerPassiveSpritesheet_145: -2830482677411541711
+      PlayerPassiveSpritesheet_146: 2398867257614478066
+      PlayerPassiveSpritesheet_147: 158293981321222487
+      PlayerPassiveSpritesheet_148: 6022824339895865156
+      PlayerPassiveSpritesheet_149: -2239252185305963528
+      PlayerPassiveSpritesheet_15: -948306105492628345
+      PlayerPassiveSpritesheet_150: -6051268007356678953
+      PlayerPassiveSpritesheet_151: 8974237556035732430
+      PlayerPassiveSpritesheet_152: -4662363324475504385
+      PlayerPassiveSpritesheet_153: -8906244628762677334
+      PlayerPassiveSpritesheet_154: 6643690921164905823
+      PlayerPassiveSpritesheet_155: -7131487505635725760
+      PlayerPassiveSpritesheet_156: 5597264472991451379
+      PlayerPassiveSpritesheet_157: 8719620182552347016
+      PlayerPassiveSpritesheet_158: 4620689602091677410
+      PlayerPassiveSpritesheet_159: 1132805960706919433
+      PlayerPassiveSpritesheet_16: 3765910242434338945
+      PlayerPassiveSpritesheet_160: -1267902866627748349
+      PlayerPassiveSpritesheet_161: -4755099080160668583
+      PlayerPassiveSpritesheet_162: 6568068969855486572
+      PlayerPassiveSpritesheet_163: -8140167739397287063
+      PlayerPassiveSpritesheet_164: -566602945113489958
+      PlayerPassiveSpritesheet_165: -7474303619887878075
+      PlayerPassiveSpritesheet_166: 4836914886254210208
+      PlayerPassiveSpritesheet_167: 1332516549112041268
+      PlayerPassiveSpritesheet_168: -992386004053969614
+      PlayerPassiveSpritesheet_169: -2160939738182779472
+      PlayerPassiveSpritesheet_17: 3630972652433012573
+      PlayerPassiveSpritesheet_170: -6868865323949171971
+      PlayerPassiveSpritesheet_171: -5436949686941169052
+      PlayerPassiveSpritesheet_172: 1732458584696325702
+      PlayerPassiveSpritesheet_173: 6956226713593525526
+      PlayerPassiveSpritesheet_174: 3371203841496328092
+      PlayerPassiveSpritesheet_175: -289699601218483424
+      PlayerPassiveSpritesheet_176: 7448607998472289784
+      PlayerPassiveSpritesheet_177: -7412296846309017959
+      PlayerPassiveSpritesheet_178: -2943396961891315845
+      PlayerPassiveSpritesheet_179: 5513863848478624423
+      PlayerPassiveSpritesheet_18: -4764639519378084062
+      PlayerPassiveSpritesheet_180: 3851402857001051651
+      PlayerPassiveSpritesheet_181: 5731391394594698354
+      PlayerPassiveSpritesheet_182: -4900408532919740909
+      PlayerPassiveSpritesheet_183: 7711611246301507589
+      PlayerPassiveSpritesheet_184: -3591522910804687893
+      PlayerPassiveSpritesheet_185: 8426538305079539412
+      PlayerPassiveSpritesheet_186: -7742585712448020504
+      PlayerPassiveSpritesheet_187: -960463026807215267
+      PlayerPassiveSpritesheet_188: 3150298057784787346
+      PlayerPassiveSpritesheet_189: 4680703198975054282
+      PlayerPassiveSpritesheet_19: -74520633899911311
+      PlayerPassiveSpritesheet_190: 1356029057804906945
+      PlayerPassiveSpritesheet_191: -4787228817765600319
+      PlayerPassiveSpritesheet_192: -1082108242224380954
+      PlayerPassiveSpritesheet_193: -5663445950178430493
+      PlayerPassiveSpritesheet_194: -3196949365698248244
+      PlayerPassiveSpritesheet_195: -8795302730809361886
+      PlayerPassiveSpritesheet_196: 8511179233124221922
+      PlayerPassiveSpritesheet_197: 1039600643960569180
+      PlayerPassiveSpritesheet_2: -7953614711884800158
+      PlayerPassiveSpritesheet_20: 2790163745153916310
+      PlayerPassiveSpritesheet_21: 7577668378503842056
+      PlayerPassiveSpritesheet_22: -7778584740039499802
+      PlayerPassiveSpritesheet_23: -1788295567435989393
+      PlayerPassiveSpritesheet_24: -3790122178266266371
+      PlayerPassiveSpritesheet_25: 7073514808128838929
+      PlayerPassiveSpritesheet_26: 6322463650357496284
+      PlayerPassiveSpritesheet_27: -6202802975052950501
+      PlayerPassiveSpritesheet_28: 2383011087861032081
+      PlayerPassiveSpritesheet_29: 2563958866903351768
+      PlayerPassiveSpritesheet_3: -5216976230985679191
+      PlayerPassiveSpritesheet_30: 2961774974120051002
+      PlayerPassiveSpritesheet_31: -7983772960539610468
+      PlayerPassiveSpritesheet_32: -3037856181819369184
+      PlayerPassiveSpritesheet_33: 6607632459851269900
+      PlayerPassiveSpritesheet_34: 8782133320281972415
+      PlayerPassiveSpritesheet_35: 47490696155193417
+      PlayerPassiveSpritesheet_36: 8485014735036157156
+      PlayerPassiveSpritesheet_37: 4057218925991787944
+      PlayerPassiveSpritesheet_38: -435845962631207167
+      PlayerPassiveSpritesheet_39: -6045742523042559313
+      PlayerPassiveSpritesheet_4: -5136525874458218394
+      PlayerPassiveSpritesheet_40: 6414110036378476270
+      PlayerPassiveSpritesheet_41: 674677353826031825
+      PlayerPassiveSpritesheet_42: -5902648265236068255
+      PlayerPassiveSpritesheet_43: -8695750943279566761
+      PlayerPassiveSpritesheet_44: -8504572045275880019
+      PlayerPassiveSpritesheet_45: -17123846799488988
+      PlayerPassiveSpritesheet_46: -4313289330799007995
+      PlayerPassiveSpritesheet_47: 7848010901842066523
+      PlayerPassiveSpritesheet_48: 8137036353056108682
+      PlayerPassiveSpritesheet_49: 2121001561939939622
+      PlayerPassiveSpritesheet_5: -1342719331554506674
+      PlayerPassiveSpritesheet_50: -1082288235568049414
+      PlayerPassiveSpritesheet_51: 1548313101431509565
+      PlayerPassiveSpritesheet_52: -4476878765187023758
+      PlayerPassiveSpritesheet_53: -4391888670345812860
+      PlayerPassiveSpritesheet_54: 3196033051997622196
+      PlayerPassiveSpritesheet_55: 4254499410668106390
+      PlayerPassiveSpritesheet_56: -7360552646349666492
+      PlayerPassiveSpritesheet_57: 6114050609807270713
+      PlayerPassiveSpritesheet_58: -2746098802267627814
+      PlayerPassiveSpritesheet_59: -8006493150429192099
+      PlayerPassiveSpritesheet_6: 4075805055062868763
+      PlayerPassiveSpritesheet_60: -4219439614654175529
+      PlayerPassiveSpritesheet_61: -876320168986766794
+      PlayerPassiveSpritesheet_62: -8217256234717941543
+      PlayerPassiveSpritesheet_63: -1125108776936848769
+      PlayerPassiveSpritesheet_64: -1312351415000736449
+      PlayerPassiveSpritesheet_65: 1307608351643724574
+      PlayerPassiveSpritesheet_66: 3905438675950117723
+      PlayerPassiveSpritesheet_67: 8800000730495407454
+      PlayerPassiveSpritesheet_68: -5496809524032988816
+      PlayerPassiveSpritesheet_69: -4977873283868057192
+      PlayerPassiveSpritesheet_7: -603359147165798208
+      PlayerPassiveSpritesheet_70: -1140159623404678957
+      PlayerPassiveSpritesheet_71: -5369272445570627475
+      PlayerPassiveSpritesheet_72: 7975639825887543647
+      PlayerPassiveSpritesheet_73: 2862123747653400655
+      PlayerPassiveSpritesheet_74: -2454239604564639382
+      PlayerPassiveSpritesheet_75: 1503115345733090164
+      PlayerPassiveSpritesheet_76: 690262379056722174
+      PlayerPassiveSpritesheet_77: -7036540882106343544
+      PlayerPassiveSpritesheet_78: 2422794685405339380
+      PlayerPassiveSpritesheet_79: 3425435162384492828
+      PlayerPassiveSpritesheet_8: -158287864866222884
+      PlayerPassiveSpritesheet_80: -3864370077303859693
+      PlayerPassiveSpritesheet_81: -693421339287993775
+      PlayerPassiveSpritesheet_82: -7092667556837892138
+      PlayerPassiveSpritesheet_83: -5195322536605227705
+      PlayerPassiveSpritesheet_84: 9049667919514215488
+      PlayerPassiveSpritesheet_85: 414005092427631083
+      PlayerPassiveSpritesheet_86: -1584946774947153295
+      PlayerPassiveSpritesheet_87: 2966624683841258768
+      PlayerPassiveSpritesheet_88: 7437136702185522292
+      PlayerPassiveSpritesheet_89: 5138245638135315185
+      PlayerPassiveSpritesheet_9: -8372939616574282297
+      PlayerPassiveSpritesheet_90: 5359557170074589241
+      PlayerPassiveSpritesheet_91: 5679471681909114977
+      PlayerPassiveSpritesheet_92: 4523944577736009321
+      PlayerPassiveSpritesheet_93: 4965899115041389233
+      PlayerPassiveSpritesheet_94: 8062462864380142147
+      PlayerPassiveSpritesheet_95: -877234095579862902
+      PlayerPassiveSpritesheet_96: 8870609624617010159
+      PlayerPassiveSpritesheet_97: -3159996713914678935
+      PlayerPassiveSpritesheet_98: 2217827658296191327
+      PlayerPassiveSpritesheet_99: 1767602264632520555
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
