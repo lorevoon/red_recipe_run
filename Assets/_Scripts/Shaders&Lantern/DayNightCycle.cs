@@ -1,34 +1,37 @@
 using UnityEngine;
-using UnityEngine.Rendering;  // General rendering namespace
-using UnityEngine.Rendering.Universal;  // Specific URP namespace
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class DayNightCycle : MonoBehaviour
 {
-    public Volume globalVolume; // Reference to the global post-processing volume
-    public Transform clockHand; // Reference to the clock hand transform
+    public Volume globalVolume;
+    public Transform clockHand;
 
-    public float timeSpeed = 1.0f; // How fast time progresses
-    private float timeOfDay = 0.0f; // Time of day in hours
+    public float timeSpeed = 1.0f; // Speed of time progression
+    private float timeOfDay = 6.0f; // Start at 6 AM
 
-    public Light2D globalLight; // Reference to a global light source to simulate sunlight/moonlight
+    public Light2D globalLight;
     public Color dayColor;
     public Color nightColor;
 
-    public AudioSource dayAudioSource; // Reference for day audio source
-    public AudioSource nightAudioSource; // Reference for night audio source
+    public AudioSource dayAudioSource;
+    public AudioSource nightAudioSource;
 
     void Start()
     {
-        // Initialize the light with daytime settings
         globalLight.color = dayColor;
         globalLight.intensity = 1.0f;
+
+        // Start playing day audio at the beginning
+        dayAudioSource.Play();
+        clockHand.localEulerAngles = new Vector3(0, 0, 180f); // Start at 6 o'clock (pointing down)
     }
 
     void Update()
     {
         UpdateTimeOfDay();
         UpdateLighting();
-        UpdateClockHandRotation(); // Update the clock hand rotation
+        UpdateClockHandRotation();
         UpdateAudio();
     }
 
@@ -36,57 +39,62 @@ public class DayNightCycle : MonoBehaviour
     {
         // Time progresses continuously
         timeOfDay += Time.deltaTime * timeSpeed;
+
+        // Ensure the timeOfDay wraps around after 24 hours
         if (timeOfDay >= 24.0f)
         {
-            timeOfDay = 0.0f; // Reset the time at midnight
+            timeOfDay = 0.0f;
         }
     }
 
     void UpdateLighting()
     {
-        // Interpolate light color and intensity based on time of day
-        if (timeOfDay < 6 || timeOfDay > 18) // Nighttime
+        if (timeOfDay >= 18.0f || timeOfDay < 6.0f) // Nighttime (6 PM to 6 AM)
         {
             globalLight.color = nightColor;
-            globalLight.intensity = 0.5f; // Dimmer light at night
+            globalLight.intensity = 0.5f;
         }
-        else // Daytime
+        else // Daytime (6 AM to 6 PM)
         {
             globalLight.color = dayColor;
-            globalLight.intensity = 1.0f; // Brighter light during the day
+            globalLight.intensity = 1.0f;
         }
 
-        // Adjust post-processing weight based on time for smooth transition
-        if (timeOfDay >= 18 && timeOfDay < 20) // Dusk
+        // Smooth transitions for global volume (dusk/dawn)
+        if (timeOfDay >= 18 && timeOfDay < 20) // Dusk (6 PM to 8 PM)
         {
-            globalVolume.weight = (timeOfDay - 18) / 2; // Gradually increase weight
+            globalVolume.weight = (timeOfDay - 18) / 2;
         }
-        else if (timeOfDay >= 6 && timeOfDay < 8) // Dawn
+        else if (timeOfDay >= 6 && timeOfDay < 8) // Dawn (6 AM to 8 AM)
         {
-            globalVolume.weight = 1 - ((timeOfDay - 6) / 2); // Gradually decrease weight
+            globalVolume.weight = 1 - ((timeOfDay - 6) / 2);
         }
         else
         {
-            globalVolume.weight = timeOfDay > 20 || timeOfDay < 6 ? 1 : 0;
+            globalVolume.weight = (timeOfDay >= 20 || timeOfDay < 6) ? 1 : 0;
         }
     }
 
     void UpdateClockHandRotation()
     {
-        float rotationDegrees = ((timeOfDay / 24f) * 360f) - 90f; // Subtract 90 to start from 12 o'clock
+        // Convert 24-hour time to 12-hour cycle (clock makes full rotation every 12 hours)
+        float twelveHourTime = timeOfDay % 12f;
+        // Calculate rotation (0-360 degrees over 12 hours)
+        float rotationDegrees = (twelveHourTime / 12f) * 360f;
+        // Apply rotation (negative because Unity rotates clockwise with positive angles)
         clockHand.localEulerAngles = new Vector3(0, 0, -rotationDegrees);
     }
 
     void UpdateAudio()
     {
-        // Play bird sounds during the day (6 AM to 6 PM)
-        if ((timeOfDay >= 6 && timeOfDay < 18) && !dayAudioSource.isPlaying)
+        // Play day audio from 6 AM to 6 PM
+        if (timeOfDay >= 6.0f && timeOfDay < 18.0f && !dayAudioSource.isPlaying)
         {
             nightAudioSource.Stop();
             dayAudioSource.Play();
         }
-        // Play owl sounds during the night (6 PM to 6 AM)
-        else if ((timeOfDay >= 18 || timeOfDay < 6) && !nightAudioSource.isPlaying)
+        // Play night audio from 6 PM to 6 AM
+        else if ((timeOfDay >= 18.0f || timeOfDay < 6.0f) && !nightAudioSource.isPlaying)
         {
             dayAudioSource.Stop();
             nightAudioSource.Play();
