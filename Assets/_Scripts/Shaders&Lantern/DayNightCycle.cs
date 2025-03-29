@@ -1,12 +1,11 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.Rendering;  // General rendering namespace
 using UnityEngine.Rendering.Universal;  // Specific URP namespace
 
 public class DayNightCycle : MonoBehaviour
 {
-    public TextMeshProUGUI timeDisplay; // Reference to the TextMesh Pro UI component for time
     public Volume globalVolume; // Reference to the global post-processing volume
+    public Transform clockHand; // Reference to the clock hand transform
 
     public float timeSpeed = 1.0f; // How fast time progresses
     private float timeOfDay = 0.0f; // Time of day in hours
@@ -14,6 +13,9 @@ public class DayNightCycle : MonoBehaviour
     public Light2D globalLight; // Reference to a global light source to simulate sunlight/moonlight
     public Color dayColor;
     public Color nightColor;
+
+    public AudioSource dayAudioSource; // Reference for day audio source
+    public AudioSource nightAudioSource; // Reference for night audio source
 
     void Start()
     {
@@ -26,7 +28,8 @@ public class DayNightCycle : MonoBehaviour
     {
         UpdateTimeOfDay();
         UpdateLighting();
-        UpdateUI();
+        UpdateClockHandRotation(); // Update the clock hand rotation
+        UpdateAudio();
     }
 
     void UpdateTimeOfDay()
@@ -68,10 +71,25 @@ public class DayNightCycle : MonoBehaviour
         }
     }
 
-    void UpdateUI()
+    void UpdateClockHandRotation()
     {
-        // Update the time display
-        timeDisplay.text = string.Format("{0:00}:{1:00}", (int)timeOfDay, (int)(timeOfDay * 60) % 60);
+        float rotationDegrees = ((timeOfDay / 24f) * 360f) - 90f; // Subtract 90 to start from 12 o'clock
+        clockHand.localEulerAngles = new Vector3(0, 0, -rotationDegrees);
     }
 
+    void UpdateAudio()
+    {
+        // Play bird sounds during the day (6 AM to 6 PM)
+        if ((timeOfDay >= 6 && timeOfDay < 18) && !dayAudioSource.isPlaying)
+        {
+            nightAudioSource.Stop();
+            dayAudioSource.Play();
+        }
+        // Play owl sounds during the night (6 PM to 6 AM)
+        else if ((timeOfDay >= 18 || timeOfDay < 6) && !nightAudioSource.isPlaying)
+        {
+            dayAudioSource.Stop();
+            nightAudioSource.Play();
+        }
+    }
 }
