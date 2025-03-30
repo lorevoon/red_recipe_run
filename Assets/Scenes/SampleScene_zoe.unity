@@ -184,6 +184,14 @@ PrefabInstance:
       propertyPath: m_PointLightOuterRadius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: 'm_ApplyToSortingLayers.Array.data[0]'
+      value: 2054030679
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: 'm_ApplyToSortingLayers.Array.data[1]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3204628609387752867, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
       propertyPath: m_LocalScale.x
       value: 1

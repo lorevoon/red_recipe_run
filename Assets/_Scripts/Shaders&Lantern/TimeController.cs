@@ -74,6 +74,8 @@ public class TimeController : Singleton<TimeController>
         {
             _globalVolume.weight = _timeOfDay > 20 || _timeOfDay < 6 ? 1 : 0;
         }
+        _globalLight.color = Color.Lerp(_dayColor, _nightColor, _globalVolume.weight);
+
     }
 
     void UpdateUI()
