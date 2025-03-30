@@ -19,5 +19,10 @@ public class LanternController : MonoBehaviour {
             _isLightOn = !_isLightOn; // Toggle the state of the light
             _light2D.enabled = _isLightOn; // Enable or disable the Light2D component
         }
+        // turn off lantern when not night
+        else if (!_timeController.IsNight) {
+            _isLightOn = false;
+            _light2D.enabled = false;
+        }
     }
 }
