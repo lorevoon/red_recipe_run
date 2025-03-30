@@ -185,12 +185,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
       propertyPath: 'm_ApplyToSortingLayers.Array.data[0]'
       value: 2054030679
       objectReference: {fileID: 0}
     - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
       propertyPath: 'm_ApplyToSortingLayers.Array.data[1]'
-      value: 0
+      value: -1976911461
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: 'm_ApplyToSortingLayers.Array.data[3]'
+      value: -22829389
       objectReference: {fileID: 0}
     - target: {fileID: 3204628609387752867, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
       propertyPath: m_LocalScale.x
@@ -243,6 +251,10 @@ PrefabInstance:
     - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
       propertyPath: IsCycleOn
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: _timeSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -323,8 +335,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2054030679
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -415,6 +427,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1945145556746038868, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945145556746038868, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1976911461
+      objectReference: {fileID: 0}
     - target: {fileID: 2940092690503372454, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -433,11 +453,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_Intensity
-      value: 0.8
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: m_BlendStyleIndex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: m_OverlapOperation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_PointLightInnerAngle
@@ -445,19 +473,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_PointLightInnerRadius
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: 'm_ApplyToSortingLayers.Array.data[0]'
       value: 2054030679
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: 'm_ApplyToSortingLayers.Array.data[1]'
+      value: -1976911461
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: 'm_ApplyToSortingLayers.Array.data[3]'
+      value: -22829389
       objectReference: {fileID: 0}
     - target: {fileID: 7910355346454261436, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_LocalPosition.x
