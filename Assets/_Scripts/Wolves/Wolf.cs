@@ -8,6 +8,8 @@ public class Wolf : MonoBehaviour
     private SpriteRenderer _spriteRenderer;  // extra: flip sprite
     private Rigidbody2D _rigidBody;
     private AudioSource _audioSource;
+
+    private GameObject _lantern;
     
     // actual wolf variables
     public int chaseSpeed = 5;
@@ -31,6 +33,7 @@ public class Wolf : MonoBehaviour
         // assign values to necessary wolf variables
         _rigidBody = GetComponent<Rigidbody2D>();
         _player = GameObject.FindGameObjectWithTag("Player");
+        _lantern = GameObject.FindGameObjectWithTag("Lantern");
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _audioSource = GetComponent<AudioSource>();
         
@@ -51,6 +54,11 @@ public class Wolf : MonoBehaviour
                 _currentState = EWolfStates.Chase;
                 Chase();
             }
+        }
+        else if (_lantern.GetComponent<LanternController>()._isLightOn == true)
+        {
+            _currentState = EWolfStates.Chase;
+            Chase();
         }
         else
         {

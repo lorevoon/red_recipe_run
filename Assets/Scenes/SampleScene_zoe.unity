@@ -176,38 +176,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeController
       objectReference: {fileID: 0}
-    - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: m_LightType
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: 'm_ApplyToSortingLayers.Array.data[0]'
-      value: 2054030679
-      objectReference: {fileID: 0}
-    - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: 'm_ApplyToSortingLayers.Array.data[1]'
-      value: -1976911461
-      objectReference: {fileID: 0}
-    - target: {fileID: 1462706291537614476, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: 'm_ApplyToSortingLayers.Array.data[3]'
-      value: -22829389
-      objectReference: {fileID: 0}
-    - target: {fileID: 3204628609387752867, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3204628609387752867, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4619293422647677424, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.535024
@@ -247,14 +215,6 @@ PrefabInstance:
     - target: {fileID: 4619293422647677424, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: IsCycleOn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: _timeSpeed
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -427,73 +387,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1945145556746038868, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_SortingLayer
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1945145556746038868, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1976911461
-      objectReference: {fileID: 0}
     - target: {fileID: 2940092690503372454, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_Color.b
-      value: 0.46293163
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_Color.g
-      value: 0.91641057
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_Color.r
-      value: 0.9716981
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_Intensity
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_BlendStyleIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_OverlapOperation
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_PointLightInnerAngle
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_PointLightInnerRadius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: 'm_ApplyToSortingLayers.Array.data[0]'
-      value: 2054030679
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: 'm_ApplyToSortingLayers.Array.data[1]'
-      value: -1976911461
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597847158267413295, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      propertyPath: 'm_ApplyToSortingLayers.Array.data[3]'
-      value: -22829389
       objectReference: {fileID: 0}
     - target: {fileID: 7910355346454261436, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_LocalPosition.x

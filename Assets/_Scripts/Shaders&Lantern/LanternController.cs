@@ -5,7 +5,7 @@ public class LanternController : MonoBehaviour {
     [SerializeField] private Light2D _light2D; // Reference to the Light2D component
     private TimeController _timeController;
 
-    private bool _isLightOn = false; // Track the state of the light
+    public bool _isLightOn = false; // Track the state of the light
 
     void Start()
     {
