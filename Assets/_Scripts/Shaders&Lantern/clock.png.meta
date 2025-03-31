@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1b029a760d1b46144b879abdeca4bf05
+guid: 934bb28836d5c4d5d913d1db5eb4e272
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5829029165012892431
-    second: Chain - Bronze_0
+      213: 8581363780399802525
+    second: clock_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chain - Bronze_0
+      name: clock_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 7
-        height: 53
+        x: 69
+        y: 28
+        width: 862
+        height: 861
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f4c302abd02b1fa0800000000000000
-      internalID: -5829029165012892431
+      spriteID: d98222b64e0271770800000000000000
+      internalID: 8581363780399802525
       vertices: []
       indices: 
       edges: []

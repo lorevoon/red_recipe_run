@@ -23,7 +23,6 @@ public class CameraManager : Singleton<CameraManager>
             {
                 CurrentCamera = AllVirtualCameras[i];
                 _framingTransposer = CurrentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-                CurrentCamera.Follow = PlayerController.Instance.gameObject.transform;
                 break;
             }
         }
