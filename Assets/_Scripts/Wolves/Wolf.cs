@@ -77,24 +77,24 @@ public class Wolf : MonoBehaviour
         // Debug.Log(_currentState);
 
         // stop from moving out of window
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-        if (screenPos.x <= 0 - 50)
-        {
-            screenPos.x = 0 - 50;
-        }
-        else if (screenPos.y <= 0 - 50)
-        {
-            screenPos.y = 0 - 50;
-        }
-        else if (screenPos.x >= Screen.width + 50)
-        {
-            screenPos.x = Screen.width + 50;
-        }
-        else if (screenPos.y >= Screen.height + 50)
-        {
-            screenPos.y = Screen.height + 50;
-        }
-        transform.position = Camera.main.ScreenToWorldPoint(screenPos);
+        // Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        // if (screenPos.x <= 0 - 50)
+        // {
+        //     screenPos.x = 0 - 50;
+        // }
+        // else if (screenPos.y <= 0 - 50)
+        // {
+        //     screenPos.y = 0 - 50;
+        // }
+        // else if (screenPos.x >= Screen.width + 50)
+        // {
+        //     screenPos.x = Screen.width + 50;
+        // }
+        // else if (screenPos.y >= Screen.height + 50)
+        // {
+        //     screenPos.y = Screen.height + 50;
+        // }
+        // transform.position = Camera.main.ScreenToWorldPoint(screenPos);
 
     }
 
