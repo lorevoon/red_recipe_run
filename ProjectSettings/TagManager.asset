@@ -49,11 +49,3 @@ TagManager:
   - name: items, player
     uniqueID: 2318055835
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
-  - name: top
-    uniqueID: 4272137907
-    locked: 0
-  m_RenderingLayers:
-  - Default
