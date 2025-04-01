@@ -6,7 +6,7 @@ public class WolfSpawner : MonoBehaviour
 {
     private GameObject manager;
     private EGrid[,] bushTypeGrid;
-    private List<Vector2Int> emptyList;
+    public List<Vector2Int> emptyList;
 
     public int amount = 2;
     private List<Vector2Int> spawnPoints;
@@ -41,7 +41,6 @@ public class WolfSpawner : MonoBehaviour
         // }
 
         GetEmptyBlockList();
-        GetSpawnPoints();
     }
 
     void GetEmptyBlockList()
@@ -93,6 +92,8 @@ public class WolfSpawner : MonoBehaviour
 
     void spawnWolves()
     {
+        GetSpawnPoints();
+
         for (int i = 0; i < spawnPoints.Count; i++)
         {   
             Vector3 v = new Vector3(spawnPoints[i].x, spawnPoints[i].y, 0);

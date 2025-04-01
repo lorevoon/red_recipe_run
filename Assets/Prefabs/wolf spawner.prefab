@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1357008241907990211}
   m_Layer: 0
   m_Name: wolf spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

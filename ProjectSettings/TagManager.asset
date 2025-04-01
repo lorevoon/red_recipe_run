@@ -9,6 +9,7 @@ TagManager:
   - Wolf
   - Lantern
   - Manager
+  - Spawner
   layers:
   - Default
   - TransparentFX

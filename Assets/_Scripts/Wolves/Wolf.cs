@@ -27,6 +27,8 @@ public class Wolf : MonoBehaviour
     private Vector2 _wanderPoint;
 
     private GameObject lantern;
+    private GameObject spawner;
+    private List<Vector2Int> walkable;
     
     void Start()
     {
@@ -37,6 +39,9 @@ public class Wolf : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
 
         lantern = GameObject.FindGameObjectWithTag("Lantern");
+
+        spawner = GameObject.FindGameObjectWithTag("Spawner");
+        walkable = spawner.GetComponent<WolfSpawner>().emptyList;
         
         _velocity = _rigidBody.linearVelocity;
         
@@ -165,7 +170,8 @@ public class Wolf : MonoBehaviour
 
     private void newWanderPoint()
     {
-        _wanderPoint.x = transform.position.x + Random.Range(-10, 10);
-        _wanderPoint.y = transform.position.y + Random.Range(-10, 10);
+        // _wanderPoint.x = transform.position.x + Random.Range(-10, 10);
+        // _wanderPoint.y = transform.position.y + Random.Range(-10, 10);
+        _wanderPoint = walkable[Random.Range(0, walkable.Count)];
     }
 }
