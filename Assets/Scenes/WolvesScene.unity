@@ -921,6 +921,18 @@ PrefabInstance:
       propertyPath: _timeSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: _nightColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: _nightColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: _nightColor.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

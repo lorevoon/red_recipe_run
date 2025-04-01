@@ -6,10 +6,10 @@ public class WolfSpawner : MonoBehaviour
 {
     private GameObject manager;
     private EGrid[,] bushTypeGrid;
-    public List<Vector2Int> emptyList;
+    public List<Vector2> emptyList;
 
     public int amount = 2;
-    private List<Vector2Int> spawnPoints;
+    private List<Vector2> spawnPoints;
 
     public TimeController tc;
     private bool isNight = false;
@@ -40,12 +40,11 @@ public class WolfSpawner : MonoBehaviour
         //     Debug.LogError("Manager not found. Check the GameObject with the 'Manager' tag.");
         // }
 
-        GetEmptyBlockList();
     }
 
     void GetEmptyBlockList()
     {
-        emptyList = new List<Vector2Int>();
+        emptyList = new List<Vector2>();
 
         int width = bushTypeGrid.GetLength(0);
         int height = bushTypeGrid.GetLength(1);
@@ -56,7 +55,7 @@ public class WolfSpawner : MonoBehaviour
             {
                 if (bushTypeGrid[x, y] == EGrid.Empty)
                 {
-                    emptyList.Add(new Vector2Int(x, y));
+                    emptyList.Add(new Vector2(x, y));
                 }
             }
         }
@@ -64,18 +63,19 @@ public class WolfSpawner : MonoBehaviour
 
     void GetSpawnPoints()
     {
-        spawnPoints = new List<Vector2Int>();
+        spawnPoints = new List<Vector2>();
 
         for (int i = 0; i < amount; i++)
         {   
-            Vector2Int spawnPoint = emptyList[Random.Range(0, emptyList.Count)];
+            Vector2 spawnPoint = emptyList[Random.Range(0, emptyList.Count)];
             spawnPoints.Add(spawnPoint);
             Debug.Log(spawnPoint);
         }
     }
     
     void Update()
-    {
+    {   
+        GetEmptyBlockList();
         isNight = tc.GetComponent<TimeController>().IsNight;
 
         if (isNight && notSpawned)
@@ -98,6 +98,7 @@ public class WolfSpawner : MonoBehaviour
         {   
             Vector3 v = new Vector3(spawnPoints[i].x, spawnPoints[i].y, 0);
             Instantiate(wolf, v, Quaternion.identity);
+            wolf.GetComponent<Wolf>().currentPos = spawnPoints[i];
         }
     }
 
@@ -109,6 +110,19 @@ public class WolfSpawner : MonoBehaviour
         foreach (GameObject wolf in wolves)
         {   
             Destroy(wolf);
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        // Set Gizmo color
+        Gizmos.color = Color.green;
+
+        // Draw each walkable block
+        foreach (Vector2 block in emptyList)
+        {
+            Vector3 position = new Vector3(block.x, block.y, 0);
+            Gizmos.DrawCube(position, Vector3.one * 1f); // Adjust size as needed
         }
     }
 

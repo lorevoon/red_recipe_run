@@ -28,7 +28,12 @@ public class Wolf : MonoBehaviour
 
     private GameObject lantern;
     private GameObject spawner;
-    private List<Vector2Int> walkable;
+    private List<Vector2> walkable;
+
+    public Vector2 currentPos;
+    public Vector2 targetPos;
+    // private Queue<Vector2> queue = new Queue<Vector2>();
+    // private Dictionary<Vector2, Vector2> cameFrom = new Dictionary<Vector2, Vector2>();
     
     void Start()
     {
@@ -41,7 +46,6 @@ public class Wolf : MonoBehaviour
         lantern = GameObject.FindGameObjectWithTag("Lantern");
 
         spawner = GameObject.FindGameObjectWithTag("Spawner");
-        walkable = spawner.GetComponent<WolfSpawner>().emptyList;
         
         _velocity = _rigidBody.linearVelocity;
         
@@ -49,7 +53,9 @@ public class Wolf : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+        walkable = spawner.GetComponent<WolfSpawner>().emptyList;
+        
         float _distToPlayer = Vector2.Distance(transform.position, _player.transform.position);
         
         // wolf follows _player and is close
@@ -78,6 +84,21 @@ public class Wolf : MonoBehaviour
             _spriteRenderer.flipX = _velocity.x < _prevXVelocity;
         }
         _prevXVelocity = _velocity.x;
+
+        // update target position
+        if (_currentState == EWolfStates.Chase)
+        {
+            targetPos.x = _player.transform.position.x;
+            targetPos.y = _player.transform.position.y;
+        }
+        else if (_currentState == EWolfStates.Wander)
+        {
+            targetPos.x = _wanderPoint.x;
+            targetPos.y = _wanderPoint.y;
+        }
+
+        currentPos.x = transform.position.x;
+        currentPos.y = transform.position.y;
 
         // Debug.Log(_currentState);
 
@@ -170,8 +191,7 @@ public class Wolf : MonoBehaviour
 
     private void newWanderPoint()
     {
-        // _wanderPoint.x = transform.position.x + Random.Range(-10, 10);
-        // _wanderPoint.y = transform.position.y + Random.Range(-10, 10);
-        _wanderPoint = walkable[Random.Range(0, walkable.Count)];
+        _wanderPoint.x = transform.position.x + Random.Range(-10, 10);
+        _wanderPoint.y = transform.position.y + Random.Range(-10, 10);
     }
 }
