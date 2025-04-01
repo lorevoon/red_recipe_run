@@ -58,4 +58,5 @@ public class MapManager : Singleton<MapManager>
     {
         _player.transform.position = PlayerSpawnPoint;
     }
+
 }

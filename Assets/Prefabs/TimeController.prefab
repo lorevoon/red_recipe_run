@@ -47,9 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5f97aafb7e64bd299c46a51d5b2d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsCycleOn: 0
+  IsCycleOn: 1
   _timeDisplay: {fileID: 3290288490388893505}
   _globalVolume: {fileID: 4865363831382700539}
+  _timeSpeed: 0.5
   _globalLight: {fileID: 1462706291537614476}
   _dayColor: {r: 1, g: 1, b: 1, a: 0}
   _nightColor: {r: 0, g: 0, b: 0, a: 0}
@@ -105,7 +106,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000cbe3776d
+  m_ApplyToSortingLayers: 57056e7a9bb92a8a00000000b3a6a3fe
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -126,7 +127,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
+  m_PointLightOuterRadius: 2
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

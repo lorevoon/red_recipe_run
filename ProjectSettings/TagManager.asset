@@ -7,6 +7,8 @@ TagManager:
   - Tool
   - Ingredient
   - Wolf
+  - Lantern
+  - Manager
   layers:
   - Default
   - TransparentFX
@@ -41,8 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: background
+    uniqueID: 2054030679
     locked: 0
-  m_RenderingLayers:
-  - Default
+  - name: items, player
+    uniqueID: 2318055835
+    locked: 0

@@ -25,6 +25,8 @@ public class Wolf : MonoBehaviour
     private Vector2 _velocity;
     private float _prevXVelocity = 0f; // flip sprite
     private Vector2 _wanderPoint;
+
+    private GameObject lantern;
     
     void Start()
     {
@@ -33,12 +35,14 @@ public class Wolf : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _audioSource = GetComponent<AudioSource>();
+
+        lantern = GameObject.FindGameObjectWithTag("Lantern");
         
         _velocity = _rigidBody.linearVelocity;
         
         InvokeRepeating(nameof(newWanderPoint), 0, 5);
     }
-    
+
     void Update()
     {
         float _distToPlayer = Vector2.Distance(transform.position, _player.transform.position);
@@ -51,6 +55,11 @@ public class Wolf : MonoBehaviour
                 _currentState = EWolfStates.Chase;
                 Chase();
             }
+        }
+        else if (lantern.GetComponent<LanternController>()._isLightOn == true)
+        {
+            _currentState = EWolfStates.Chase;
+            Chase();
         }
         else
         {
