@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c779848d9dd029409ca676b49e10a18, type: 3}
+  m_Name: ItemBushRuleOverrideTile
+  m_EditorClassIdentifier: 
+  m_Tile: {fileID: 11400000, guid: f189b3943807d4954938930f20c17511, type: 2}
+  m_Sprites: []
+  m_GameObjects: []
+  m_InstanceTile: {fileID: 2177615985169936050}
+--- !u!114 &2177615985169936050
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589d3fb6e34514f74be71d306edcf041, type: 3}
+  m_Name: BushRuleTile (Override)
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: 8847685855091251874, guid: 9dde8703dc2a44113874fe873038a152, type: 3}
+  m_DefaultGameObject: {fileID: 7393717641046185060, guid: 3c5919f8f5c414eacb4af2b58cf48a79, type: 3}
+  m_DefaultColliderType: 1
+  m_TilingRules: []
+  FriendTile: {fileID: 0}

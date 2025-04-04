@@ -1,5 +1,5 @@
 ﻿level,maxDurability,percentage,gapPercentage,colorHex
 Level1,10,0.1,0.2,#ffffff
-Level2,15,0.2,0.1,#c9c9c9
-Level3,25,0.3,0.05,#919191
-Level4,40,0.4,0.025,#5e5e5e
+Level2,15,0.2,0.1,#d9d9d9
+Level3,25,0.3,0.05,#c9c9c9
+Level4,40,0.4,0.025,#b0b0b0

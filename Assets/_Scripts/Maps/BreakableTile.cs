@@ -37,7 +37,8 @@ public class BreakableTile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        if (!_playerController.IsInLastInputDirection(new Vector3(_position.x+0.5f, _position.y+0.5f, 0))) return;
+        if (!_playerController.IsInLastInputDirection(
+                new Vector3(_position.x+0.5f, _position.y+0.5f, 0))) return;
         
         _currentDurability -= _playerController.ToolSpeed;
         if (_currentDurability > 0f)
@@ -48,11 +49,18 @@ public class BreakableTile : MonoBehaviour
         }
         else // durability < 0
         {
+            SpawnIngredient();
             PlayAudio(_destroyingSounds[Random.Range(0, _destroyingSounds.Length)], 0.3f);
             _mapManager.BushTypeGrid[_position.x, _position.y] = EGrid.Empty;
             _tilemap.SetTile(new Vector3Int(_position.x, _position.y, 0), null);
             Destroy(this);
         }
+    }
+
+    private void SpawnIngredient()
+    {
+        if (_mapManager.BushTypeGrid[_position.x, _position.y] != EGrid.Item) return;
+        IngredientManager.Instance.SpawnIngredients(_position);
     }
     
     private void PlayAudio(AudioClip audioClip, float pitchRange = 0f, float volume = 1f)

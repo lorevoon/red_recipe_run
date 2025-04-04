@@ -881,6 +881,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8997164699135265689, guid: 398b48eac9f9a415c9abafe691f17972, type: 3}
+      propertyPath: _itemRuleTile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6528a5f38724c474c9c0d79694bbec16, type: 2}
+    - target: {fileID: 8997164699135265689, guid: 398b48eac9f9a415c9abafe691f17972, type: 3}
       propertyPath: _wallRuleTile
       value: 
       objectReference: {fileID: 11400000, guid: 7ce1b15751ddc4b53997cdae5fc488d0, type: 2}

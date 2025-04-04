@@ -9,13 +9,15 @@ public class MapGenerator : MonoBehaviour
 {
     private MapManager _mapManager;
     
-    [NamedArray(typeof(EIngredient))] [SerializeField] private RuleTile[] _ingredientRuleTiles;
+    // [NamedArray(typeof(EIngredient))] [SerializeField] private RuleTile[] _ingredientRuleTiles;
     [SerializeField] private RuleTile _bushRuleTile;
     [SerializeField] private RuleTile _wallRuleTile;
     [SerializeField] private RuleTile _groundRuleTile;
+    [SerializeField] private RuleTile _itemRuleTile;
     
     private Tilemap _bushTilemap;
     private Tilemap _groundTilemap;
+    // private Tilemap _wallTilemap;
     
     // random walker algorithm
     private List<WalkerObject> _walkers;
@@ -35,6 +37,7 @@ public class MapGenerator : MonoBehaviour
         _mapManager = MapManager.Instance;
         _bushTilemap = GameObject.FindGameObjectWithTag("Bush").GetComponent<Tilemap>();
         _groundTilemap = GameObject.FindGameObjectWithTag("Ground").GetComponent<Tilemap>();
+        // _wallTilemap = GameObject.FindGameObjectWithTag("Wall").GetComponent<Tilemap>();
         GenerateMap();
     }
     
@@ -222,7 +225,7 @@ public class MapGenerator : MonoBehaviour
             int startY = Random.Range(1, _mapHeight-1);
             if (_mapManager.BushTypeGrid[startX, startY] != EGrid.Bush) continue;
 
-            ConvertRandomSection(startX, startY, sizeOfVein, EGrid.Item, _ingredientRuleTiles[0]);
+            ConvertRandomSection(startX, startY, sizeOfVein, EGrid.Item, _itemRuleTile);
             totalGaps -= sizeOfVein;
         }
     }

@@ -8,11 +8,15 @@ using UnityEngine;
 
 public class IngredientManager : Singleton<IngredientManager>
 {
+    private MapManager _mapManager;
     private Dictionary<EIngredient, SIngredientData> _ingredients;
+    // [NamedArray(typeof(EIngredient))] private GameObject[] _ingredientPrefabs;
+    private GameObject[] _ingredientPrefabs;
 
     protected override void Awake()
     {
         base.Awake();
+        _mapManager = MapManager.Instance;
         _ingredients = new Dictionary<EIngredient, SIngredientData>();
         Init(Path.Combine(Application.streamingAssetsPath, "Tables/IngredientsTable.csv"));
     }
@@ -30,23 +34,34 @@ public class IngredientManager : Singleton<IngredientManager>
             {
                 SIngredientData data = new SIngredientData
                 {
-                    ID = int.Parse(csv.GetField("ID")),
                     Name = (EIngredient)Enum.Parse(typeof(EIngredient), csv.GetField("name")),
+                    ID = int.Parse(csv.GetField("ID")),
                     GenLevel = int.Parse(csv.GetField("genLevel")),
                     AvgVeinSize = int.Parse(csv.GetField("avgVeinSize")),
                     Description = csv.GetField("description"),
-                    PrefabPath = csv.GetField("prefab")
+                    PrefabPath = csv.GetField("prefabPath")
                 };
 
                 _ingredients.Add(data.Name, data);
             }
         }
-        
-        // TODO save prefabs?
+
+        _ingredientPrefabs = new GameObject[_ingredients.Count];
+        foreach (var data in _ingredients)
+        {
+            _ingredientPrefabs[data.Value.ID] = 
+                Resources.Load("Prefabs/Ingredients/" + data.Value.PrefabPath).GameObject();
+        }
     }
 
     public SIngredientData GetIngredientData(EIngredient ingredient)
     {
         return _ingredients[ingredient];
+    }
+    
+    public void SpawnIngredients(Vector3Int gridPosition)
+    {
+        Instantiate(_ingredientPrefabs[_ingredients[EIngredient.Apple].ID],
+            new Vector3(gridPosition.x, gridPosition.y, 0), Quaternion.identity);
     }
 }
