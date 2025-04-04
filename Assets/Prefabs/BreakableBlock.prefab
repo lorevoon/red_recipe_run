@@ -9,10 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7107232630655957138}
-  - component: {fileID: 5074237051961477355}
-  - component: {fileID: 3545933416889222587}
-  - component: {fileID: 5968524226709500616}
   - component: {fileID: 2485192382510998247}
+  - component: {fileID: 5085564360029321157}
+  - component: {fileID: -80944542587794837}
   m_Layer: 0
   m_Name: BreakableBlock
   m_TagString: Untagged
@@ -29,25 +28,59 @@ Transform:
   m_GameObject: {fileID: 7393717641046185060}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2969446, y: -0.6495664, z: -9.920754}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5074237051961477355
-MonoBehaviour:
+--- !u!61 &2485192382510998247
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7393717641046185060}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f2da95916b48af806c892b6b0fe086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &3545933416889222587
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9375, y: 1}
+    newSize: {x: 0.9375, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &5085564360029321157
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,88 +123,50 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -658537002, guid: 12c17ce157ef24457b9648bd7cdba4a5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 8795366620419746748, guid: ed6247c8a701f452a83783e63aae90db, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9375, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &5968524226709500616
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7393717641046185060}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &2485192382510998247
-BoxCollider2D:
+--- !u!114 &-80944542587794837
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7393717641046185060}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b0a76bff3b64bbaaaafeea16ecde04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _breakVFX: {fileID: 146150720129857085, guid: 9cda80a461a994c41b505915305f2c46, type: 3}
+  _crackingSounds:
+  - {fileID: 8300000, guid: a0cc53fc6d6df465bb2f724a4005143b, type: 3}
+  - {fileID: 8300000, guid: e1d45286652f34fcaa96dabef49c21af, type: 3}
+  - {fileID: 8300000, guid: b3396d903c86741c9ac46753fa9c6fa3, type: 3}
+  - {fileID: 8300000, guid: 77ea60ee5eb4c41cdaee96ff82f668c2, type: 3}
+  - {fileID: 8300000, guid: a63af0e494a174a5da981c1cfd0f67df, type: 3}
+  - {fileID: 8300000, guid: 0424c11cff7044c419d25159c1ed1e40, type: 3}
+  - {fileID: 8300000, guid: 753a6021e0803429198215dc350d2571, type: 3}
+  - {fileID: 8300000, guid: a2b9cdf4bcab04419a45312cf280ab57, type: 3}
+  - {fileID: 8300000, guid: 8b42e5468c28147d29f4726255ab43f3, type: 3}
+  - {fileID: 8300000, guid: 6c794f0ed30b948919f780acded12527, type: 3}
+  - {fileID: 8300000, guid: bc52a058e3351468fa446672ae624eab, type: 3}
+  - {fileID: 8300000, guid: c34861be6e3fb48fa82c24aa90d58346, type: 3}
+  - {fileID: 8300000, guid: 8fa5a9e7cadb3486192ec929ed92cdc2, type: 3}
+  - {fileID: 8300000, guid: d8291c04baac84b88aa847cbdcc698dd, type: 3}
+  - {fileID: 8300000, guid: 0506ec18c37874e26a3b5ba66f170e0b, type: 3}
+  - {fileID: 8300000, guid: aca9ee77bd7c24f20a766b42d3e1d144, type: 3}
+  - {fileID: 8300000, guid: 6131fa9d98ec04e11b081a902de7e019, type: 3}
+  _destroyingSounds:
+  - {fileID: 8300000, guid: c822716101b60461382b4583b8a5a052, type: 3}
+  - {fileID: 8300000, guid: 0c7040ddf40fc41518d94557192a50b3, type: 3}
+  - {fileID: 8300000, guid: a3191288629b14480a748e8c82d75501, type: 3}

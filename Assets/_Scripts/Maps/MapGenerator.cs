@@ -9,10 +9,13 @@ public class MapGenerator : MonoBehaviour
 {
     private MapManager _mapManager;
     
-    [SerializeField] private RuleTile _bushRuleTile;
     [NamedArray(typeof(EIngredient))] [SerializeField] private RuleTile[] _ingredientRuleTiles;
+    [SerializeField] private RuleTile _bushRuleTile;
     [SerializeField] private RuleTile _wallRuleTile;
-    [SerializeField] private Tilemap _tileMap;
+    [SerializeField] private RuleTile _groundRuleTile;
+    
+    private Tilemap _bushTilemap;
+    private Tilemap _groundTilemap;
     
     // random walker algorithm
     private List<WalkerObject> _walkers;
@@ -30,6 +33,8 @@ public class MapGenerator : MonoBehaviour
     private void Start()
     {
         _mapManager = MapManager.Instance;
+        _bushTilemap = GameObject.FindGameObjectWithTag("Bush").GetComponent<Tilemap>();
+        _groundTilemap = GameObject.FindGameObjectWithTag("Ground").GetComponent<Tilemap>();
         GenerateMap();
     }
     
@@ -59,6 +64,10 @@ public class MapGenerator : MonoBehaviour
             {
                 _mapManager.BushTypeGrid[x, y] = EGrid.Unreachable;
                 _mapManager.BushDurabilityGrid[x, y] = -1f;
+                _bushTilemap.SetTile(new Vector3Int(x, y, 0), _wallRuleTile);
+                
+                if (Random.Range(0f, 1f) <= 0.1f)
+                    _groundTilemap.SetTile(new Vector3Int(x, y, 0), _groundRuleTile);
             }
         }
 
@@ -70,7 +79,7 @@ public class MapGenerator : MonoBehaviour
         WalkerObject currentWalker = 
             new WalkerObject(new Vector2(tileCenter.x, tileCenter.y), GetDirection(), _chanceToChange);
         _mapManager.BushTypeGrid[tileCenter.x, tileCenter.y] = EGrid.Bush;
-        _tileMap.SetTile(tileCenter, _bushRuleTile);
+        _bushTilemap.SetTile(tileCenter, _bushRuleTile);
         _walkers.Add(currentWalker);
 
         _tileCount++;
@@ -93,7 +102,7 @@ public class MapGenerator : MonoBehaviour
                         if (currentPos.y + y >= _mapHeight-2 || currentPos.y + y < 1) continue;
                         if (_mapManager.BushTypeGrid[currentPos.x + x, currentPos.y + y] == EGrid.Bush) continue;
                         
-                        _tileMap.SetTile(new Vector3Int(currentPos.x + x, currentPos.y + y), _bushRuleTile);
+                        _bushTilemap.SetTile(new Vector3Int(currentPos.x + x, currentPos.y + y), _bushRuleTile);
                         _tileCount++;
                         _mapManager.BushTypeGrid[currentPos.x + x, currentPos.y + y] = EGrid.Bush;
 
@@ -121,19 +130,19 @@ public class MapGenerator : MonoBehaviour
                 
                 if (_mapManager.BushTypeGrid[x + 1, y] == EGrid.Unreachable)
                 {
-                    _tileMap.SetTile(new Vector3Int(x+1, y, 0), _wallRuleTile);
+                    _bushTilemap.SetTile(new Vector3Int(x+1, y, 0), _wallRuleTile);
                     _mapManager.BushTypeGrid[x + 1, y] = EGrid.Wall;
                 }
 
                 if (_mapManager.BushTypeGrid[x - 1, y] == EGrid.Unreachable)
                 {
-                    _tileMap.SetTile(new Vector3Int(x-1, y, 0), _wallRuleTile);
+                    _bushTilemap.SetTile(new Vector3Int(x-1, y, 0), _wallRuleTile);
                     _mapManager.BushTypeGrid[x - 1, y] = EGrid.Wall;
                 }
                     
                 if (_mapManager.BushTypeGrid[x, y+1] == EGrid.Unreachable)
                 {
-                    _tileMap.SetTile(new Vector3Int(x, y+1, 0), _wallRuleTile);
+                    _bushTilemap.SetTile(new Vector3Int(x, y+1, 0), _wallRuleTile);
                     _mapManager.BushTypeGrid[x, y+1] = EGrid.Wall;
                     
                     _topWalls.Add(new Vector3Int(x, y+1, 0));
@@ -141,7 +150,7 @@ public class MapGenerator : MonoBehaviour
                     
                 if (_mapManager.BushTypeGrid[x, y-1] == EGrid.Unreachable)
                 {
-                    _tileMap.SetTile(new Vector3Int(x, y-1, 0), _wallRuleTile);
+                    _bushTilemap.SetTile(new Vector3Int(x, y-1, 0), _wallRuleTile);
                     _mapManager.BushTypeGrid[x, y-1] = EGrid.Wall;
                 }
             }
@@ -172,7 +181,7 @@ public class MapGenerator : MonoBehaviour
                     _mapManager.BushDurabilityGrid[x, y] = _mapManager.GetBushLevelData(level).MaxDurability;
                     
                     if (ColorUtility.TryParseHtmlString(_mapManager.GetBushLevelData(level).ColorHex, out Color color))
-                        _tileMap.SetColor(new Vector3Int(x, y), color);
+                        _bushTilemap.SetColor(new Vector3Int(x, y), color);
 
                     break;
                 }
@@ -228,7 +237,7 @@ public class MapGenerator : MonoBehaviour
             _walkers.Add(walker);
         }
         _mapManager.BushTypeGrid[startX, startY] = type;
-        _tileMap.SetTile(new Vector3Int(startX, startY), tile);
+        _bushTilemap.SetTile(new Vector3Int(startX, startY), tile);
         currentSize++;
         
         while (currentSize <= size)
@@ -239,7 +248,7 @@ public class MapGenerator : MonoBehaviour
                 if (_mapManager.BushTypeGrid[currentPos.x, currentPos.y] == EGrid.Bush)
                 {
                     _mapManager.BushTypeGrid[currentPos.x, currentPos.y] = type;
-                    _tileMap.SetTile(new Vector3Int(currentPos.x, currentPos.y), tile);
+                    _bushTilemap.SetTile(new Vector3Int(currentPos.x, currentPos.y), tile);
                     currentSize++;
                 }
                 
@@ -265,7 +274,7 @@ public class MapGenerator : MonoBehaviour
 
         Vector3Int startPos = startableWalls[Random.Range(0, startableWalls.Count)];
         _mapManager.BushTypeGrid[startPos.x, startPos.y] = EGrid.Empty;
-        _tileMap.SetTile(startPos, null);
+        _bushTilemap.SetTile(startPos, null);
         
         _mapManager.PlayerSpawnPoint = new Vector3(startPos.x + 0.5f, startPos.y + 0.5f);
         _mapManager.SpawnPlayer();

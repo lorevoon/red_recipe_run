@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestBushRuleTile
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: -2045645678, guid: 12c17ce157ef24457b9648bd7cdba4a5, type: 3}
-  m_DefaultGameObject: {fileID: 3699869990999773066, guid: b5a558c0e1432447abac6b4eb868c217, type: 3}
+  m_DefaultGameObject: {fileID: 7393717641046185060, guid: 3c5919f8f5c414eacb4af2b58cf48a79, type: 3}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0

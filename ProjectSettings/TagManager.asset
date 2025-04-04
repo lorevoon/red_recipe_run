@@ -7,6 +7,9 @@ TagManager:
   - Tool
   - Ingredient
   - Wolf
+  - Bush
+  - Ground
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -14,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Block
   - 
   - 
   - 
@@ -46,6 +49,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Blocks
+    uniqueID: 69819015
     locked: 0
   m_RenderingLayers:
   - Default

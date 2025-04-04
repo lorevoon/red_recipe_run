@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf65af2a52274564a69383159bcbc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bushRuleTile: {fileID: 11400000, guid: 90d7634073c4147b496f5e0e0191b8a1, type: 2}
+  _bushRuleTile: {fileID: 11400000, guid: f189b3943807d4954938930f20c17511, type: 2}
   _ingredientRuleTiles:
   - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
   - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
   - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
   _wallRuleTile: {fileID: 11400000, guid: 827c75ea0be6c43e58917743c0f3b030, type: 2}
-  _tileMap: {fileID: 0}
+  _groundRuleTile: {fileID: 11400000, guid: 1df822aae9a334054919e5a8dbea7371, type: 2}
 --- !u!1 &4109576382123700487
 GameObject:
   m_ObjectHideFlags: 0
