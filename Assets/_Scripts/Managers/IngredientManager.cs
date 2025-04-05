@@ -62,6 +62,6 @@ public class IngredientManager : Singleton<IngredientManager>
     public void SpawnIngredients(Vector3Int gridPosition)
     {
         Instantiate(_ingredientPrefabs[_ingredients[EIngredient.Apple].ID],
-            new Vector3(gridPosition.x, gridPosition.y, 0), Quaternion.identity);
+            new Vector3(gridPosition.x + 0.5f, gridPosition.y + 0.5f, 0), Quaternion.identity);
     }
 }

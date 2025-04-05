@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: IsCycleOn
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -558,7 +562,7 @@ GameObject:
   - component: {fileID: 1157279527}
   m_Layer: 0
   m_Name: Wall Tilemap
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -883,7 +887,7 @@ PrefabInstance:
     - target: {fileID: 8997164699135265689, guid: 398b48eac9f9a415c9abafe691f17972, type: 3}
       propertyPath: _itemRuleTile
       value: 
-      objectReference: {fileID: 11400000, guid: 6528a5f38724c474c9c0d79694bbec16, type: 2}
+      objectReference: {fileID: 2177615985169936050, guid: 2401b455c1b2c481f9e75a5881f4cdc0, type: 2}
     - target: {fileID: 8997164699135265689, guid: 398b48eac9f9a415c9abafe691f17972, type: 3}
       propertyPath: _wallRuleTile
       value: 

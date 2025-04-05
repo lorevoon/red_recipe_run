@@ -55,16 +55,17 @@ public class PlayerInventory : MonoBehaviour
     {
         AddItem(ingredient);
         ingredient.transform.SetParent(PlayerController.Instance.Basket.transform);
-        ingredient.GetComponent<Collider2D>().enabled = false;
-        ingredient.GetComponent<SpriteRenderer>().enabled = false;
+        ingredient.SetActive(false);
     }
 
     public void DropIngredient()
     {
+        if (InventoryList.Count <= 0) return;
+        
         GameObject mostRecent = RemoveItem();
 
         mostRecent.transform.SetParent(null);
-        mostRecent.GetComponent<SpriteRenderer>().enabled = true;
-        mostRecent.GetComponent<Collider2D>().enabled = true;
+        mostRecent.SetActive(true);
+        mostRecent.GetComponent<Ingredient>().OnDrop();
     }
 }
