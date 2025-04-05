@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
-public class MapGenerator : MonoBehaviour
+public partial class MapGenerator : MonoBehaviour
 {
     private MapManager _mapManager;
     
@@ -46,6 +46,8 @@ public class MapGenerator : MonoBehaviour
         GenerateVeins();
         
         GeneratePlayerSpawn();
+
+        CreateNodes();
     }
 
     private void InitializeGrid()
