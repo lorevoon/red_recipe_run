@@ -50,7 +50,8 @@ MonoBehaviour:
   IsCycleOn: 1
   _timeDisplay: {fileID: 3290288490388893505}
   _globalVolume: {fileID: 4865363831382700539}
-  _timeSpeed: 0.5
+  _timeSpeed: 1
+  _timeOfDay: 17
   _globalLight: {fileID: 1462706291537614476}
   _dayColor: {r: 1, g: 1, b: 1, a: 0}
   _nightColor: {r: 0, g: 0, b: 0, a: 0}

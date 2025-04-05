@@ -55,7 +55,7 @@ MonoBehaviour:
   nodePrefab: {fileID: 3310937314210547800, guid: f018ded6839ab1c4980854acb9877dbe, type: 3}
   nodeList: []
   wolf: {fileID: 6074581517925506373, guid: 770ca51b8575fe44db16ac0648e640d3, type: 3}
-  amount: 2
+  amount: 3
   tc: {fileID: 0}
 --- !u!114 &5917292556960482815
 MonoBehaviour:

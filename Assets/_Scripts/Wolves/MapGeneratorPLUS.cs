@@ -17,7 +17,7 @@ public partial class MapGenerator
     public EGrid[,] grid;
 
     // wolf spawning
-    public int amount = 2;
+    public int amount = 3;
 
     public TimeController tc;
     private bool isNight = false;
