@@ -27,7 +27,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public Sprite walkRightFootBack;
 
     [Header("Settings")]
-    public float stepInterval = 0.05f;
+    public float stepInterval = 0.1f;
     public float moveThreshold = 0.1f;
     private float stepTimer;
 
