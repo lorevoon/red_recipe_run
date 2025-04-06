@@ -45,13 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf65af2a52274564a69383159bcbc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bushRuleTile: {fileID: 11400000, guid: 90d7634073c4147b496f5e0e0191b8a1, type: 2}
-  _ingredientRuleTiles:
-  - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
-  - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
-  - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
-  _wallRuleTile: {fileID: 11400000, guid: 827c75ea0be6c43e58917743c0f3b030, type: 2}
-  _tileMap: {fileID: 0}
+  _bushRuleTile: {fileID: 11400000, guid: f189b3943807d4954938930f20c17511, type: 2}
+  _wallRuleTile: {fileID: 11400000, guid: 7ce1b15751ddc4b53997cdae5fc488d0, type: 2}
+  _groundRuleTile: {fileID: 11400000, guid: 1df822aae9a334054919e5a8dbea7371, type: 2}
+  _itemRuleTile: {fileID: 2177615985169936050, guid: 2401b455c1b2c481f9e75a5881f4cdc0, type: 2}
   nodePrefab: {fileID: 3310937314210547800, guid: f018ded6839ab1c4980854acb9877dbe, type: 3}
   nodeList: []
   wolf: {fileID: 6074581517925506373, guid: 770ca51b8575fe44db16ac0648e640d3, type: 3}

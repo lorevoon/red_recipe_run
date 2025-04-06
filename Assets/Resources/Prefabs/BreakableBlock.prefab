@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2485192382510998247}
   - component: {fileID: 5085564360029321157}
   - component: {fileID: -80944542587794837}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BreakableBlock
   m_TagString: Bush
   m_Icon: {fileID: 0}
@@ -149,8 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _breakVFX: {fileID: 146150720129857085, guid: 9cda80a461a994c41b505915305f2c46, type: 3}
   _crackingSounds:
-  - {fileID: 8300000, guid: a0cc53fc6d6df465bb2f724a4005143b, type: 3}
-  - {fileID: 8300000, guid: e1d45286652f34fcaa96dabef49c21af, type: 3}
+  - {fileID: 8300000, guid: 6afd79d40e3554b52933ecdf23ddfbed, type: 3}
+  - {fileID: 8300000, guid: 4e96a76b2d54a4bf2b84b2311db355d3, type: 3}
   - {fileID: 8300000, guid: b3396d903c86741c9ac46753fa9c6fa3, type: 3}
   - {fileID: 8300000, guid: 77ea60ee5eb4c41cdaee96ff82f668c2, type: 3}
   - {fileID: 8300000, guid: a63af0e494a174a5da981c1cfd0f67df, type: 3}

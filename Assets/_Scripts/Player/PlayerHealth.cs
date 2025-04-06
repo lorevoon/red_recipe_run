@@ -5,20 +5,20 @@ using TMPro;
 public class PlayerHealth : MonoBehaviour
 {
     public int health = 3; 
-    public Image heartImage; 
-    public TMP_Text healthText;
+    // public Image heartImage; 
+    // public TMP_Text healthText;
     public GameObject damageEffectPrefab; 
 
     void Start()
     {
-        UpdateHealthDisplay();
+        // UpdateHealthDisplay();
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
         health = Mathf.Max(health, 0); 
-        UpdateHealthDisplay();
+        // UpdateHealthDisplay();
 
         if (damageEffectPrefab != null && health > 0)
         {
@@ -31,8 +31,8 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void UpdateHealthDisplay()
-    {
-        healthText.text = health.ToString();
-    }
+    // void UpdateHealthDisplay()
+    // {
+    //     healthText.text = health.ToString();
+    // }
 }

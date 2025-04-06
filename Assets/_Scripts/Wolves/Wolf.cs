@@ -94,6 +94,7 @@ public class Wolf : MonoBehaviour
 
     void Chase()
     {
+        if (path == null) return;
         speed = 2;
 
         if (path.Count == 0)
@@ -155,6 +156,7 @@ public class Wolf : MonoBehaviour
     // draw path of wolf
     private void OnDrawGizmos()
     {
+        if (path == null) return;
         if(path.Count > 0)
         {
             Gizmos.color = Color.blue;

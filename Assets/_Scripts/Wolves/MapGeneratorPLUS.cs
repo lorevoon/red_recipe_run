@@ -19,7 +19,7 @@ public partial class MapGenerator
     // wolf spawning
     public int amount = 3;
 
-    public TimeController tc;
+    // public TimeController tc;
     private bool isNight = false;
 
     private bool notSpawned = true;
@@ -36,6 +36,7 @@ public partial class MapGenerator
                 if (grid[x,y] == EGrid.Empty) // enum grid stuff
                 {
                     Node node = Instantiate(nodePrefab, new Vector2(x+0.5f, y+0.5f), Quaternion.identity);
+                    node.transform.SetParent(transform, true);
                     nodeList.Add(node);
                 }
             }
@@ -91,7 +92,7 @@ public partial class MapGenerator
         // wolves spawning and destroying
     void Update()
     {
-        isNight = tc.GetComponent<TimeController>().IsNight;
+        isNight = TimeController.Instance.IsNight;
 
         if (isNight && notSpawned)
         {

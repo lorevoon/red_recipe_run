@@ -10,6 +10,9 @@ TagManager:
   - Lantern
   - Manager
   - Spawner
+  - Bush
+  - Ground
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -17,9 +20,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Ingredient
+  - Block
   - 
   - 
   - 

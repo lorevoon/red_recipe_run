@@ -6,16 +6,19 @@ using UnityEngine.Rendering.Universal;  // Specific URP namespace
 public class TimeController : Singleton<TimeController>
 {
     [SerializeField] private bool IsCycleOn;
-    
-    [SerializeField] private TextMeshProUGUI _timeDisplay; // Reference to the TextMesh Pro UI component for time
+
     [SerializeField] private Volume _globalVolume; // Reference to the global post-processing volume
+    [SerializeField] private Transform _clockHand;
 
     public float _timeSpeed = 1.0f; // How fast time progresses
-    public float _timeOfDay = 8.0f; // Time of day in hours
+    public float _timeOfDay = 6.0f; // Time of day in hours
 
     [SerializeField] private Light2D _globalLight; // Reference to a global light source to simulate sunlight/moonlight
     [SerializeField] private Color _dayColor;
     [SerializeField] private Color _nightColor;
+
+    [SerializeField] private AudioSource _dayAudioSource;
+    [SerializeField] private AudioSource _nightAudioSource;
 
     public bool IsNight { get; private set; }
 
@@ -25,14 +28,22 @@ public class TimeController : Singleton<TimeController>
         _globalLight.color = _dayColor;
         _globalLight.intensity = 1.0f;
         IsNight = false;
+        _dayAudioSource.Play();
+        _clockHand.localEulerAngles = new Vector3(0, 0, 180f);
     }
 
     void Update()
     {
-        if (!IsCycleOn) return;
+        if (!IsCycleOn)
+        {
+            _dayAudioSource.Stop();
+            _nightAudioSource.Stop();
+            return;
+        }
         UpdateTimeOfDay();
         UpdateLighting();
-        UpdateUI();
+        UpdateClockHandRotation();
+        UpdateAudio();
     }
 
     void UpdateTimeOfDay()
@@ -74,14 +85,34 @@ public class TimeController : Singleton<TimeController>
         {
             _globalVolume.weight = _timeOfDay > 20 || _timeOfDay < 6 ? 1 : 0;
         }
+        
         _globalLight.color = Color.Lerp(_dayColor, _nightColor, _globalVolume.weight);
 
     }
-
-    void UpdateUI()
+    
+    void UpdateClockHandRotation()
     {
-        // Update the time display
-        _timeDisplay.text = string.Format("{0:00}:{1:00}", (int)_timeOfDay, (int)(_timeOfDay * 60) % 60);
+        float twelveHourTime = _timeOfDay % 12f;
+        // Calculate rotation (0-360 degrees over 12 hours)
+        float rotationDegrees = (twelveHourTime / 12f) * 360f;
+        // Apply rotation (negative because Unity rotates clockwise with positive angles)
+        _clockHand.localEulerAngles = new Vector3(0, 0, -rotationDegrees);
+    }
+    
+    void UpdateAudio()
+    {
+        // Play bird sounds during the day (6 AM to 6 PM)
+        if ((_timeOfDay >= 6 && _timeOfDay < 18) && !_dayAudioSource.isPlaying)
+        {
+            _nightAudioSource.Stop();
+            _dayAudioSource.Play();
+        }
+        // Play owl sounds during the night (6 PM to 6 AM)
+        else if ((_timeOfDay >= 18 || _timeOfDay < 6) && !_nightAudioSource.isPlaying)
+        {
+            _dayAudioSource.Stop();
+            _nightAudioSource.Play();
+        }
     }
 
 }
