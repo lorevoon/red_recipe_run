@@ -5,6 +5,7 @@ using UnityEngine;
 public class Wolf : MonoBehaviour
 {
     private GameObject _player;
+    private PlayerHealth _playerHealth;
     private SpriteRenderer _spriteRenderer;  // extra: flip sprite
     private Rigidbody2D _rigidBody;
     private AudioSource _audioSource;
@@ -31,6 +32,7 @@ public class Wolf : MonoBehaviour
         // assign values to necessary wolf variables
         _rigidBody = GetComponent<Rigidbody2D>();
         _player = GameObject.FindGameObjectWithTag("Player");
+        _playerHealth = _player.GetComponent<PlayerHealth>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _audioSource = GetComponent<AudioSource>();
         
@@ -131,7 +133,13 @@ public class Wolf : MonoBehaviour
     IEnumerator Bite()
     {
         // replace this with bite logic
-        Debug.Log("Bite player");
+        //Debug.Log("Bite player");
+
+        _audioSource.Play(); 
+
+         if (_playerHealth != null){
+            _playerHealth.TakeDamage(1);
+        }
 
         yield return new WaitForSeconds(pauseAfterBite);
 

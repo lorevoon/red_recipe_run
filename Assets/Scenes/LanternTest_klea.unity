@@ -139,18 +139,19 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &1072850637
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4965503916550675609, guid: 8d792bdf5f0df4d68bccc8c311aa3695, type: 3}
-  m_PrefabInstance: {fileID: 6638997363768853833}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072850636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71bc7271489ae42ae81bcb9976a1c6fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3734108e74b8747fbae077e87f59e536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   light2D: {fileID: 1528274547}
-  turnOnSound: {fileID: 8300000, guid: bbeb90f247d734f09b1b01d236910418, type: 3}
-  turnOffSound: {fileID: 8300000, guid: a60a743eeb30946ba8b41775d9e918f7, type: 3}
+  turnOnSound: {fileID: 8300000, guid: 4e96a76b2d54a4bf2b84b2311db355d3, type: 3}
+  turnOffSound: {fileID: 8300000, guid: 6afd79d40e3554b52933ecdf23ddfbed, type: 3}
 --- !u!4 &1072850638
 Transform:
   m_ObjectHideFlags: 0
@@ -396,6 +397,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ComponentVersion: 2
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 1
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 1
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath: []
 --- !u!1 &2066833442
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,3 +637,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 2066833445}
   - {fileID: 6638997363768853833}
+  - {fileID: 1072850638}
