@@ -2,15 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AStarManager : MonoBehaviour
+public class AStarManager : Singleton<AStarManager>
 {
-    public static AStarManager instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
     public List<Node> GeneratePath(Node start, Node end)
     {
         List<Node> openSet = new List<Node>();

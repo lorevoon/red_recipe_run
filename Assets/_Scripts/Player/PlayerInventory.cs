@@ -4,9 +4,12 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public List<GameObject> InventoryList = new List<GameObject>();
-
+    
     private PlayerController _playerController;
     private float _pickupRadius = 2f; // Radius for picking up ingredients
+    private int _max_ingredients = 25;
+    private int _curr_ingredients;
+
 
     public void AddItem(GameObject ingredient)
     {
@@ -45,26 +48,43 @@ public class PlayerInventory : MonoBehaviour
             }
         }
 
-        if (closestIngredient != null)
+
+        if (closestIngredient != null && _curr_ingredients < _max_ingredients)
         {
             PickUpIngredient(closestIngredient); // pick up ingredient
+            _curr_ingredients += 1;
         }
     }
 
-    public void PickUpIngredient(GameObject ingredient)
-    {
-        AddItem(ingredient);
-        ingredient.transform.SetParent(PlayerController.Instance.Basket.transform);
-        ingredient.SetActive(false);
+
+   public void PickUpIngredient(GameObject ingredient)
+   { 
+       AddItem(ingredient);
+       Transform basketTransform = PlayerController.Instance.Basket.transform; 
+       basketTransform.localScale *= 1.05f; // Increase basket size by 5%
+
+       ingredient.transform.SetParent(basketTransform, true);
+       ingredient.SetActive(false);
     }
 
     public void DropIngredient()
-    {
+    { 
         if (InventoryList.Count <= 0) return;
         
         GameObject mostRecent = RemoveItem();
+        
+       // Store the world position before unparenting
+        Vector3 worldPosition = mostRecent.transform.position;
 
+        // Unparent the object
         mostRecent.transform.SetParent(null);
+
+        // Restore the world position
+        mostRecent.transform.position = worldPosition;
+
+        // Ensure the rotation is reset to avoid unwanted rotation from the parent
+        mostRecent.transform.rotation = Quaternion.identity;
+
         mostRecent.SetActive(true);
         mostRecent.GetComponent<Ingredient>().OnDrop();
     }

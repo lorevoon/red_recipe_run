@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using System.Collections.Generic; // Add this line to fix the error
 
@@ -21,7 +20,7 @@ public class PlayerController : Singleton<PlayerController>
     private float _bounceCooldown = 0f;
     private const float _bounceSuppressTime = 0.2f;
 
-    void Start()
+    private void Start()
     {
         _playerInventory = GetComponent<PlayerInventory>();
         _audioSource = GetComponent<AudioSource>();
@@ -31,12 +30,12 @@ public class PlayerController : Singleton<PlayerController>
             Tool = GameObject.FindWithTag("Tool");
     }
   
-    void Update() {
+    private void Update() {
         Move();
         HandlePickup();
     }
 
-    void HandlePickup()
+    private void HandlePickup()
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {

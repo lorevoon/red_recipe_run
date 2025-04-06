@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,7 @@ public class Wolf : MonoBehaviour
     
     // player
     private GameObject player;
+    private PlayerHealth playerHealth;
     private bool seesPlayer = false;
     public float viewRadius = 3.0f;
     private GameObject lantern;
@@ -29,7 +31,7 @@ public class Wolf : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         lantern = GameObject.FindGameObjectWithTag("Lantern");
-
+        playerHealth = player.GetComponent<PlayerHealth>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -79,7 +81,7 @@ public class Wolf : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D obj)
     {
         // collides with player --> change state to bite and invoke its function
-        if (obj.gameObject.tag == "Player")
+        if (obj.gameObject.CompareTag("Player"))
         {
             currentState = EWolfStates.Bite;
         }
@@ -96,14 +98,18 @@ public class Wolf : MonoBehaviour
 
         if (path.Count == 0)
         {
-            path = AStarManager.instance.GeneratePath(currentNode, AStarManager.instance.FindNearestNode(player.transform.position));
+            path = AStarManager.Instance.GeneratePath(currentNode, AStarManager.Instance.FindNearestNode(player.transform.position));
         }
     }
 
     IEnumerator Bite()
     {
-        // replace this with bite logic
-        Debug.Log("Bite player");
+        //Debug.Log("Bite player");
+        audioSource.Play(); 
+
+         if (playerHealth != null){
+            playerHealth.TakeDamage(1);
+        }
 
         path.Clear();
         yield return new WaitForSeconds(pause);
@@ -132,7 +138,7 @@ public class Wolf : MonoBehaviour
                 Node[] nodes = FindObjectsOfType<Node>();
                 while (path.Count == 0)
                 {
-                    path = AStarManager.instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
+                    path = AStarManager.Instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
                 }
             }
         }
@@ -141,7 +147,7 @@ public class Wolf : MonoBehaviour
             Node[] nodes = FindObjectsOfType<Node>();
             while (path == null)
             {
-                path = AStarManager.instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
+                path = AStarManager.Instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
             }
         }
     }
