@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2640780760402614174}
   - component: {fileID: 8997164699135265689}
+  - component: {fileID: 5917292556960482815}
   m_Layer: 0
   m_Name: MapGenerator
   m_TagString: Untagged
@@ -44,13 +45,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf65af2a52274564a69383159bcbc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bushRuleTile: {fileID: 11400000, guid: f189b3943807d4954938930f20c17511, type: 2}
+  _bushRuleTile: {fileID: 11400000, guid: 90d7634073c4147b496f5e0e0191b8a1, type: 2}
   _ingredientRuleTiles:
   - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
   - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
   - {fileID: 11400000, guid: 30b23a0eea2384748a6b03efc0e7dc0b, type: 2}
   _wallRuleTile: {fileID: 11400000, guid: 827c75ea0be6c43e58917743c0f3b030, type: 2}
-  _groundRuleTile: {fileID: 11400000, guid: 1df822aae9a334054919e5a8dbea7371, type: 2}
+  _tileMap: {fileID: 0}
+  nodePrefab: {fileID: 3310937314210547800, guid: f018ded6839ab1c4980854acb9877dbe, type: 3}
+  nodeList: []
+  wolf: {fileID: 6074581517925506373, guid: 770ca51b8575fe44db16ac0648e640d3, type: 3}
+  amount: 3
+  tc: {fileID: 0}
+--- !u!114 &5917292556960482815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006557042608071793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65ad27912a63284cbd87e8d54f8e844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4109576382123700487
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,7 +86,7 @@ GameObject:
   - component: {fileID: 1580541549903981917}
   m_Layer: 0
   m_Name: Manager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

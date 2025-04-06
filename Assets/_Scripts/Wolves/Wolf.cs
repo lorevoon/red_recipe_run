@@ -1,130 +1,102 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Wolf : MonoBehaviour
 {
-    private GameObject _player;
-    private SpriteRenderer _spriteRenderer;  // extra: flip sprite
-    private Rigidbody2D _rigidBody;
-    private AudioSource _audioSource;
+    // pathfinding
+    public Node currentNode;
+    public List<Node> path = new List<Node>();
+
+    // wolf
+    public int speed = 1;
+    private EWolfStates currentState = EWolfStates.Wander;
+    private EWolfStates previousState;
+    public int pause = 3;
     
-    // actual wolf variables
-    public int chaseSpeed = 5;
-    public int wanderSpeed = 2;
+    // player
+    private GameObject player;
+    private bool seesPlayer = false;
+    public float viewRadius = 3.0f;
+    private GameObject lantern;
 
-    private EWolfStates _currentState = EWolfStates.Wander;
+    // audio
+    private AudioSource audioSource;
 
-    private bool _seesPlayer = false;
-    private float _distToPlayer;
-    public float viewRadius = 5;
 
-    public int pauseAfterBite = 2;
-
-    // other necessary variables
-    private Vector2 _velocity;
-    private float _prevXVelocity = 0f; // flip sprite
-    private Vector2 _wanderPoint;
-    
     void Start()
     {
-        // assign values to necessary wolf variables
-        _rigidBody = GetComponent<Rigidbody2D>();
-        _player = GameObject.FindGameObjectWithTag("Player");
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _audioSource = GetComponent<AudioSource>();
-        
-        _velocity = _rigidBody.linearVelocity;
-        
-        InvokeRepeating(nameof(newWanderPoint), 0, 5);
+        player = GameObject.FindGameObjectWithTag("Player");
+        lantern = GameObject.FindGameObjectWithTag("Lantern");
+
+        audioSource = GetComponent<AudioSource>();
     }
-    
-    void Update()
+
+    private void Update()
     {
-        float _distToPlayer = Vector2.Distance(transform.position, _player.transform.position);
-        
-        // wolf follows _player and is close
-        if (_seesPlayer && _distToPlayer <= viewRadius)
+        previousState = currentState;
+
+        seesPlayer = Vector2.Distance(transform.position, player.transform.position) < viewRadius;
+
+        // sees player (and is close) or lantern on...
+        if (seesPlayer || lantern.GetComponent<LanternController>()._isLightOn)
         {
-            if (_currentState != EWolfStates.Bite)
+            // if not already biting player --> chase
+            if (currentState != EWolfStates.Bite)
             {
-                _currentState = EWolfStates.Chase;
-                Chase();
-            }
+                currentState = EWolfStates.Chase;
+            }    
         }
         else
         {
-            _currentState = EWolfStates.Wander;
-            StartCoroutine(Wander());
+            currentState = EWolfStates.Wander;
         }
+        // bite state dealt with in collide function (OnTriggerEnter2D)
 
-        // flip sprite
-        if (_velocity.x != 0)
+        switch(currentState)
         {
-            _spriteRenderer.flipX = _velocity.x < _prevXVelocity;
+            case EWolfStates.Wander:
+                Wander();
+                CreatePath();
+                break;
+            case EWolfStates.Chase:
+                Chase();
+                CreatePath();
+                break;
+            case EWolfStates.Bite:
+                StartCoroutine(Bite());
+                break;
         }
-        _prevXVelocity = _velocity.x;
-
-        // Debug.Log(_currentState);
-
-        // stop from moving out of window
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-        if (screenPos.x <= 0 - 50)
-        {
-            screenPos.x = 0 - 50;
-        }
-        else if (screenPos.y <= 0 - 50)
-        {
-            screenPos.y = 0 - 50;
-        }
-        else if (screenPos.x >= Screen.width + 50)
-        {
-            screenPos.x = Screen.width + 50;
-        }
-        else if (screenPos.y >= Screen.height + 50)
-        {
-            screenPos.y = Screen.height + 50;
-        }
-        transform.position = Camera.main.ScreenToWorldPoint(screenPos);
-
-    }
-
-    private void FixedUpdate()
-    {
-        // create ray from wolf to _player
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, _player.transform.position - transform.position);
         
-        // ray hits something
-        if (ray.collider != null)
+        if (previousState != currentState)
         {
-            // update bool if sees _player
-            _seesPlayer = ray.collider.CompareTag("Player");
-            
-            // for testing purpose (see green/red line depending on if wolf can see _player)
-            if (_seesPlayer)
-            {
-                Debug.DrawRay(transform.position, _player.transform.position - transform.position, Color.green);
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, _player.transform.position - transform.position, Color.red);
-            }
+            path.Clear();
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D obj)
     {
-        string objTag = obj.gameObject.tag;
-
-        // collides with _player --> change state to bite and invoke its function
-        if (objTag == "Player")
+        // collides with player --> change state to bite and invoke its function
+        if (obj.gameObject.tag == "Player")
         {
-            _currentState = EWolfStates.Bite;
-            StartCoroutine(Bite());
+            currentState = EWolfStates.Bite;
         }
-        else
+    }
+
+    void Wander()
+    {
+        speed = 1;
+    }
+
+    void Chase()
+    {
+        speed = 2;
+
+        if (path.Count == 0)
         {
-            Debug.Log(objTag);
+            path = AStarManager.instance.GeneratePath(currentNode, AStarManager.instance.FindNearestNode(player.transform.position));
         }
     }
 
@@ -133,30 +105,57 @@ public class Wolf : MonoBehaviour
         // replace this with bite logic
         Debug.Log("Bite player");
 
-        yield return new WaitForSeconds(pauseAfterBite);
+        path.Clear();
+        yield return new WaitForSeconds(pause);
 
         // go back to chase
-        _currentState = EWolfStates.Chase;
-        Chase();
+        currentState = EWolfStates.Chase;
     }
 
-    private void Chase()
+    public void CreatePath()
     {
-        _velocity = Vector2.MoveTowards(transform.position, _player.transform.position, chaseSpeed * Time.deltaTime);
-        transform.position = _velocity;
+        if (path != null)
+        {
+            if (path.Count > 0)
+            {
+                int x = 0;
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(path[x].transform.position.x, path[x].transform.position.y, -2), speed * Time.deltaTime);
+
+                if (Vector2.Distance(transform.position, path[x].transform.position) < 0.1f)
+                {
+                    currentNode = path[x];
+                    path.RemoveAt(x);
+                }
+            }
+            else
+            {
+                Node[] nodes = FindObjectsOfType<Node>();
+                while (path.Count == 0)
+                {
+                    path = AStarManager.instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
+                }
+            }
+        }
+        else
+        {
+            Node[] nodes = FindObjectsOfType<Node>();
+            while (path == null)
+            {
+                path = AStarManager.instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
+            }
+        }
     }
 
-    IEnumerator Wander()
+    // draw path of wolf
+    private void OnDrawGizmos()
     {
-        _velocity = Vector2.MoveTowards(transform.position, _wanderPoint, wanderSpeed * Time.deltaTime);
-        transform.position = _velocity;
-
-        yield return new WaitForSeconds(3);
-    }
-
-    private void newWanderPoint()
-    {
-        _wanderPoint.x = transform.position.x + Random.Range(-10, 10);
-        _wanderPoint.y = transform.position.y + Random.Range(-10, 10);
+        if(path.Count > 0)
+        {
+            Gizmos.color = Color.blue;
+            for(int i = 1; i < path.Count; i++)
+            {
+                Gizmos.DrawLine(path[i].transform.position, path[i - 1].transform.position);
+            }
+        }
     }
 }

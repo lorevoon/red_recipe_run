@@ -10,8 +10,8 @@ public class TimeController : Singleton<TimeController>
     [SerializeField] private TextMeshProUGUI _timeDisplay; // Reference to the TextMesh Pro UI component for time
     [SerializeField] private Volume _globalVolume; // Reference to the global post-processing volume
 
-    private float _timeSpeed = 1.0f; // How fast time progresses
-    private float _timeOfDay = 0.0f; // Time of day in hours
+    public float _timeSpeed = 1.0f; // How fast time progresses
+    public float _timeOfDay = 8.0f; // Time of day in hours
 
     [SerializeField] private Light2D _globalLight; // Reference to a global light source to simulate sunlight/moonlight
     [SerializeField] private Color _dayColor;
@@ -74,6 +74,8 @@ public class TimeController : Singleton<TimeController>
         {
             _globalVolume.weight = _timeOfDay > 20 || _timeOfDay < 6 ? 1 : 0;
         }
+        _globalLight.color = Color.Lerp(_dayColor, _nightColor, _globalVolume.weight);
+
     }
 
     void UpdateUI()
