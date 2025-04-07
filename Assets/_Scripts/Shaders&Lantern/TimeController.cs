@@ -87,7 +87,6 @@ public class TimeController : Singleton<TimeController>
         }
         
         _globalLight.color = Color.Lerp(_dayColor, _nightColor, _globalVolume.weight);
-
     }
     
     void UpdateClockHandRotation()

@@ -109,7 +109,7 @@ public class Wolf : MonoBehaviour
         audioSource.Play(); 
 
          if (playerHealth != null){
-            playerHealth.TakeDamage(1);
+            playerHealth.TakeDamage(1, transform.position);
         }
 
         path.Clear();
