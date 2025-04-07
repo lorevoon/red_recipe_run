@@ -5,8 +5,8 @@ using UnityEngine.Serialization;
 
 public struct SIngredientData
 {
-    public int ID;
     public EIngredient Name;
+    public int ID;
     public int GenLevel;
     public int AvgVeinSize;
     public string Description;
