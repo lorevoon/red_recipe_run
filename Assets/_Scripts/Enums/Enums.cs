@@ -114,16 +114,28 @@ public enum EGrid
     Unreachable
 }
 
-public enum EIngredient // placeholder
+public enum EIngredient
 {
+    Marmalade,
+    Jam,
     Apple,
-    Avocado,
-    Potato,
-    Turnip,
+    Pineapple,
+    Bread,
     Eggplant,
-    Onion,
-    Melon,
-    PigHead
+    PepperRed,
+    PepperGreen,
+    Tomato,
+    Strawberry,
+    Peach,
+    Lemon,
+    Honey,
+    Jerky,
+    MelonHoneydew,
+    Cherry,
+    DragonFruit,
+    Avocado,
+    Bug,
+    Onion
 }
 
 public enum EBushLevel
@@ -139,4 +151,11 @@ public enum EWolfStates
     Wander,
     Chase,
     Bite
+}
+
+public enum EUpgradeType
+{
+    MovementSpeed,
+    InventorySpace,
+    MaxHearts
 }
