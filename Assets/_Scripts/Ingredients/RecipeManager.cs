@@ -6,6 +6,10 @@ public class RecipeManager : MonoBehaviour
 {
     public static RecipeManager Instance { get; private set; }
 
+    [Header("UI Configuration")]
+    [SerializeField] private GameObject recipeEntryPrefab;
+    [SerializeField] private Transform scrollViewContent;
+
     private List<EIngredient> currentRecipe = new List<EIngredient>();
     private List<EIngredient> playerInventory = new List<EIngredient>();
 
@@ -20,6 +24,12 @@ public class RecipeManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+        GenerateNewRecipe();
+        UpdateRecipeUI();
     }
 
     public void GenerateNewRecipe()
@@ -41,6 +51,22 @@ public class RecipeManager : MonoBehaviour
         
         // Take the first recipeLength ingredients
         currentRecipe = allIngredients.Take(recipeLength).ToList();
+    }
+
+    private void UpdateRecipeUI()
+    {
+        // Clear existing entries
+        foreach (Transform child in scrollViewContent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Create new entries
+        foreach (var ingredient in currentRecipe)
+        {
+            var entry = Instantiate(recipeEntryPrefab, scrollViewContent);
+            entry.GetComponent<RecipeUI>().Initialize(ingredient);
+        }
     }
 
     public List<EIngredient> GetCurrentRecipe()
@@ -100,4 +126,4 @@ public class RecipeManager : MonoBehaviour
     {
         return playerInventory.Count;
     }
-} 
+}
