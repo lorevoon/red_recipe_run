@@ -84,11 +84,6 @@ public class InventoryManager : MonoBehaviour
             Debug.Log("InventoryManager: I key detected");
             ToggleInventory();
         }
-
-        if (Input.GetKeyDown(KeyCode.Q) && inventory.Count > 0)
-        {
-            DropItem();
-        }
     }
 
     private void ToggleInventory()
@@ -200,6 +195,20 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void RemoveItem(EIngredient item)
+    {
+        if (inventory.Contains(item))
+        {
+            inventory.Remove(item);
+            Debug.Log($"InventoryManager: Removed {item} from inventory");
+            if (isInventoryOpen)
+            {
+                UpdateInventoryUI();
+                UpdateRecipeUI();
+            }
+        }
+    }
+
     public bool CheckRecipeComplete()
     {
         foreach (EIngredient requiredItem in currentRecipe)
@@ -234,7 +243,7 @@ public class InventoryManager : MonoBehaviour
             GameObject droppedItem = Instantiate(ingredientPrefab, dropPosition, Quaternion.identity);
             
             // Set the ingredient type
-            IngredientItem ingredientComponent = droppedItem.GetComponent<IngredientItem>();
+            Ingredient ingredientComponent = droppedItem.GetComponent<Ingredient>();
             if (ingredientComponent != null)
             {
                 ingredientComponent.IngredientType = itemToDrop;

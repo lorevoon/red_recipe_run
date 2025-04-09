@@ -65,6 +65,13 @@ public class PlayerInventory : MonoBehaviour
 
        ingredient.transform.SetParent(basketTransform, true);
        ingredient.SetActive(false);
+
+       // Add the ingredient to the InventoryManager
+       Ingredient ingredientComponent = ingredient.GetComponent<Ingredient>();
+       if (ingredientComponent != null)
+       {
+           InventoryManager.Instance.AddItem(ingredientComponent.IngredientType);
+       }
     }
 
     public void DropIngredient()
@@ -73,7 +80,7 @@ public class PlayerInventory : MonoBehaviour
         
         GameObject mostRecent = RemoveItem();
         
-       // Store the world position before unparenting
+        // Store the world position before unparenting
         Vector3 worldPosition = mostRecent.transform.position;
 
         // Unparent the object
@@ -87,5 +94,12 @@ public class PlayerInventory : MonoBehaviour
 
         mostRecent.SetActive(true);
         mostRecent.GetComponent<Ingredient>().OnDrop();
+
+        // Remove the ingredient from the InventoryManager
+        Ingredient ingredientComponent = mostRecent.GetComponent<Ingredient>();
+        if (ingredientComponent != null)
+        {
+            InventoryManager.Instance.RemoveItem(ingredientComponent.IngredientType);
+        }
     }
 }
