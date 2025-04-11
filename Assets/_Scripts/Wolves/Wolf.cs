@@ -25,7 +25,7 @@ public class Wolf : MonoBehaviour
 
     // audio
     private AudioSource audioSource;
-
+    public AudioClip howl, close, bite;
 
     void Start()
     {
@@ -33,6 +33,9 @@ public class Wolf : MonoBehaviour
         lantern = GameObject.FindGameObjectWithTag("Lantern");
         playerHealth = player.GetComponent<PlayerHealth>();
         audioSource = GetComponent<AudioSource>();
+
+        audioSource.clip = howl;
+        audioSource.Play();
     }
 
     private void Update()
@@ -66,15 +69,18 @@ public class Wolf : MonoBehaviour
                 Chase();
                 CreatePath();
                 break;
-            case EWolfStates.Bite:
-                StartCoroutine(Bite());
-                break;
+            // case EWolfStates.Bite:
+            //     StartCoroutine(Bite());
+            //     break;
         }
         
         if (previousState != currentState)
         {
             path.Clear();
         }
+
+        // sfx if close and not biting
+        noiseIfClose();
 
     }
 
@@ -84,6 +90,7 @@ public class Wolf : MonoBehaviour
         if (obj.gameObject.CompareTag("Player"))
         {
             currentState = EWolfStates.Bite;
+            StartCoroutine(Bite());
         }
     }
 
@@ -106,9 +113,10 @@ public class Wolf : MonoBehaviour
     IEnumerator Bite()
     {
         //Debug.Log("Bite player");
+        audioSource.clip = bite;
         audioSource.Play(); 
 
-         if (playerHealth != null){
+        if (playerHealth != null){
             playerHealth.TakeDamage(1, transform.position);
         }
 
@@ -166,4 +174,14 @@ public class Wolf : MonoBehaviour
             }
         }
     }
+
+    private void noiseIfClose()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) < 5.0f && currentState != EWolfStates.Bite)
+        {
+            audioSource.clip = close;
+            audioSource.Play();
+        }
+    }
+
 }

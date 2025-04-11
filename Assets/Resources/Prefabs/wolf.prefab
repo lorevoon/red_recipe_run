@@ -181,6 +181,9 @@ MonoBehaviour:
   speed: 1
   pause: 3
   viewRadius: 3
+  howl: {fileID: 8300000, guid: fcb321fb22165a740b0ddc1a8713a9bb, type: 3}
+  close: {fileID: 8300000, guid: e9e8998a18a63c3409b4858db1541a9e, type: 3}
+  bite: {fileID: 8300000, guid: 677985db3bafc0040ab9cf395898b266, type: 3}
 --- !u!82 &-2406388539839755160
 AudioSource:
   m_ObjectHideFlags: 0
@@ -191,8 +194,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b04469202a33a422389f60fe6fbb780b, type: 3}
-  m_Resource: {fileID: 8300000, guid: b04469202a33a422389f60fe6fbb780b, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

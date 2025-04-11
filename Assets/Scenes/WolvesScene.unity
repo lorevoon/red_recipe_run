@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3352910478514541682, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: ToolSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4093921831652903708, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: healthText
       value: 
@@ -447,7 +451,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
       propertyPath: IsCycleOn
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: _timeSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: _nightColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: _nightColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
+      propertyPath: _nightColor.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

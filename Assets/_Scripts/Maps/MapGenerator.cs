@@ -55,7 +55,7 @@ public partial class MapGenerator : MonoBehaviour
         
         GeneratePlayerSpawn();
 
-        CreateNodes();
+        // CreateNodes();
     }
 
     private void InitializeGrid()

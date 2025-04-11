@@ -96,6 +96,7 @@ public partial class MapGenerator
 
         if (isNight && notSpawned)
         {
+            CreateNodes();
             spawnWolves();
             notSpawned = false;
         }
