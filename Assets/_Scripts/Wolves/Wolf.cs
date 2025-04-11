@@ -27,15 +27,26 @@ public class Wolf : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip howl, close, bite;
 
+    private Animator anim;
+
+    private SpriteRenderer spriteRenderer;
+    private Vector3 prevPos;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         lantern = GameObject.FindGameObjectWithTag("Lantern");
         playerHealth = player.GetComponent<PlayerHealth>();
-        audioSource = GetComponent<AudioSource>();
 
+        audioSource = GetComponent<AudioSource>();
         audioSource.clip = howl;
         audioSource.Play();
+
+        anim = GetComponent<Animator>();
+
+        // for flip
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        prevPos = transform.position;
     }
 
     private void Update()
@@ -82,6 +93,9 @@ public class Wolf : MonoBehaviour
         // sfx if close and not biting
         noiseIfClose();
 
+        // animation and flipping
+        spriteUpdate();
+        prevPos = transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D obj)
@@ -113,6 +127,8 @@ public class Wolf : MonoBehaviour
     IEnumerator Bite()
     {
         //Debug.Log("Bite player");
+        anim.CrossFade("wolf_attack", 0, 0);
+
         audioSource.clip = bite;
         audioSource.Play(); 
 
@@ -182,6 +198,25 @@ public class Wolf : MonoBehaviour
             audioSource.clip = close;
             audioSource.Play();
         }
+    }
+
+    private void spriteUpdate()
+    {
+        if (currentState != EWolfStates.Bite)
+        {
+            if (transform.position == prevPos)
+            {
+                anim.CrossFade("wolf_idle", 0, 0);
+            }
+            else
+            {
+                anim.CrossFade("wolf_run", 0, 0);
+            }
+        }
+
+        // for flipping
+        spriteRenderer.flipX = transform.position.x > prevPos.x;
+        
     }
 
 }
