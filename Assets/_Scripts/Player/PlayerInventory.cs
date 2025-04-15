@@ -5,7 +5,13 @@ using System.Collections; // Add this with other using directives
 public class PlayerInventory : MonoBehaviour
 {
     public List<GameObject> InventoryList = new List<GameObject>();
+
+    [Header("Audio")]
+    public AudioClip pickupSound;
+    public AudioClip dropSound;
+    private AudioSource _audioSource;
     
+    [Header("Player")]
     private PlayerController _playerController;
     private PlayerAnimation _playerAnimator;
     private float _pickupRadius = 2f; // Radius for picking up ingredients
@@ -22,6 +28,16 @@ public class PlayerInventory : MonoBehaviour
         {
             Debug.LogError("PlayerController instance not found!");
         }
+
+        // initialize audio
+        _audioSource = GetComponent<AudioSource>();
+        if (_audioSource == null)
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            _audioSource.playOnAwake = false;
+            _audioSource.spatialBlend = 0f; // 2D sound
+        }
+        
         _curr_ingredients = 0;
     }
 
@@ -122,6 +138,13 @@ public class PlayerInventory : MonoBehaviour
         {
             InventoryManager.Instance.AddItem(ingredientComponent.IngredientType);
         }
+
+        // 🔊 Play pickup sound
+        if (_audioSource != null && pickupSound != null)
+        {
+            Debug.Log("Playing pickup sound!");
+            _audioSource.PlayOneShot(pickupSound);
+        }
         
     }
 
@@ -212,6 +235,12 @@ public class PlayerInventory : MonoBehaviour
         if (ingredientComponent != null)
         {
             InventoryManager.Instance.RemoveItem(ingredientComponent.IngredientType);
+        }
+
+        // 🔊 Play drop sound
+        if (_audioSource != null && dropSound != null)
+        {
+            _audioSource.PlayOneShot(dropSound);
         }
     }
 
