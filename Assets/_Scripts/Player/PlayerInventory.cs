@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections; // Add this with other using directives
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -71,30 +72,57 @@ public class PlayerInventory : MonoBehaviour
 
    public void PickUpIngredient(GameObject ingredient)
    { 
-       AddItem(ingredient);
-       Transform basketTransform = PlayerController.Instance.Basket.transform; 
-       basketTransform.localScale *= 1.05f; // Increase basket size by 5%
+    //    AddItem(ingredient);
+    //    Transform basketTransform = PlayerController.Instance.Basket.transform; 
+    //    basketTransform.localScale *= 1.05f; // Increase basket size by 5%
+
+    //     _playerController._maxSpeed *= _slowing_factor;
+    //     _playerController._moveForce *= _slowing_factor;
+
+    //    ingredient.transform.SetParent(basketTransform);
+    //    //ingredient.SetActive(false);
+
+    //    // Hide it but disable collider
+    //     SpriteRenderer ing = ingredient.GetComponent<SpriteRenderer>();
+    //     if (ing != null) ing.enabled = false;
+
+    //     Collider2D col = ingredient.GetComponent<Collider2D>();
+    //     if (col != null) col.enabled = false;
+
+    //    // Add the ingredient to the InventoryManager
+    //    Ingredient ingredientComponent = ingredient.GetComponent<Ingredient>();
+    //    if (ingredientComponent != null)
+    //    {
+    //        InventoryManager.Instance.AddItem(ingredientComponent.IngredientType);
+    //    }
+        AddItem(ingredient);
+        Transform basketTransform = PlayerController.Instance.Basket.transform; 
+        basketTransform.localScale *= 1.05f; // Increase basket size by 5%
 
         _playerController._maxSpeed *= _slowing_factor;
         _playerController._moveForce *= _slowing_factor;
 
-       ingredient.transform.SetParent(basketTransform);
-       //ingredient.SetActive(false);
+        // Start the movement coroutine
 
-       // Hide it but disable collider
-        SpriteRenderer ing = ingredient.GetComponent<SpriteRenderer>();
-        if (ing != null) ing.enabled = false;
+        float left_distance = Vector2.Distance(ingredient.transform.position, _playerController.left_hand_pos.position);
+        float right_distance = Vector2.Distance(ingredient.transform.position, _playerController.right_hand_pos.position);
 
-        Collider2D col = ingredient.GetComponent<Collider2D>();
-        if (col != null) col.enabled = false;
+        if (left_distance < right_distance) 
+        {
+            StartCoroutine(MoveToHand(ingredient, _playerController.left_hand_pos));
+        }
+        else {
+            StartCoroutine(MoveToHand(ingredient, _playerController.right_hand_pos));
+        }
+        
 
-       // Add the ingredient to the InventoryManager
-       Ingredient ingredientComponent = ingredient.GetComponent<Ingredient>();
-       if (ingredientComponent != null)
-       {
-           InventoryManager.Instance.AddItem(ingredientComponent.IngredientType);
-       }
-       
+        // Add the ingredient to the InventoryManager
+        Ingredient ingredientComponent = ingredient.GetComponent<Ingredient>();
+        if (ingredientComponent != null)
+        {
+            InventoryManager.Instance.AddItem(ingredientComponent.IngredientType);
+        }
+        
     }
 
     public void DropIngredient()
@@ -120,10 +148,15 @@ public class PlayerInventory : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         int facingDirection = _playerController.LastFacingDirection;
 
-        float offset = _playerController.LastFacingDirection == 1 ? 0f : 1.1f; // X-axis offset only
+       // float offset = _playerController.LastFacingDirection == 1 ? 0f : 1.1f; // X-axis offset only
 
-        Vector3 dropOrigin = _playerController._hand_pos.position;
-        Vector3 dropPosition = dropOrigin + new Vector3(offset * facingDirection, 0f, 0f);
+        // drop away from player
+        Vector3 dropOrigin = facingDirection == 1 ? _playerController.right_hand_pos.position : _playerController.right_hand_pos.position ;
+        float dropOffset = 0.75f;
+        if (facingDirection == 1) {
+            dropOffset -= 0.1f;
+        }
+        Vector3 dropPosition = dropOrigin + new Vector3(facingDirection * dropOffset, 0f, 0f);
 
         // Call OnDrop BEFORE changing position to disable bobbing and reset startPosition
         IngredientItem item = mostRecent.GetComponent<IngredientItem>();
@@ -147,36 +180,30 @@ public class PlayerInventory : MonoBehaviour
         if (col != null) col.enabled = true;
 
         // Temporarily stop physics for smooth positioning
+       // Temporarily stop physics for smooth positioning
         Rigidbody2D rb = mostRecent.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            // rb.velocity = Vector2.zero;
-            // rb.angularVelocity = 0f;
-            // rb.isKinematic = true; // temporarily stop physics
-
-            // rb.position = dropPosition;  // Move to drop position
-            // rb.rotation = 0f;
-
-            // rb.isKinematic = false;  // re-enable physics
-
             rb.isKinematic = false;
+            rb.simulated = true;
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
 
+            // Set drop origin to correct hand
             mostRecent.transform.position = dropOrigin;
 
-            // Apply throw force
+            // Apply randomized throw force
+            float horizontalForce = Random.Range(2f, 4f);   // Sideways
+            float verticalForce = Random.Range(-2f, -4f);     // Downward
 
-            float sideways = Random.Range(2.5f, 4f);
-            float downward = Random.Range(-1.5f, -3f);
-            Vector2 throwDir = new Vector2(sideways * facingDirection, downward).normalized;
-            float throwForce = 3f;
-            rb.AddForce(throwDir * throwForce, ForceMode2D.Impulse);
+            Vector2 throwDir = new Vector2(facingDirection * horizontalForce, verticalForce);
+            rb.AddForce(throwDir, ForceMode2D.Impulse);
         }
 
         // Ensure the rotation is reset to avoid unwanted rotation from the parent
         mostRecent.transform.rotation = Quaternion.identity;
         mostRecent.transform.position = dropPosition;
+        mostRecent.transform.localScale = Vector3.one;
 
         mostRecent.GetComponent<Ingredient>().OnDrop();
 
@@ -186,6 +213,52 @@ public class PlayerInventory : MonoBehaviour
         {
             InventoryManager.Instance.RemoveItem(ingredientComponent.IngredientType);
         }
+    }
+
+    private IEnumerator MoveToHand(GameObject ingredient, Transform handTransform)
+    {
+        // Disable physics during collection
+        Rigidbody2D rb = ingredient.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.simulated = false;
+        }
+
+        // Disable collider immediately
+        Collider2D col = ingredient.GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        float duration = 0.3f;
+        float elapsed = 0f;
+        Vector3 startPosition = ingredient.transform.position;
+        Vector3 startScale = ingredient.transform.localScale;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            
+            ingredient.transform.position = Vector3.Lerp(
+                startPosition, 
+                handTransform.position, 
+                t
+            );
+            
+            ingredient.transform.localScale = Vector3.Lerp(
+                startScale, 
+                startScale * 0.5f, 
+                t
+            );
+
+            yield return null;  // Wait for next frame
+        }
+
+        // Final positioning
+        ingredient.transform.SetParent(PlayerController.Instance.Basket.transform);
+        ingredient.transform.localPosition = Vector3.zero;
+        
+        SpriteRenderer sr = ingredient.GetComponent<SpriteRenderer>();
+        if (sr != null) sr.enabled = false;
     }
 
 }

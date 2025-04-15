@@ -9,7 +9,8 @@ public class PlayerController : Singleton<PlayerController>
     
     public GameObject Tool;
     public GameObject Basket;
-    public Transform _hand_pos;
+    public Transform left_hand_pos;
+      public Transform right_hand_pos;
     public int LastFacingDirection { get; private set; } = 1;
     
     // private float _playerSpeed = 10; // speed player moves

@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &274524734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 274524735}
+  m_Layer: 6
+  m_Name: LeftHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &274524735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274524734}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1372632445}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &292706872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -922,7 +953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1446213741}
   m_Layer: 6
-  m_Name: Hand
+  m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -937,7 +968,7 @@ Transform:
   m_GameObject: {fileID: 1446213740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0.4, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1134,6 +1165,14 @@ PrefabInstance:
       propertyPath: _hand_pos
       value: 
       objectReference: {fileID: 1446213741}
+    - target: {fileID: 3352910478514541682, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: left_hand_pos
+      value: 
+      objectReference: {fileID: 274524735}
+    - target: {fileID: 3352910478514541682, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: right_hand_pos
+      value: 
+      objectReference: {fileID: 1446213741}
     - target: {fileID: 7910355346454261436, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.48916093
@@ -1181,6 +1220,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7910355346454261436, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1446213741}
+    - targetCorrespondingSourceObject: {fileID: 7910355346454261436, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 274524735}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
 --- !u!1001 &1709765378
