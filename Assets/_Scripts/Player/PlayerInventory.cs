@@ -216,7 +216,7 @@ public class PlayerInventory : MonoBehaviour
         {
             rb.isKinematic = false;
             rb.simulated = true;
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
 
             // Set drop origin to correct hand

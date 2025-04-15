@@ -13,6 +13,7 @@ public class CreditsScript : MonoBehaviour
 
     public void OpenPanel()
     {
+        // open panel when Credits is clicked
         if (credit_panel != null) 
         {
             credit_panel.SetActive(true);
@@ -26,12 +27,6 @@ public class CreditsScript : MonoBehaviour
         {
             credit_panel.SetActive(false);
         }
-        // Debug.Log("Button clicked!"); // Check Unity Console for this message
-        // bool isActive = credit_panel.activeSelf;
-        // if (gameObject.CompareTag("ClosePanel") && isActive)
-        // {
-        //     credit_panel.SetActive(false);
-        // }
     }
 
 }
