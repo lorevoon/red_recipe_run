@@ -112,6 +112,13 @@ public class PlayerInventory : MonoBehaviour
     //        InventoryManager.Instance.AddItem(ingredientComponent.IngredientType);
     //    }
         AddItem(ingredient);
+        // 🔊 Play pickup sound
+        if (_audioSource != null && pickupSound != null)
+        {
+            Debug.Log("Playing pickup sound!");
+            _audioSource.PlayOneShot(pickupSound);
+        }
+
         Transform basketTransform = PlayerController.Instance.Basket.transform; 
         basketTransform.localScale *= 1.05f; // Increase basket size by 5%
 
@@ -139,12 +146,6 @@ public class PlayerInventory : MonoBehaviour
             InventoryManager.Instance.AddItem(ingredientComponent.IngredientType);
         }
 
-        // 🔊 Play pickup sound
-        if (_audioSource != null && pickupSound != null)
-        {
-            Debug.Log("Playing pickup sound!");
-            _audioSource.PlayOneShot(pickupSound);
-        }
         
     }
 
@@ -153,6 +154,12 @@ public class PlayerInventory : MonoBehaviour
         if (InventoryList.Count <= 0) return;
 
         GameObject mostRecent = RemoveItem();
+
+        // 🔊 Play drop sound
+        if (_audioSource != null && dropSound != null)
+        {
+            _audioSource.PlayOneShot(dropSound);
+        }
 
         Transform basketTransform = PlayerController.Instance.Basket.transform; 
         basketTransform.localScale *= 0.95f; // Decrease basket size by 5%
@@ -237,11 +244,6 @@ public class PlayerInventory : MonoBehaviour
             InventoryManager.Instance.RemoveItem(ingredientComponent.IngredientType);
         }
 
-        // 🔊 Play drop sound
-        if (_audioSource != null && dropSound != null)
-        {
-            _audioSource.PlayOneShot(dropSound);
-        }
     }
 
     private IEnumerator MoveToHand(GameObject ingredient, Transform handTransform)
@@ -275,7 +277,7 @@ public class PlayerInventory : MonoBehaviour
             
             ingredient.transform.localScale = Vector3.Lerp(
                 startScale, 
-                startScale * 0.5f, 
+                startScale * 0.8f, 
                 t
             );
 
