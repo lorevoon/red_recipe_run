@@ -46,6 +46,7 @@ public class BreakableTile : MonoBehaviour
             _spriteRenderer.color = new Color(1f, 1f, 1f, 1f-_currentDurability/_maxDurability);
             PlayAudio(_crackingSounds[Random.Range(0, _crackingSounds.Length)]);
             Instantiate(_breakVFX, new Vector3(_position.x+0.5f, _position.y+0.5f), Quaternion.identity);
+            _playerController.ResetBounce();
         }
         else // durability < 0
         {
