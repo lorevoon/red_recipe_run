@@ -45,10 +45,10 @@ public class CameraManager : Singleton<CameraManager>
         StartCoroutine(AssignCollider(Array.IndexOf(AllVirtualCameras, camera2)));
         CurrentCamera = camera2;
         
-        _framingTransposer = CurrentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-        _isFramingTransposed = _framingTransposer != null;
-        GameObject followObject = GameObject.Find("CameraFollowingObject");
-        if (followObject != null) CurrentCamera.Follow = followObject.transform;
+        // _framingTransposer = CurrentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        // _isFramingTransposed = _framingTransposer != null;
+        // GameObject followObject = GameObject.Find("CameraFollowingObject");
+        // if (followObject != null) CurrentCamera.Follow = followObject.transform;
     }
     
     private IEnumerator AssignCollider(int cameraIndex)
