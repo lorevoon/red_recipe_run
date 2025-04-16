@@ -11,7 +11,9 @@ public class RecipeManager : MonoBehaviour
     [SerializeField] private Transform scrollViewContent;
 
     private List<EIngredient> currentRecipe = new List<EIngredient>();
+    private RecipeList.Recipe selectedRecipe;
     private List<EIngredient> playerInventory = new List<EIngredient>();
+    private int Difficulty;
 
     private void Awake()
     {
@@ -29,44 +31,14 @@ public class RecipeManager : MonoBehaviour
     void Start()
     {
         GenerateNewRecipe();
-        UpdateRecipeUI();
     }
 
     public void GenerateNewRecipe()
     {
         currentRecipe.Clear();
-        int recipeLength = Random.Range(2, 5); // Random length between 2 and 4 ingredients
-        
-        // Get all possible ingredients
-        EIngredient[] allIngredients = (EIngredient[])System.Enum.GetValues(typeof(EIngredient));
-        
-        // Shuffle the ingredients
-        for (int i = 0; i < allIngredients.Length; i++)
-        {
-            int randomIndex = Random.Range(i, allIngredients.Length);
-            EIngredient temp = allIngredients[i];
-            allIngredients[i] = allIngredients[randomIndex];
-            allIngredients[randomIndex] = temp;
-        }
-        
-        // Take the first recipeLength ingredients
-        currentRecipe = allIngredients.Take(recipeLength).ToList();
-    }
-
-    private void UpdateRecipeUI()
-    {
-        // Clear existing entries
-        foreach (Transform child in scrollViewContent)
-        {
-            Destroy(child.gameObject);
-        }
-
-        // Create new entries
-        foreach (var ingredient in currentRecipe)
-        {
-            var entry = Instantiate(recipeEntryPrefab, scrollViewContent);
-            entry.GetComponent<RecipeUI>().Initialize(ingredient);
-        }
+        int randomIndex = Random.Range(0, RecipeList.AllRecipes.Count);
+        RecipeList.Recipe selectedRecipe = RecipeList.AllRecipes[randomIndex];
+        currentRecipe = new List<EIngredient>(selectedRecipe.Ingredients);
     }
 
     public List<EIngredient> GetCurrentRecipe()
