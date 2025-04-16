@@ -8,10 +8,12 @@ public class RecipeManager : MonoBehaviour
 
     [Header("UI Configuration")]
     [SerializeField] private GameObject recipeEntryPrefab;
+    [SerializeField] private GameObject RecipePanel;
     [SerializeField] private Transform scrollViewContent;
 
+
     private RecipeList.Recipe currentRecipe;
-    private List<EIngredient> playerInventory = new List<EIngredient>();
+    private bool isRecipeOpen = false;
 
     private void Awake()
     {
@@ -29,7 +31,6 @@ public class RecipeManager : MonoBehaviour
     void Start()
     {
         GenerateNewRecipe();
-        UpdateRecipeUI();
     }
 
     public void GenerateNewRecipe()
@@ -38,17 +39,42 @@ public class RecipeManager : MonoBehaviour
         currentRecipe = RecipeList.AllRecipes[randomIndex];
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("RecipeManager: L key detected");
+            ToggleRecipe();
+        }
+    }
+
+    private void ToggleRecipe()
+    {
+        if (RecipePanel == null)
+        {
+            Debug.LogError("RecipeManager: RecipePanel is null when trying to toggle!");
+            return;
+        }
+
+        isRecipeOpen = !isRecipeOpen;
+        Debug.Log($"RecipeManager: Setting panel {(isRecipeOpen ? "ACTIVE" : "INACTIVE")}");
+        RecipePanel.SetActive(isRecipeOpen);
+
+        if (isRecipeOpen)
+        {
+            UpdateRecipeUI();
+        }
+    }
+
+
     private void UpdateRecipeUI()
     {
-        // Clear existing entries
         foreach (Transform child in scrollViewContent)
         {
             Destroy(child.gameObject);
         }
-
-        // Create a single entry for the current recipe
         var entry = Instantiate(recipeEntryPrefab, scrollViewContent);
-        entry.GetComponent<RecipeUI>().Initialize(currentRecipe); // Pass the entire recipe
+        entry.GetComponent<RecipeUI>().Initialize(currentRecipe);
     }
 
     public RecipeList.Recipe GetCurrentRecipe()
@@ -56,57 +82,5 @@ public class RecipeManager : MonoBehaviour
         return currentRecipe;
     }
 
-    public bool HasAllRecipeIngredients()
-    {
-        foreach (var ingredient in currentRecipe.Ingredients)
-        {
-            if (!playerInventory.Contains(ingredient))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public void AddItemToInventory(EIngredient item)
-    {
-        int maxInventorySize = (int)PlayerProgress.Instance.GetUpgradeValue(EUpgradeType.InventorySpace);
-        if (playerInventory.Count < maxInventorySize)
-        {
-            playerInventory.Add(item);
-        }
-        else
-        {
-            Debug.Log("Inventory is full!");
-        }
-    }
-
-    public void RemoveItemFromInventory(EIngredient item)
-    {
-        if (playerInventory.Contains(item))
-        {
-            playerInventory.Remove(item);
-        }
-    }
-
-    public List<EIngredient> GetInventory()
-    {
-        return new List<EIngredient>(playerInventory);
-    }
-
-
-    public void ClearInventory()
-    {
-        playerInventory.Clear();
-    }
-
-    public int GetInventorySpace()
-    {
-        return (int)PlayerProgress.Instance.GetUpgradeValue(EUpgradeType.InventorySpace);
-    }
-
-    public int GetUsedInventorySpace()
-    {
-        return playerInventory.Count;
-    }
 }
+
