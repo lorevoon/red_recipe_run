@@ -55,18 +55,9 @@ public class InventoryManager : MonoBehaviour
     {
         currentRecipe.Clear();
         
-        // Get all available ingredients
-        EIngredient[] allIngredients = (EIngredient[])System.Enum.GetValues(typeof(EIngredient));
-        List<EIngredient> availableIngredients = new List<EIngredient>(allIngredients);
-        
-        // Randomly select 2-4 ingredients
-        int recipeSize = Random.Range(2, 5);
-        for (int i = 0; i < recipeSize && availableIngredients.Count > 0; i++)
-        {
-            int randomIndex = Random.Range(0, availableIngredients.Count);
-            currentRecipe.Add(availableIngredients[randomIndex]);
-            availableIngredients.RemoveAt(randomIndex);
-        }
+        int randomIndex = Random.Range(0, RecipeList.AllRecipes.Count);
+        RecipeList.Recipe selectedRecipe = RecipeList.AllRecipes[randomIndex];
+        currentRecipe = new List<EIngredient>(selectedRecipe.Ingredients);
 
         Debug.Log($"InventoryManager: Generated new recipe with {currentRecipe.Count} ingredients");
         foreach (var ingredient in currentRecipe)

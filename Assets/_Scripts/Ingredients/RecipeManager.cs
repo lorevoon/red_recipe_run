@@ -8,10 +8,12 @@ public class RecipeManager : MonoBehaviour
 
     [Header("UI Configuration")]
     [SerializeField] private GameObject recipeEntryPrefab;
+    [SerializeField] private GameObject RecipePanel;
     [SerializeField] private Transform scrollViewContent;
 
-    private List<EIngredient> currentRecipe = new List<EIngredient>();
-    private List<EIngredient> playerInventory = new List<EIngredient>();
+
+    private RecipeList.Recipe currentRecipe;
+    private bool isRecipeOpen = false;
 
     private void Awake()
     {
@@ -29,101 +31,56 @@ public class RecipeManager : MonoBehaviour
     void Start()
     {
         GenerateNewRecipe();
-        UpdateRecipeUI();
     }
 
     public void GenerateNewRecipe()
     {
-        currentRecipe.Clear();
-        int recipeLength = Random.Range(2, 5); // Random length between 2 and 4 ingredients
-        
-        // Get all possible ingredients
-        EIngredient[] allIngredients = (EIngredient[])System.Enum.GetValues(typeof(EIngredient));
-        
-        // Shuffle the ingredients
-        for (int i = 0; i < allIngredients.Length; i++)
-        {
-            int randomIndex = Random.Range(i, allIngredients.Length);
-            EIngredient temp = allIngredients[i];
-            allIngredients[i] = allIngredients[randomIndex];
-            allIngredients[randomIndex] = temp;
-        }
-        
-        // Take the first recipeLength ingredients
-        currentRecipe = allIngredients.Take(recipeLength).ToList();
+        int randomIndex = Random.Range(0, RecipeList.AllRecipes.Count);
+        currentRecipe = RecipeList.AllRecipes[randomIndex];
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("RecipeManager: L key detected");
+            ToggleRecipe();
+        }
+    }
+
+    private void ToggleRecipe()
+    {
+        if (RecipePanel == null)
+        {
+            Debug.LogError("RecipeManager: RecipePanel is null when trying to toggle!");
+            return;
+        }
+
+        isRecipeOpen = !isRecipeOpen;
+        Debug.Log($"RecipeManager: Setting panel {(isRecipeOpen ? "ACTIVE" : "INACTIVE")}");
+        RecipePanel.SetActive(isRecipeOpen);
+
+        if (isRecipeOpen)
+        {
+            UpdateRecipeUI();
+        }
+    }
+
 
     private void UpdateRecipeUI()
     {
-        // Clear existing entries
         foreach (Transform child in scrollViewContent)
         {
             Destroy(child.gameObject);
         }
-
-        // Create new entries
-        foreach (var ingredient in currentRecipe)
-        {
-            var entry = Instantiate(recipeEntryPrefab, scrollViewContent);
-            entry.GetComponent<RecipeUI>().Initialize(ingredient);
-        }
+        var entry = Instantiate(recipeEntryPrefab, scrollViewContent);
+        entry.GetComponent<RecipeUI>().Initialize(currentRecipe);
     }
 
-    public List<EIngredient> GetCurrentRecipe()
+    public RecipeList.Recipe GetCurrentRecipe()
     {
-        return new List<EIngredient>(currentRecipe);
+        return currentRecipe;
     }
 
-    public void AddItemToInventory(EIngredient item)
-    {
-        int maxInventorySize = (int)PlayerProgress.Instance.GetUpgradeValue(EUpgradeType.InventorySpace);
-        if (playerInventory.Count < maxInventorySize)
-        {
-            playerInventory.Add(item);
-        }
-        else
-        {
-            Debug.Log("Inventory is full!");
-        }
-    }
-
-    public void RemoveItemFromInventory(EIngredient item)
-    {
-        if (playerInventory.Contains(item))
-        {
-            playerInventory.Remove(item);
-        }
-    }
-
-    public List<EIngredient> GetInventory()
-    {
-        return new List<EIngredient>(playerInventory);
-    }
-
-    public bool HasAllRecipeIngredients()
-    {
-        foreach (var ingredient in currentRecipe)
-        {
-            if (!playerInventory.Contains(ingredient))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public void ClearInventory()
-    {
-        playerInventory.Clear();
-    }
-
-    public int GetInventorySpace()
-    {
-        return (int)PlayerProgress.Instance.GetUpgradeValue(EUpgradeType.InventorySpace);
-    }
-
-    public int GetUsedInventorySpace()
-    {
-        return playerInventory.Count;
-    }
 }
+
