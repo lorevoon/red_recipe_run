@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 3814896521885833322}
   - component: {fileID: 8519976839583454444}
   - component: {fileID: 4917956775154328779}
+  - component: {fileID: 3345946630664625429}
   m_Layer: 5
   m_Name: IngredientBadge
   m_TagString: Untagged
@@ -255,6 +256,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &3345946630664625429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6177575079001283275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7893c7a26156cef45aba12cb97f57880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 6837881551452002907}
+  ingredientName: {fileID: 2633124294098725045}
 --- !u!1 &8440180184450657108
 GameObject:
   m_ObjectHideFlags: 0

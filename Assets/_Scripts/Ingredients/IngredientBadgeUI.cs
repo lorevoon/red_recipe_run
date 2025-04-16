@@ -9,8 +9,14 @@ public class IngredientBadgeUI : MonoBehaviour
 
     public void Initialize(EIngredient ingredient)
     {
-        string path = $"FreePixelFood/Sprite/Food/{ingredient}";
-        icon.sprite = Resources.Load<Sprite>(path);
+        string path = $"FoodSprites/{ingredient}";
+        Sprite sprite = Resources.Load<Sprite>(path);
+    
+        if(sprite == null) 
+            Debug.LogError($"Missing sprite: {path}");
+        else
+            icon.sprite = sprite;
+
         ingredientName.text = FormatIngredientName(ingredient.ToString());
     }
 

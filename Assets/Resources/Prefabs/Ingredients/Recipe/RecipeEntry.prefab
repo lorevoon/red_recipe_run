@@ -225,7 +225,6 @@ GameObject:
   - component: {fileID: 4762771277284968594}
   - component: {fileID: 8810247665538939722}
   - component: {fileID: 3723526581649429709}
-  - component: {fileID: 5076086420085085316}
   - component: {fileID: 6567058232823769424}
   m_Layer: 5
   m_Name: RecipeEntry
@@ -320,22 +319,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &5076086420085085316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7811165693025823222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bcd804a12af193469ed8ed94ddf7c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recipeNameText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  ingredientsContainer: {fileID: 0}
-  ingredientBadgePrefab: {fileID: 0}
 --- !u!114 &6567058232823769424
 MonoBehaviour:
   m_ObjectHideFlags: 0

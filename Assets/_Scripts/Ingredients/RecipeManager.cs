@@ -10,10 +10,8 @@ public class RecipeManager : MonoBehaviour
     [SerializeField] private GameObject recipeEntryPrefab;
     [SerializeField] private Transform scrollViewContent;
 
-    private List<EIngredient> currentRecipe = new List<EIngredient>();
-    private RecipeList.Recipe selectedRecipe;
+    private RecipeList.Recipe currentRecipe;
     private List<EIngredient> playerInventory = new List<EIngredient>();
-    private int Difficulty;
 
     private void Awake()
     {
@@ -31,19 +29,43 @@ public class RecipeManager : MonoBehaviour
     void Start()
     {
         GenerateNewRecipe();
+        UpdateRecipeUI();
     }
 
     public void GenerateNewRecipe()
     {
-        currentRecipe.Clear();
         int randomIndex = Random.Range(0, RecipeList.AllRecipes.Count);
-        RecipeList.Recipe selectedRecipe = RecipeList.AllRecipes[randomIndex];
-        currentRecipe = new List<EIngredient>(selectedRecipe.Ingredients);
+        currentRecipe = RecipeList.AllRecipes[randomIndex];
     }
 
-    public List<EIngredient> GetCurrentRecipe()
+    private void UpdateRecipeUI()
     {
-        return new List<EIngredient>(currentRecipe);
+        // Clear existing entries
+        foreach (Transform child in scrollViewContent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Create a single entry for the current recipe
+        var entry = Instantiate(recipeEntryPrefab, scrollViewContent);
+        entry.GetComponent<RecipeUI>().Initialize(currentRecipe); // Pass the entire recipe
+    }
+
+    public RecipeList.Recipe GetCurrentRecipe()
+    {
+        return currentRecipe;
+    }
+
+    public bool HasAllRecipeIngredients()
+    {
+        foreach (var ingredient in currentRecipe.Ingredients)
+        {
+            if (!playerInventory.Contains(ingredient))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void AddItemToInventory(EIngredient item)
@@ -72,17 +94,6 @@ public class RecipeManager : MonoBehaviour
         return new List<EIngredient>(playerInventory);
     }
 
-    public bool HasAllRecipeIngredients()
-    {
-        foreach (var ingredient in currentRecipe)
-        {
-            if (!playerInventory.Contains(ingredient))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
 
     public void ClearInventory()
     {
