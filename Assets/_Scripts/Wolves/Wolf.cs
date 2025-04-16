@@ -121,6 +121,7 @@ public class Wolf : MonoBehaviour
 
     public void CreatePath()
     {
+        
         if (path != null)
         {
             if (path.Count > 0)
