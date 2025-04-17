@@ -33,6 +33,9 @@ public class Wolf : MonoBehaviour
         lantern = GameObject.FindGameObjectWithTag("Lantern");
         playerHealth = player.GetComponent<PlayerHealth>();
         audioSource = GetComponent<AudioSource>();
+
+        Node[] nodes = FindObjectsOfType<Node>();
+        currentNode = FindNearestNode(nodes, transform.position);
     }
 
     private void Update()
@@ -78,6 +81,27 @@ public class Wolf : MonoBehaviour
 
     }
 
+    private Node FindNearestNode(Node[] nodes, Vector2 position)
+    {
+        Node nearest = null;
+        float minDist = Mathf.Infinity;
+
+        foreach (Node node in nodes)
+        {
+            float dist = Vector2.Distance(position, node.transform.position);
+            if (dist < minDist)
+            {
+                minDist = dist;
+                nearest = node;
+            }
+        }
+
+        return nearest;
+    }
+
+
+
+
     private void OnTriggerEnter2D(Collider2D obj)
     {
         // collides with player --> change state to bite and invoke its function
@@ -94,6 +118,13 @@ public class Wolf : MonoBehaviour
 
     void Chase()
     {
+
+        if (AStarManager.Instance == null)
+        {
+            Debug.LogError("AStarManager.Instance is null in Chase!");
+            return;
+        }
+
         if (path == null) return;
         speed = 2;
 
@@ -121,38 +152,65 @@ public class Wolf : MonoBehaviour
 
     public void CreatePath()
     {
-        
-        if (path != null)
+        if (currentNode == null)
         {
-            if (path.Count > 0)
-            {
-                int x = 0;
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(path[x].transform.position.x, path[x].transform.position.y, -2), speed * Time.deltaTime);
+            Debug.LogError("currentNode is null in CreatePath()!");
+            return;
+        }
 
-                if (Vector2.Distance(transform.position, path[x].transform.position) < 0.1f)
-                {
-                    currentNode = path[x];
-                    path.RemoveAt(x);
-                }
-            }
-            else
+        if (AStarManager.Instance == null)
+        {
+            Debug.LogError("AStarManager.Instance is null in CreatePath()!");
+            return;
+        }
+
+        if (path != null && path.Count > 0)
+        {
+            if (path[0] == null)
             {
-                Node[] nodes = FindObjectsOfType<Node>();
-                while (path.Count == 0)
-                {
-                    path = AStarManager.Instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
-                }
+                Debug.LogWarning("First node in path is null.");
+                return;
+            }
+
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                new Vector3(path[0].transform.position.x, path[0].transform.position.y, -2),
+                speed * Time.deltaTime
+            );
+
+            if (Vector2.Distance(transform.position, path[0].transform.position) < 0.1f)
+            {
+                currentNode = path[0];
+                path.RemoveAt(0);
             }
         }
         else
         {
             Node[] nodes = FindObjectsOfType<Node>();
-            while (path == null)
+            if (nodes.Length == 0)
             {
-                path = AStarManager.Instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
+                Debug.LogError("No nodes found in scene.");
+                return;
+            }
+
+            int attempts = 0;
+            int maxAttempts = 10;
+
+            while ((path == null || path.Count == 0) && attempts < maxAttempts)
+            {
+                Node randomNode = nodes[Random.Range(0, nodes.Length)];
+                path = AStarManager.Instance.GeneratePath(currentNode, randomNode);
+                attempts++;
+            }
+
+            if (path == null || path.Count == 0)
+            {
+                Debug.LogWarning("Failed to generate path after several attempts.");
+                return;
             }
         }
     }
+
 
     // draw path of wolf
     private void OnDrawGizmos()
