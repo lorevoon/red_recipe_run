@@ -59,20 +59,27 @@ public class TimeController : Singleton<TimeController>
 
     void UpdateTimeOfDay()
     {
+        // convert real seconds into game hours based on speed
         float deltaTimeHours = Time.deltaTime * _timeSpeed;
         _elapsedTime += deltaTimeHours;
 
-        // Check for completed full 24h cycles (not just up to 30)
-        float totalTimePassed = _elapsedTime - 6f; // total time since first 6AM
-        int newCycleCount = Mathf.FloorToInt(totalTimePassed / 24f);
+        // How many full 6AM→6AM cycles have passed?
+        float cycleLengthInGameHours = 24f;
+        float gameTimeSinceStart = _elapsedTime - 6f;
+
+        int newCycleCount = Mathf.FloorToInt(gameTimeSinceStart / cycleLengthInGameHours);
 
         if (newCycleCount > completedCycles)
         {
             completedCycles = newCycleCount;
+
+            // Each cycle adds 30 real-time seconds to the next day/night cycle
             currentCycleDuration = baseCycleDuration + (completedCycles * cycleIncrement);
-            SetTimeSpeedForCurrentCycle();
+
+            SetTimeSpeedForCurrentCycle(); // recalculate time speed
         }
     }
+
 
     void UpdateClockHandRotation()
     {
