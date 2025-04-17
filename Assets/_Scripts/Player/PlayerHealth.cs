@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        // PlayerEvents.HpChanged += OnPlayerHPChanged;
         _playerTransform = PlayerController.Instance.gameObject.transform;
         _heartImage = GameManager.Instance.gameObject.GetComponentInChildren<Image>();
         _healthText = GameManager.Instance.gameObject.GetComponentInChildren<TMP_Text>();
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage, Vector3 wolfPosition)
     {
+        PlayerEvents.HpChanged.Invoke(-damage);
         Health -= damage;
         Health = Mathf.Max(Health, 0); 
         UpdateHealthDisplay();

@@ -8,8 +8,8 @@ using Random = UnityEngine.Random;
 public partial class MapGenerator : MonoBehaviour
 {
     private MapManager _mapManager;
-    
-    // [NamedArray(typeof(EIngredient))] [SerializeField] private RuleTile[] _ingredientRuleTiles;
+
+    [SerializeField] private GameObject _grandmasHouse;
     [SerializeField] private RuleTile _bushRuleTile;
     [SerializeField] private RuleTile _wallRuleTile;
     [SerializeField] private RuleTile _groundRuleTile;
@@ -54,6 +54,7 @@ public partial class MapGenerator : MonoBehaviour
         GenerateVeins();
         
         GeneratePlayerSpawn();
+        GenerateGrandmasHouse();
 
         CreateNodes();
     }
@@ -283,6 +284,38 @@ public partial class MapGenerator : MonoBehaviour
         
         _mapManager.PlayerSpawnPoint = new Vector3(startPos.x + 0.5f, startPos.y + 0.5f);
         _mapManager.SpawnPlayer();
+    }
+
+    private void GenerateGrandmasHouse()
+    {
+        int houseWidth = 7;
+        int houseHeight = 7;
+        Vector3Int center = new Vector3Int(Mathf.FloorToInt(_mapManager.PlayerSpawnPoint.x), 
+            Mathf.FloorToInt(_mapManager.PlayerSpawnPoint.y), 0);
+
+        
+        int startX = center.x - houseWidth / 2;
+        int startY = center.y + 1;
+        int endX = startX + houseWidth;
+        int endY = startY + houseHeight;
+
+        int gridWidth = _mapManager.BushTypeGrid.GetLength(0);
+        int gridHeight = _mapManager.BushTypeGrid.GetLength(1);
+
+        for (int x = startX; x < endX; x++)
+        {
+            for (int y = startY; y < endY; y++)
+            {
+                if (x >= 0 && x < gridWidth && y >= 0 && y < gridHeight)
+                {
+                    _mapManager.BushTypeGrid[x, y] = EGrid.Unreachable;
+                    _bushTilemap.SetTile(new Vector3Int(x, y, 0), null);
+                }
+            }
+        }
+        
+        Vector3 housePos = new Vector3(startX + houseWidth / 2f - 0.5f, startY + houseHeight / 2f, 0f);
+        Instantiate(_grandmasHouse, housePos, Quaternion.identity);
     }
     
     # region random walker algorithm

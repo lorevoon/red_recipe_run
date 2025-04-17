@@ -82,6 +82,11 @@ public class PlayerController : Singleton<PlayerController>
         if (collision.gameObject.CompareTag("Bush"))
             _bounceCooldown = _bounceSuppressTime;
     }
+
+    public void ResetBounce()
+    {
+        _bounceCooldown = _bounceSuppressTime;
+    }
     
     public bool IsInLastInputDirection(Vector3 blockPosition)
     {
