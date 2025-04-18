@@ -9,11 +9,17 @@ public class PlayerController : Singleton<PlayerController>
     
     public GameObject Tool;
     public GameObject Basket;
+    public Transform left_hand_pos;
+    public Transform right_hand_pos;
+    public Transform head;
+    public int LastFacingDirection { get; private set; } = 1;
     
     // private float _playerSpeed = 10; // speed player moves
     private bool _isMovementEnabled = true;
-    private float _moveForce = 10f;
-    private float _maxSpeed = 3f;
+    public float _moveForce = 10f;
+    public float _maxSpeed = 3f; // speed for player with empty basket
+
+    public float _maxAllowedSpeed = 3f;
     private float _dampingFactor = 0.9f;
     public float ToolSpeed = 3;
 
@@ -34,6 +40,16 @@ public class PlayerController : Singleton<PlayerController>
     private void Update()
     {
         if (!_isMovementEnabled) return;
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        // Update last facing direction
+        if (moveX != 0)
+            LastFacingDirection = moveX > 0 ? 1 : -1;
+
+        if (moveY != 0)
+            LastFacingDirection = moveY > 0 ? 0 : 2;
+
         Move();
         HandlePickup();
     }
