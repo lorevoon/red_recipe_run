@@ -157,5 +157,6 @@ public enum EUpgradeType
 {
     MovementSpeed,
     InventorySpace,
-    MaxHearts
+    MaxHearts,
+    LanternPower
 }

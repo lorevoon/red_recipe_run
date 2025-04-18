@@ -1,0 +1,106 @@
+/* Game Over Screen Styles */
+.game-over-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-over-container.visible {
+    opacity: 1;
+}
+
+.game-over-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('project://database/Assets/Sprites/placeholder_ending.jpg');
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+.game-over-content {
+    width: 800px;
+    height: 600px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.game-over-title {
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 120px;
+    color: #d4f5ff; /* Light blue color */
+    -unity-text-align: middle-center;
+    margin-bottom: 60px;
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: #1a2e32; /* Dark teal for outline */
+}
+
+.score-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.score-label {
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 60px;
+    color: #b3e6ff; /* Slightly darker blue */
+    -unity-text-align: middle-center;
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: #1a2e32;
+}
+
+.score-value {
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 80px;
+    color: #ffcc00; /* Gold color for score */
+    -unity-text-align: middle-center;
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: #1a2e32;
+}
+
+.buttons-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.game-over-button {
+    width: 300px;
+    height: 80px;
+    background-color: #1a2e32; /* Dark teal background */
+    border-width: 3px;
+    border-color: #4d7a7a; /* Medium teal border */
+    border-radius: 10px;
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 40px;
+    color: #d4f5ff; /* Light blue text */
+    -unity-text-align: middle-center;
+    margin: 10px;
+    transition: all 0.2s;
+}
+
+.game-over-button:hover {
+    background-color: #2b4c52; /* Slightly lighter when hovering */
+    border-color: #6b9999; /* Lighter border on hover */
+    scale: 1.05;
+}
+
+.game-over-button:active {
+    background-color: #13232a; /* Darker when pressed */
+    scale: 0.95;
+} 

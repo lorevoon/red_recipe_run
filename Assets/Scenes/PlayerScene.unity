@@ -1063,6 +1063,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4009991570993072164, guid: 1cce0154a18a541e6a3a03fa2da04dae, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009991570993072164, guid: 1cce0154a18a541e6a3a03fa2da04dae, type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009991570993072164, guid: 1cce0154a18a541e6a3a03fa2da04dae, type: 3}
+      propertyPath: near clip plane
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009991570993072164, guid: 1cce0154a18a541e6a3a03fa2da04dae, type: 3}
+      propertyPath: orthographic size
+      value: 4.1996446
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006544058989410825, guid: 1cce0154a18a541e6a3a03fa2da04dae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.2969446
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006544058989410825, guid: 1cce0154a18a541e6a3a03fa2da04dae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6495664
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006544058989410825, guid: 1cce0154a18a541e6a3a03fa2da04dae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07924557
+      objectReference: {fileID: 0}
     - target: {fileID: 6154622806631414785, guid: 1cce0154a18a541e6a3a03fa2da04dae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2969446
@@ -1265,9 +1293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443d311605f1051458bd2da626570afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 1735181477}
-  inventoryPanelPrefab: {fileID: 6604778185853755550, guid: fba955b4af3f7d34786533083f81acd3, type: 3}
-  inventoryItemPrefab: {fileID: 1628803689887874405, guid: c82ef685ff80a48459c0b282bbcc3d03, type: 3}
 --- !u!4 &1599268059
 Transform:
   m_ObjectHideFlags: 0
@@ -1397,6 +1422,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3352910478514541682, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: healthHearts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352910478514541682, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: 'healthHearts.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1858183438}
     - target: {fileID: 6918062575315230302, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1727,6 +1760,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4d12a5a9b5044247b58ede909361946, type: 3}
+--- !u!1 &1858183438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4992481537570967070, guid: 398b48eac9f9a415c9abafe691f17972, type: 3}
+  m_PrefabInstance: {fileID: 1586446106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1955640723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1813,6 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d420a8a1102a934ca858723a4e789d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManagerPrefab: {fileID: 203406550759725987, guid: 109fb1cea53b20345b14d3123e10fa19, type: 3}
 --- !u!4 &1957651276
 Transform:
   m_ObjectHideFlags: 0
