@@ -56,7 +56,7 @@ public partial class MapGenerator : MonoBehaviour
         GeneratePlayerSpawn();
         GenerateGrandmasHouse();
 
-        CreateNodes();
+        // CreateNodes();
     }
 
     private void InitializeGrid()

@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 4c71fa0f21cedbb4f9135d2ecc49cba2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2227756394152185495}
   m_Layer: 0
   m_Name: Lantern
-  m_TagString: Untagged
+  m_TagString: Lantern
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,6 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _light2D: {fileID: 4965503916550675609}
+  _turnOnSound: {fileID: 8300000, guid: 7a1ae710a3f604ab1a12d6672913cbc2, type: 3}
+  _turnOffSound: {fileID: 8300000, guid: 509d9b9cdcf164faeb8a4e885a609602, type: 3}
+  _isLightOn: 0
 --- !u!1 &3548205444289465946
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1962968398604910369}
   - component: {fileID: 6074581517925506373}
   - component: {fileID: -2406388539839755160}
+  - component: {fileID: 6216477709810978300}
   m_Layer: 2
   m_Name: wolf
   m_TagString: Wolf
@@ -30,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 1681092823427532816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.3, y: -2.5622318, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: -8.5, y: -2.5, z: 0}
+  m_LocalScale: {x: 3.5, y: 4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -570064347295900876, guid: 14d2a5408e929174aab8b7cd6b615d3b, type: 3}
+  m_Sprite: {fileID: 5310287267623455123, guid: c7dc91dab7683e84586ccd5425610a3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,7 +157,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.3125}
+    oldSize: {x: 0.36, y: 0.24}
     newSize: {x: 0.16, y: 0.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -181,6 +182,9 @@ MonoBehaviour:
   speed: 1
   pause: 3
   viewRadius: 3
+  howl: {fileID: 8300000, guid: fcb321fb22165a740b0ddc1a8713a9bb, type: 3}
+  close: {fileID: 8300000, guid: e9e8998a18a63c3409b4858db1541a9e, type: 3}
+  bite: {fileID: 8300000, guid: 677985db3bafc0040ab9cf395898b266, type: 3}
 --- !u!82 &-2406388539839755160
 AudioSource:
   m_ObjectHideFlags: 0
@@ -191,8 +195,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b04469202a33a422389f60fe6fbb780b, type: 3}
-  m_Resource: {fileID: 8300000, guid: b04469202a33a422389f60fe6fbb780b, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -278,3 +282,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &6216477709810978300
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681092823427532816}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49c6e63be8705c74799a12d136e9908d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
