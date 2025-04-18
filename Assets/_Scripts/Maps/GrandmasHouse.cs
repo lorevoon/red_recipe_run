@@ -33,6 +33,7 @@ public class GrandmasHouse : MonoBehaviour
         {
             _isPlayerInRange = true;
             CameraManager.Instance.SwapCamera(CameraManager.Instance.AllVirtualCameras[(int)ECamera.GrandmasHouse]);
+            UIToolkitManager.Instance.ToggleUpgrades();
         }
         else if (other.CompareTag("Ingredient"))
         {
@@ -48,6 +49,7 @@ public class GrandmasHouse : MonoBehaviour
     {
         _isPlayerInRange = false;
         CameraManager.Instance.SwapCamera(CameraManager.Instance.AllVirtualCameras[(int)ECamera.RecipeRun]);
+        UIToolkitManager.Instance.ToggleUpgrades();
     }
 
     private IEnumerator PullIngredientToDoorRoutine(GameObject ingredient)
@@ -82,6 +84,7 @@ public class GrandmasHouse : MonoBehaviour
     {
         _playerController.EnableMovement(false);
         _recipeManager.ToggleRecipe();
+        
         _playerController.EnableMovement();
         yield return null;
     }

@@ -791,6 +791,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lantern
       objectReference: {fileID: 0}
+    - target: {fileID: 4965503916550675609, guid: 8d792bdf5f0df4d68bccc8c311aa3695, type: 3}
+      propertyPath: m_ShadowsEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965503916550675609, guid: 8d792bdf5f0df4d68bccc8c311aa3695, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.497
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965503916550675609, guid: 8d792bdf5f0df4d68bccc8c311aa3695, type: 3}
+      propertyPath: m_LightVolumeEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965503916550675609, guid: 8d792bdf5f0df4d68bccc8c311aa3695, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965503916550675609, guid: 8d792bdf5f0df4d68bccc8c311aa3695, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 7.42
+      objectReference: {fileID: 0}
     - target: {fileID: 5520789115353498724, guid: 8d792bdf5f0df4d68bccc8c311aa3695, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.37

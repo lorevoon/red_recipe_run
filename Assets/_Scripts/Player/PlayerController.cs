@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic; // Add this line to fix the error
 using System.Collections;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerController : Singleton<PlayerController>
 {
