@@ -129,11 +129,13 @@ public class TimeController : Singleton<TimeController>
         {
             if (_nightAudioSource != null) _nightAudioSource.Stop();
             _dayAudioSource.Play();
+            AudioManager.Instance.SwitchToDay();
         }
         else if (_nightAudioSource != null && (timeOfDay >= 18f || timeOfDay < 6f) && !_nightAudioSource.isPlaying)
         {
             if (_dayAudioSource != null) _dayAudioSource.Stop();
             _nightAudioSource.Play();
+            AudioManager.Instance.SwitchToNight();
         }
     }
 
