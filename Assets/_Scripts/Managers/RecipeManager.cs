@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 using Random = UnityEngine.Random;
 
@@ -17,6 +18,9 @@ public class RecipeManager : Singleton<RecipeManager>
     public Dictionary<EIngredient, int> unspawnedIngredientsInRecipe;
     private int ingredientsLeft;
     private bool isRecipeOpen = false;
+    public int difficulty = 0;
+ 
+
 
     void Start()
     {
@@ -25,14 +29,48 @@ public class RecipeManager : Singleton<RecipeManager>
 
     public void GenerateNewRecipe()
     {
-        int randomIndex = Random.Range(0, RecipeList.AllRecipes.Count);
-        currentRecipe = RecipeList.AllRecipes[randomIndex];
-        unspawnedIngredientsInRecipe = currentRecipe.Ingredients;
-        foreach (var pair in unspawnedIngredientsInRecipe)
+        List<SRecipe> possibleRecipes = new List<SRecipe>();
+        
+        switch(difficulty)
         {
-            ingredientsLeft += pair.Value;
+            case 0: // 8-11 ingredients
+                possibleRecipes = RecipeList.AllRecipes
+                    .Where(recipe => GetTotalIngredients(recipe) >= 8 && GetTotalIngredients(recipe) <= 11)
+                    .ToList();
+                break;
+                
+            case 1: // Exactly 12 ingredients
+                possibleRecipes = RecipeList.AllRecipes
+                    .Where(recipe => GetTotalIngredients(recipe) == 12)
+                    .ToList();
+                break;
+                
+            case 2: // 13-15 ingredients
+                possibleRecipes = RecipeList.AllRecipes
+                    .Where(recipe => GetTotalIngredients(recipe) >= 13 && GetTotalIngredients(recipe) <= 15)
+                    .ToList();
+                break;
         }
+
+        // Fallback to all recipes if none match difficulty
+        if(!possibleRecipes.Any())
+        {
+            Debug.LogWarning($"No recipes found for difficulty {difficulty}. Using all recipes.");
+            possibleRecipes = RecipeList.AllRecipes;
+        }
+
+        // Select random recipe
+        int randomIndex = Random.Range(0, possibleRecipes.Count);
+        currentRecipe = possibleRecipes[randomIndex];
+    
     }
+
+
+    private int GetTotalIngredients(SRecipe recipe)
+    {
+        return recipe.Ingredients.Sum(pair => pair.Value);
+    }
+
 
     private void Update()
     {
@@ -41,6 +79,16 @@ public class RecipeManager : Singleton<RecipeManager>
             isRecipeOpen = !isRecipeOpen;
             ToggleRecipe(isRecipeOpen);
         }
+
+        // if (InventoryManager.Instance.CheckRecipeComplete())
+        // {
+        //     if (difficulty < 2){
+        //         difficulty += 1;
+        //     }
+        //     GenerateNewRecipe();
+        //     UpdateRecipeUI();
+        // }
+
     }
 
     public void ToggleRecipe(bool isOpen = true)
@@ -61,6 +109,11 @@ public class RecipeManager : Singleton<RecipeManager>
         }
         var entry = Instantiate(recipeEntryPrefab, scrollViewContent);
         entry.GetComponent<RecipeUI>().Initialize(currentRecipe);
+        if (scrollViewContent.TryGetComponent<RectTransform>(out var rectTransform))
+        {
+        LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
+        }
+
     }
 
     public SRecipe GetCurrentRecipe()

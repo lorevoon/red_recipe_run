@@ -22,10 +22,11 @@ public class RecipeUI : MonoBehaviour
             Destroy(child.gameObject);
 
         // Create ingredient badges
-        foreach (var ingredient in recipe.Ingredients)
+        foreach (var pair in recipe.Ingredients)
         {
             var badge = Instantiate(ingredientBadgePrefab, ingredientsContainer);
-            badge.GetComponent<IngredientBadgeUI>().Initialize(ingredient.Key);
+            badge.GetComponent<IngredientBadgeUI>().Initialize(pair.Key, pair.Value);
         }
+
     }
 }
