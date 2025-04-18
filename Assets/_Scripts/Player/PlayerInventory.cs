@@ -15,12 +15,12 @@ public class PlayerInventory : MonoBehaviour
     private PlayerController _playerController;
     private PlayerAnimation _playerAnimator;
     private float _pickupRadius = 2f; // Radius for picking up ingredients
-    private int _max_ingredients = 25;
-    private int _curr_ingredients;
+    private int _maxIngredients = 5; // Base inventory size, will be modified by upgrades
+    private int _currIngredients;
 
     private float _slowing_factor = 0.9f; // each 
     private float _quickening_factor = 1.1f;
-
+    
     private void Start()
     {
         _playerController = PlayerController.Instance;
@@ -38,18 +38,49 @@ public class PlayerInventory : MonoBehaviour
             _audioSource.spatialBlend = 0f; // 2D sound
         }
         
-        _curr_ingredients = 0;
+        _currIngredients = 0;
+    }
+    
+    private void Update()
+    {
+        // Update max ingredients based on upgrades each frame
+        UpdateMaxIngredientsFromUpgrades();
+    }
+    
+    private void UpdateMaxIngredientsFromUpgrades()
+    {
+        if (UpgradeManager.Instance != null)
+        {
+            _maxIngredients = UpgradeManager.Instance.GetCurrentInventorySize();
+        }
     }
 
     public void AddItem(GameObject ingredient)
     {
         InventoryList.Add(ingredient);
+        _currIngredients++;
+        
+        // Update UI if the toolkit manager exists
+        if (UIToolkitManager.Instance != null)
+        {
+            UIToolkitManager.Instance.RefreshInventoryUI();
+        }
     }
 
     public GameObject RemoveItem()
     {
+        if (InventoryList.Count == 0) return null;
+        
         GameObject ingredient = InventoryList[^1];
         InventoryList.RemoveAt(InventoryList.Count - 1);
+        _currIngredients--;
+        
+        // Update UI if the toolkit manager exists
+        if (UIToolkitManager.Instance != null)
+        {
+            UIToolkitManager.Instance.RefreshInventoryUI();
+        }
+        
         return ingredient;
     }
 
@@ -61,6 +92,13 @@ public class PlayerInventory : MonoBehaviour
     
     public void TryPickUpIngredient()
     {
+        // Don't try to pick up if inventory is full
+        if (_currIngredients >= _maxIngredients)
+        {
+            Debug.Log("Inventory full, can't pick up more items");
+            return;
+        }
+            
         Collider2D[] nearbyIngredients = Physics2D.OverlapCircleAll(transform.position, _pickupRadius);
         GameObject closestIngredient = null;
         float closestDistance = Mathf.Infinity;
@@ -79,10 +117,10 @@ public class PlayerInventory : MonoBehaviour
         }
 
 
-        if (closestIngredient != null && closestIngredient.activeSelf && _curr_ingredients < _max_ingredients)
+        if (closestIngredient != null && closestIngredient.activeSelf && _currIngredients < _maxIngredients)
         {
             PickUpIngredient(closestIngredient); // pick up ingredient
-            _curr_ingredients += 1;
+            _currIngredients += 1;
         }
     }
 
@@ -175,6 +213,7 @@ public class PlayerInventory : MonoBehaviour
         if (InventoryList.Count <= 0) return;
 
         GameObject mostRecent = RemoveItem();
+        if (mostRecent == null) return;
 
         // 🔊 Play drop sound
         if (_audioSource != null && dropSound != null)
@@ -286,15 +325,41 @@ public class PlayerInventory : MonoBehaviour
         mostRecent.transform.position = dropPosition;
         mostRecent.transform.localScale = Vector3.one;
 
+        mostRecent.SetActive(true);
         mostRecent.GetComponent<Ingredient>().OnDrop();
 
         // Remove the ingredient from the InventoryManager
         Ingredient ingredientComponent = mostRecent.GetComponent<Ingredient>();
+        
         if (ingredientComponent != null)
         {
+            ingredientComponent.OnDrop();
+            
+            // Remove the ingredient from the InventoryManager
             InventoryManager.Instance.RemoveItem(ingredientComponent.IngredientType);
         }
 
+        // Play throw sound effect
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayThrow();
+        }
+        
+        // Force refresh the UI
+        if (UIToolkitManager.Instance != null)
+        {
+            UIToolkitManager.Instance.RefreshInventoryUI();
+        }
+    }
+    
+    public int GetMaxIngredients()
+    {
+        return _maxIngredients;
+    }
+    
+    public int GetCurrentIngredients()
+    {
+        return _currIngredients;
     }
 
     private IEnumerator MoveToHand(GameObject ingredient, Transform handTransform)
