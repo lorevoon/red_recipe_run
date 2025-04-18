@@ -279,7 +279,7 @@ public partial class MapGenerator : MonoBehaviour
         }
 
         Vector3Int startPos = startableWalls[Random.Range(0, startableWalls.Count)];
-        _mapManager.BushTypeGrid[startPos.x, startPos.y] = EGrid.Empty;
+        _mapManager.BushTypeGrid[startPos.x, startPos.y] = EGrid.Unreachable;
         _bushTilemap.SetTile(startPos, null);
         
         _mapManager.PlayerSpawnPoint = new Vector3(startPos.x + 0.5f, startPos.y + 0.5f);

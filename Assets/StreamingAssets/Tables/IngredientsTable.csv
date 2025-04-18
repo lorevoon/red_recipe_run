@@ -1,2 +1,21 @@
-﻿ID,name,genLevel,avgVeinSize,description,prefabPath
-0,Apple,1,3,It's a red apple.,Apple
+﻿ID,name,prefabPath
+0,Apple,Apple
+1,Avocado,Avocado
+2,Bread,Bread
+3,Bug,Bug
+4,Cherry,Cherry
+5,DragonFruit,DragonFruit
+6,Eggplant,Eggplant
+7,Honey,Honey
+8,Jam,Jam
+9,Jerky,Jerky
+10,Lemon,Lemon
+11,Marmalade,Marmalade
+12,Honeydew,HoneyDew
+13,Onion,Onion
+14,Peach,Peach
+15,PepperGreen,Pepper_Green
+16,PepperRed, Pepper_Red
+17,Pineapple,Pineapple
+18,Strawberry,Strawberry
+19,Tomato,Tomato

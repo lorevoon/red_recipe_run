@@ -130,7 +130,7 @@ public enum EIngredient
     Lemon,
     Honey,
     Jerky,
-    MelonHoneydew,
+    Honeydew,
     Cherry,
     DragonFruit,
     Avocado,

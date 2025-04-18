@@ -61,7 +61,20 @@ public class BreakableTile : MonoBehaviour
     private void SpawnIngredient()
     {
         if (_mapManager.BushTypeGrid[_position.x, _position.y] != EGrid.Item) return;
-        IngredientManager.Instance.SpawnIngredients(_position);
+        
+        // 0.2 chance of spawning random, 0.8 chance of spawning in recipe
+        EIngredient ingredient;
+        if (Random.Range(0f, 1f) < 0.2f)
+        {
+            ingredient = RecipeManager.Instance.GetRandomIngredientInRecipe();
+        }
+        else
+        {
+            Array values = Enum.GetValues(typeof(EIngredient));
+            ingredient = (EIngredient)values.GetValue(Random.Range(0, values.Length-1));
+        }
+        
+        IngredientManager.Instance.SpawnIngredients(_position, ingredient);
     }
     
     private void PlayAudio(AudioClip audioClip, float pitchRange = 0f, float volume = 1f)

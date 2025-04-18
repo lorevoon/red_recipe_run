@@ -80,7 +80,9 @@ public class GrandmasHouse : MonoBehaviour
 
     private IEnumerator CelebrateCompletedRecipeRoutine()
     {
-        
+        _playerController.EnableMovement(false);
+        _recipeManager.ToggleRecipe();
+        _playerController.EnableMovement();
         yield return null;
     }
 }
