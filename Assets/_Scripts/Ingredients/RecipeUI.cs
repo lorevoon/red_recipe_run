@@ -11,7 +11,7 @@ public class RecipeUI : MonoBehaviour
     [SerializeField] private Transform ingredientsContainer;
     [SerializeField] private GameObject ingredientBadgePrefab;
 
-    public void Initialize(RecipeList.Recipe recipe)
+    public void Initialize(SRecipe recipe)
     {
         // Set basic info
         recipeNameText.text = recipe.RecipeName;
@@ -25,7 +25,7 @@ public class RecipeUI : MonoBehaviour
         foreach (var ingredient in recipe.Ingredients)
         {
             var badge = Instantiate(ingredientBadgePrefab, ingredientsContainer);
-            badge.GetComponent<IngredientBadgeUI>().Initialize(ingredient);
+            badge.GetComponent<IngredientBadgeUI>().Initialize(ingredient.Key);
         }
     }
 }

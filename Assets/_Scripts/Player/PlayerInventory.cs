@@ -49,8 +49,9 @@ public class PlayerInventory : MonoBehaviour
         }
 
 
-        if (closestIngredient != null && _curr_ingredients < _max_ingredients)
+        if (closestIngredient != null && closestIngredient.activeSelf && _curr_ingredients < _max_ingredients)
         {
+            Debug.Log(closestIngredient);
             PickUpIngredient(closestIngredient); // pick up ingredient
             _curr_ingredients += 1;
         }

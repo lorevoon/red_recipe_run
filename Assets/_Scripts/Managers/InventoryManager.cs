@@ -3,10 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : Singleton<InventoryManager>
 {
-    public static InventoryManager Instance { get; private set; }
-
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private Transform inventoryContent;
     [SerializeField] private Transform recipeContent;
@@ -18,18 +16,6 @@ public class InventoryManager : MonoBehaviour
 
     // Reference to the IngredientItem prefab for dropping
     [SerializeField] private GameObject ingredientPrefab;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public void Initialize(GameObject panel, Transform invContent, Transform recContent, GameObject prefab)
     {
@@ -56,8 +42,8 @@ public class InventoryManager : MonoBehaviour
         currentRecipe.Clear();
         
         int randomIndex = Random.Range(0, RecipeList.AllRecipes.Count);
-        RecipeList.Recipe selectedRecipe = RecipeList.AllRecipes[randomIndex];
-        currentRecipe = new List<EIngredient>(selectedRecipe.Ingredients);
+        SRecipe selectedRecipe = RecipeList.AllRecipes[randomIndex];
+        currentRecipe = new List<EIngredient>(selectedRecipe.Ingredients.Keys);
 
         Debug.Log($"InventoryManager: Generated new recipe with {currentRecipe.Count} ingredients");
         foreach (var ingredient in currentRecipe)
@@ -251,5 +237,16 @@ public class InventoryManager : MonoBehaviour
             UpdateInventoryUI();
             UpdateRecipeUI();
         }
+    }
+
+    public int CheckIngredientCount(EIngredient ingredient)
+    {
+        
+        return 0;
+    }
+
+    public void RemoveIngredient(EIngredient ingredient, int count)
+    {
+        
     }
 } 

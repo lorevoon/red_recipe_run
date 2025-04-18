@@ -11,6 +11,7 @@ public class PlayerController : Singleton<PlayerController>
     public GameObject Basket;
     
     // private float _playerSpeed = 10; // speed player moves
+    private bool _isMovementEnabled = true;
     private float _moveForce = 10f;
     private float _maxSpeed = 3f;
     private float _dampingFactor = 0.9f;
@@ -30,7 +31,9 @@ public class PlayerController : Singleton<PlayerController>
             Tool = GameObject.FindWithTag("Tool");
     }
   
-    private void Update() {
+    private void Update()
+    {
+        if (!_isMovementEnabled) return;
         Move();
         HandlePickup();
     }
@@ -77,11 +80,11 @@ public class PlayerController : Singleton<PlayerController>
             _rigidbody.linearVelocity = Vector2.zero;
     }
     
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bush"))
-            _bounceCooldown = _bounceSuppressTime;
-    }
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Bush"))
+    //         ResetBounce();
+    // }
 
     public void ResetBounce()
     {
@@ -97,5 +100,10 @@ public class PlayerController : Singleton<PlayerController>
         float dotProduct = Vector2.Dot(playerToBlock, _lastInputDirection);
 
         return dotProduct > 0.7f;
+    }
+    
+    public void EnableMovement(bool isEnable = true)
+    {
+        _isMovementEnabled = isEnable;
     }
 }

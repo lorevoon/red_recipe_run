@@ -21,11 +21,11 @@ public partial class MapGenerator : MonoBehaviour
     
     // random walker algorithm
     private List<WalkerObject> _walkers;
-    private int _mapWidth = 40;
+    private int _mapWidth = 100;
     private int _mapHeight = 100;
     private int _maxWalkers = 10;
     private int _tileCount;
-    private float _bushFillPercentage = 0.4f;
+    private float _bushFillPercentage = 0.3f;
     private float _chanceToChange = 0.5f;
 
     private int _minYCoord = int.MaxValue;

@@ -100,9 +100,9 @@ using UnityEngine;
     
 public enum ECamera
 {
-    MainMenu,
     RecipeRun,
-    GrandmasHouse
+    GrandmasHouse,
+    MainMenu
 }
 
 public enum EGrid

@@ -1041,7 +1041,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -2.2849586}
+  m_Offset: {x: 0.63189024, y: -2.01582}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1051,7 +1051,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.9170723, y: 5.569917}
+  m_Size: {x: 3.6532917, y: 5.03164}
   m_EdgeRadius: 0
 --- !u!114 &8545368937323947641
 MonoBehaviour:
@@ -4035,6 +4035,7 @@ GameObject:
   - component: {fileID: 4745437531798725186}
   - component: {fileID: 6304170642968969665}
   - component: {fileID: 1850212841101823683}
+  - component: {fileID: 1873130559133472011}
   m_Layer: 0
   m_Name: Grandmas House
   m_TagString: Bush
@@ -4105,7 +4106,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6125751831848154478, guid: 6ed1244ba82db4d79b8d4d37daf0045f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4190,3 +4191,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.4645715, y: 7.063773}
   m_EdgeRadius: 0
+--- !u!114 &1873130559133472011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196046824681383860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b92c0f3809f46a09fde0d0aa2de5260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

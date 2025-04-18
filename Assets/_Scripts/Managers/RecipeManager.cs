@@ -2,9 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class RecipeManager : MonoBehaviour
+public class RecipeManager : Singleton<RecipeManager>
 {
-    public static RecipeManager Instance { get; private set; }
 
     [Header("UI Configuration")]
     [SerializeField] private GameObject recipeEntryPrefab;
@@ -12,21 +11,8 @@ public class RecipeManager : MonoBehaviour
     [SerializeField] private Transform scrollViewContent;
 
 
-    private RecipeList.Recipe currentRecipe;
+    private SRecipe currentRecipe;
     private bool isRecipeOpen = false;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     void Start()
     {
@@ -43,29 +29,20 @@ public class RecipeManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Debug.Log("RecipeManager: L key detected");
-            ToggleRecipe();
+            isRecipeOpen = !isRecipeOpen;
+            ToggleRecipe(isRecipeOpen);
         }
     }
 
-    private void ToggleRecipe()
+    public void ToggleRecipe(bool isOpen = true)
     {
-        if (RecipePanel == null)
-        {
-            Debug.LogError("RecipeManager: RecipePanel is null when trying to toggle!");
-            return;
-        }
+        RecipePanel.SetActive(isOpen);
 
-        isRecipeOpen = !isRecipeOpen;
-        Debug.Log($"RecipeManager: Setting panel {(isRecipeOpen ? "ACTIVE" : "INACTIVE")}");
-        RecipePanel.SetActive(isRecipeOpen);
-
-        if (isRecipeOpen)
+        if (isOpen)
         {
             UpdateRecipeUI();
         }
     }
-
 
     private void UpdateRecipeUI()
     {
@@ -77,10 +54,21 @@ public class RecipeManager : MonoBehaviour
         entry.GetComponent<RecipeUI>().Initialize(currentRecipe);
     }
 
-    public RecipeList.Recipe GetCurrentRecipe()
+    public SRecipe GetCurrentRecipe()
     {
         return currentRecipe;
     }
 
+    public bool IsInRecipe(EIngredient ingredient)
+    {
+        return currentRecipe.Ingredients.TryGetValue(ingredient, out int count) && count > 0;
+    }
+
+    public bool SubtractFromRecipe(EIngredient ingredient)
+    {
+        if (!(currentRecipe.Ingredients.TryGetValue(ingredient, out int count) && count > 0)) return false;
+        currentRecipe.Ingredients[ingredient] = count - 1;
+        return true;
+    }
 }
 

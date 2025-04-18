@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CameraManager : Singleton<CameraManager>
 {
-    public CinemachineVirtualCamera[] AllVirtualCameras; // serialized
+    [NamedArray(typeof(ECamera))] public CinemachineVirtualCamera[] AllVirtualCameras; // serialized
     public Camera InGameMainCamera;
     public Camera UICamera;
     
@@ -14,35 +14,41 @@ public class CameraManager : Singleton<CameraManager>
     private CinemachineFramingTransposer _framingTransposer;
     
     private bool _isFramingTransposed = false;
-    
-    void Start()
+
+    private void Start()
     {
-        for (int i = 0; i < AllVirtualCameras.Length; i++)
-        {
-            if (AllVirtualCameras[i].enabled)
-            {
-                CurrentCamera = AllVirtualCameras[i];
-                _framingTransposer = CurrentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-                CurrentCamera.Follow = PlayerController.Instance.gameObject.transform;
-                break;
-            }
-        }
-    
-        // _normalYPanAmount = _framingTransposer.m_YDamping;
-        if (_framingTransposer == null) return;
-        _isFramingTransposed = true;
+        CurrentCamera = AllVirtualCameras[(int)ECamera.GrandmasHouse];
     }
+
+    // void Start()
+    // {
+    //     for (int i = 0; i < AllVirtualCameras.Length; i++)
+    //     {
+    //         if (AllVirtualCameras[i].enabled)
+    //         {
+    //             CurrentCamera = AllVirtualCameras[i];
+    //             _framingTransposer = CurrentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+    //             // CurrentCamera.Follow = PlayerController.Instance.gameObject.transform;
+    //             break;
+    //         }
+    //     }
+    //
+    //     // _normalYPanAmount = _framingTransposer.m_YDamping;
+    //     if (_framingTransposer == null) return;
+    //     _isFramingTransposed = true;
+    // }
     
     // swaps from camera1 (initial) to camera2 (final)
     public void SwapCamera(CinemachineVirtualCamera camera2)
     {
         CinemachineVirtualCamera camera1 = CurrentCamera;
+        if (camera1 == camera2) return;
         if (!isActiveAndEnabled) return;
         
         // turn camera1 off, turn camera2 on
         if (camera1) camera1.enabled = false;
         camera2.enabled = true;
-        StartCoroutine(AssignCollider(Array.IndexOf(AllVirtualCameras, camera2)));
+        // StartCoroutine(AssignCollider(Array.IndexOf(AllVirtualCameras, camera2)));
         CurrentCamera = camera2;
         
         // _framingTransposer = CurrentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
@@ -62,7 +68,7 @@ public class CameraManager : Singleton<CameraManager>
             if (collider)
                 AllVirtualCameras[cameraIndex].GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = collider;
         }
-        if (cameraIndex is (int)ECamera.RecipeRun or (int)ECamera.GrandmasHouse)
+        if (cameraIndex is (int)ECamera.RecipeRun)
             CurrentCamera.Follow = PlayerController.Instance.gameObject.transform;
     }
 }
