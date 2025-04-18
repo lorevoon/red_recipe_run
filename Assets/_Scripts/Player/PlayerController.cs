@@ -10,7 +10,8 @@ public class PlayerController : Singleton<PlayerController>
     public GameObject Tool;
     public GameObject Basket;
     public Transform left_hand_pos;
-      public Transform right_hand_pos;
+    public Transform right_hand_pos;
+    public Transform head;
     public int LastFacingDirection { get; private set; } = 1;
     
     // private float _playerSpeed = 10; // speed player moves
@@ -37,10 +38,14 @@ public class PlayerController : Singleton<PlayerController>
   
     private void Update() {
         float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
         // Update last facing direction
         if (moveX != 0)
             LastFacingDirection = moveX > 0 ? 1 : -1;
+
+        if (moveY != 0)
+            LastFacingDirection = moveY > 0 ? 0 : 2;
 
         Move();
         HandlePickup();

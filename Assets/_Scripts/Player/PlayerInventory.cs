@@ -129,16 +129,36 @@ public class PlayerInventory : MonoBehaviour
 
         float left_distance = Vector2.Distance(ingredient.transform.position, _playerController.left_hand_pos.position);
         float right_distance = Vector2.Distance(ingredient.transform.position, _playerController.right_hand_pos.position);
+        //float distToBasket = Vector2.Distance(ingredient.transform.position, _playerController.Basket.transform.position);
+        int facingDirection = _playerController.LastFacingDirection;
 
-        if (left_distance < right_distance) 
+        if (facingDirection == 0 && (_playerController.Basket.transform.position.y < ingredient.transform.position.y))
         {
-            StartCoroutine(MoveToHand(ingredient, _playerController.left_hand_pos));
+            StartCoroutine(MoveToHand(ingredient, _playerController.head));
         }
-        else {
-            StartCoroutine(MoveToHand(ingredient, _playerController.right_hand_pos));
+        else { 
+            if (left_distance < right_distance) 
+            {
+                if (ingredient.transform.position.y > _playerController.Basket.transform.position.y) {
+                    StartCoroutine(MoveToHand(ingredient, _playerController.head));
+                }
+                else {
+                    StartCoroutine(MoveToHand(ingredient, _playerController.left_hand_pos));
+                }
+            }
+            else {
+
+                if (ingredient.transform.position.y > _playerController.Basket.transform.position.y) {
+                    StartCoroutine(MoveToHand(ingredient, _playerController.head));
+                }
+                else {
+                    StartCoroutine(MoveToHand(ingredient, _playerController.right_hand_pos));
+                }
+                
+            }
         }
         
-
+        
         // Add the ingredient to the InventoryManager
         Ingredient ingredientComponent = ingredient.GetComponent<Ingredient>();
         if (ingredientComponent != null)
@@ -180,11 +200,27 @@ public class PlayerInventory : MonoBehaviour
 
        // float offset = _playerController.LastFacingDirection == 1 ? 0f : 1.1f; // X-axis offset only
 
+        Vector3 dropOrigin = _playerController.right_hand_pos.position;
         // drop away from player
-        Vector3 dropOrigin = facingDirection == 1 ? _playerController.right_hand_pos.position : _playerController.right_hand_pos.position ;
-        float dropOffset = 0.75f;
+        switch(facingDirection) {
+            case 1: 
+                dropOrigin = _playerController.right_hand_pos.position;
+                break;
+            case 0:
+                dropOrigin = _playerController.head.position;
+                break;
+            case -1:
+                dropOrigin = _playerController.left_hand_pos.position;
+                break;
+        }
+        
+        float dropOffset = 0f;
         if (facingDirection == 1) {
             dropOffset -= 0.1f;
+        }
+
+        if (facingDirection == -1) {
+            dropOffset = 0.75f;
         }
         Vector3 dropPosition = dropOrigin + new Vector3(facingDirection * dropOffset, 0f, 0f);
 
@@ -223,8 +259,20 @@ public class PlayerInventory : MonoBehaviour
             mostRecent.transform.position = dropOrigin;
 
             // Apply randomized throw force
-            float horizontalForce = Random.Range(2f, 4f);   // Sideways
-            float verticalForce = Random.Range(-2f, -4f);     // Downward
+            float horizontalForce = Random.Range(1.5f, 3f);   // Sideways
+            float verticalForce = Random.Range(-2f, -3f);     // Downward
+
+            // throwing upwards
+            if (facingDirection == 0) 
+            {
+                verticalForce *= -1;
+                horizontalForce = 0;
+            }
+
+            if (facingDirection == 2) 
+            {
+                horizontalForce = 0;
+            }
 
             Vector2 throwDir = new Vector2(facingDirection * horizontalForce, verticalForce);
             rb.AddForce(throwDir, ForceMode2D.Impulse);
