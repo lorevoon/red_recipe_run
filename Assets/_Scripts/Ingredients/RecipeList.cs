@@ -87,7 +87,7 @@ public static class RecipeList
         },
 
         new SRecipe {
-            RecipeNumber = 13,
+            RecipeNumber = 10,
             RecipeName = "Peach Muffins",
             Ingredients = new Dictionary<EIngredient, int> { {EIngredient.Peach, 3}, {EIngredient.Bread, 3}, 
                 {EIngredient.Honey, 3} },
@@ -167,7 +167,7 @@ public static class RecipeList
         },
 
          new SRecipe {
-            RecipeNumber = 23,
+            RecipeNumber = 20,
             RecipeName = "Dragon Fruit Salad",
             Ingredients = new Dictionary<EIngredient, int> { {EIngredient.DragonFruit, 3}, 
                 {EIngredient.Honeydew, 3}, {EIngredient.Lemon, 3}, {EIngredient.Honey, 3} },
