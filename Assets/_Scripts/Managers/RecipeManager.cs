@@ -62,7 +62,9 @@ public class RecipeManager : Singleton<RecipeManager>
         // Select random recipe
         int randomIndex = Random.Range(0, possibleRecipes.Count);
         currentRecipe = possibleRecipes[randomIndex];
-    
+        ingredientsLeft = GetTotalIngredients(currentRecipe);
+        unspawnedIngredientsInRecipe = currentRecipe.Ingredients;
+        Debug.Log(currentRecipe.RecipeName);
     }
 
 
@@ -137,6 +139,7 @@ public class RecipeManager : Singleton<RecipeManager>
     {
         if (ingredientsLeft <= 0)
         {
+            Debug.Log("no ingredients left. generating a random one");
             Array values = Enum.GetValues(typeof(EIngredient));
             return (EIngredient)values.GetValue(Random.Range(0, values.Length-1));
         }
@@ -161,6 +164,7 @@ public class RecipeManager : Singleton<RecipeManager>
 
         ingredientsLeft--;
 
+        Debug.Log("generating " + selected);
         return selected;
     }
 }

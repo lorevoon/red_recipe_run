@@ -16,7 +16,7 @@ public class TimeController : Singleton<TimeController>
     [SerializeField] private AudioSource _dayAudioSource;
     [SerializeField] private AudioSource _nightAudioSource;
 
-    private float baseCycleDuration = 120f; // 2 minutes
+    private float baseCycleDuration = 30f; // 2 minutes
     private float cycleIncrement = 30f;
     private int completedCycles = 0;
     private float currentCycleDuration;

@@ -64,16 +64,18 @@ public class BreakableTile : MonoBehaviour
         
         // 0.2 chance of spawning random, 0.8 chance of spawning in recipe
         EIngredient ingredient;
-        if (Random.Range(0f, 1f) < 0.2f)
-        {
-            ingredient = RecipeManager.Instance.GetRandomIngredientInRecipe();
-        }
-        else
-        {
-            Array values = Enum.GetValues(typeof(EIngredient));
-            ingredient = (EIngredient)values.GetValue(Random.Range(0, values.Length-1));
-        }
-        
+        // if (Random.Range(0f, 1f) < 0.2f)
+        // {
+        //     Debug.Log("dropping a random ingredient");
+        //     Array values = Enum.GetValues(typeof(EIngredient));
+        //     ingredient = (EIngredient)values.GetValue(Random.Range(0, values.Length));
+        // }
+        // else
+        // {
+        //     Debug.Log("dropping an ingredient from the recipe");
+        //     ingredient = RecipeManager.Instance.GetRandomIngredientInRecipe();
+        // }
+        ingredient = RecipeManager.Instance.GetRandomIngredientInRecipe();
         IngredientManager.Instance.SpawnIngredients(_position, ingredient);
     }
     

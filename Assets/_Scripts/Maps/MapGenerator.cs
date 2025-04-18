@@ -43,6 +43,7 @@ public partial class MapGenerator : MonoBehaviour
     
     private void GenerateMap()
     {
+        // Debug.Log("why tf isn't this working whatttt");
         InitializeGrid();
         
         GenerateBushes();

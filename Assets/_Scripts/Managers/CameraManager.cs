@@ -8,12 +8,12 @@ public class CameraManager : Singleton<CameraManager>
 {
     [NamedArray(typeof(ECamera))] public CinemachineVirtualCamera[] AllVirtualCameras; // serialized
     public Camera InGameMainCamera;
-    public Camera UICamera;
+    // public Camera UICamera;
     
     public CinemachineVirtualCamera CurrentCamera;
-    private CinemachineFramingTransposer _framingTransposer;
-    
-    private bool _isFramingTransposed = false;
+    // private CinemachineFramingTransposer _framingTransposer;
+    //
+    // private bool _isFramingTransposed = false;
 
     private void Start()
     {
@@ -57,18 +57,18 @@ public class CameraManager : Singleton<CameraManager>
         // if (followObject != null) CurrentCamera.Follow = followObject.transform;
     }
     
-    private IEnumerator AssignCollider(int cameraIndex)
-    {
-        if (cameraIndex == (int)ECamera.MainMenu) yield break;
-        yield return null;
-        var cam = GameObject.Find(cameraIndex.ToString());
-        if (cam)
-        {
-            var collider = cam.GetComponent<CompositeCollider2D>();
-            if (collider)
-                AllVirtualCameras[cameraIndex].GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = collider;
-        }
-        if (cameraIndex is (int)ECamera.RecipeRun)
-            CurrentCamera.Follow = PlayerController.Instance.gameObject.transform;
-    }
+    // private IEnumerator AssignCollider(int cameraIndex)
+    // {
+    //     if (cameraIndex == (int)ECamera.MainMenu) yield break;
+    //     yield return null;
+    //     var cam = GameObject.Find(cameraIndex.ToString());
+    //     if (cam)
+    //     {
+    //         var collider = cam.GetComponent<CompositeCollider2D>();
+    //         if (collider)
+    //             AllVirtualCameras[cameraIndex].GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = collider;
+    //     }
+    //     if (cameraIndex is (int)ECamera.RecipeRun)
+    //         CurrentCamera.Follow = PlayerController.Instance.gameObject.transform;
+    // }
 }
