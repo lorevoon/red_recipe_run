@@ -259,18 +259,20 @@ public class PlayerInventory : MonoBehaviour
             mostRecent.transform.position = dropOrigin;
 
             // Apply randomized throw force
-            float horizontalForce = Random.Range(1.5f, 3f);   // Sideways
-            float verticalForce = Random.Range(-2f, -3f);     // Downward
+            // float horizontalForce = Random.Range(1.5f, 3f);   // Sideways
+            float horizontalForce = 3f;   // Sideways
+            float verticalForce = 0f;     // Downward
 
             // throwing upwards
             if (facingDirection == 0) 
             {
-                verticalForce *= -1;
+                verticalForce = 3f;
                 horizontalForce = 0;
             }
 
             if (facingDirection == 2) 
             {
+                verticalForce = -3f;
                 horizontalForce = 0;
             }
 
