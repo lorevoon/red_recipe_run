@@ -120,7 +120,6 @@ public class PlayerInventory : MonoBehaviour
         if (closestIngredient != null && closestIngredient.activeSelf && _currIngredients < _maxIngredients)
         {
             PickUpIngredient(closestIngredient); // pick up ingredient
-            _currIngredients += 1;
         }
     }
 
