@@ -1,0 +1,208 @@
+/* Common Styles */
+.inventory-container, .upgrades-container {
+    position: absolute;
+    width: 750px;
+    height: 1000px;
+    border-width: 4px;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 12px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.inventory-container {
+    right: 20px;
+    top: 50px;
+    background-color: rgba(41, 68, 41, 0.92); /* Forest green background */
+    border-color: rgb(95, 67, 32); /* Brown wooden border */
+    background-image: url('project://database/Assets/Sprites/placeholder_ending.jpg');
+    -unity-background-image-tint-color: rgba(41, 68, 41, 0.6);
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+.upgrades-container {
+    left: 20px;
+    top: 50px;
+    width: 875px;
+    height: 1125px;
+    background-color: rgb(41, 41, 41);
+    border-color: rgb(214, 175, 93);
+}
+
+.visible {
+    opacity: 1;
+}
+
+.header {
+    height: 150px;
+    padding: 12px;
+    border-bottom-width: 4px;
+}
+
+.inventory-container .header {
+    border-bottom-color: rgb(95, 67, 32); /* Brown wooden border */
+    background-color: rgba(61, 88, 61, 0.8); /* Darker green header */
+}
+
+.upgrades-container .header {
+    border-bottom-color: rgb(214, 175, 93);
+}
+
+.title-text {
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 80px;
+    -unity-text-align: middle-center;
+    margin-top: 15px;
+}
+
+.inventory-container .title-text {
+    color: rgb(211, 232, 185); /* Light moss green */
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgb(51, 33, 17); /* Dark brown outline */
+}
+
+.upgrades-container .title-text {
+    color: rgb(214, 175, 93);
+}
+
+.coins-text {
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 60px;
+    color: rgb(255, 215, 0);
+    -unity-text-align: middle-center;
+    margin-bottom: 12px;
+}
+
+.scroll-view {
+    flex-grow: 1;
+    margin: 12px;
+}
+
+.inventory-container .scroll-view {
+    background-color: rgba(39, 66, 39, 0.7); /* Slightly darker green */
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgba(95, 67, 32, 0.8); /* Brown border */
+}
+
+.content-container {
+    padding: 25px;
+}
+
+/* Inventory Specific Styles */
+.inventory-item {
+    flex-direction: row;
+    height: 125px;
+    border-width: 2px;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 8px;
+    background-color: rgba(85, 125, 85, 0.8); /* Green item background */
+    border-color: rgb(95, 67, 32); /* Brown border */
+}
+
+.inventory-item:hover {
+    background-color: rgba(105, 145, 105, 0.8); /* Lighter green on hover */
+    scale: 1.02;
+    transition: all 0.1s;
+}
+
+.item-icon {
+    width: 100px;
+    height: 100px;
+    margin-right: 25px;
+    background-color: rgba(61, 88, 61, 0.7); /* Darker green for icon background */
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(95, 67, 32); /* Brown border */
+}
+
+.item-details {
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-name {
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 50px;
+    color: rgb(211, 232, 185); /* Light moss green */
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(51, 33, 17); /* Dark brown outline */
+}
+
+.item-count {
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 40px;
+    color: rgb(250, 237, 183); /* Light tan */
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(51, 33, 17); /* Dark brown outline */
+}
+
+/* Upgrades Specific Styles */
+.upgrade-item {
+    flex-direction: column;
+    background-color: rgba(60, 60, 60, 0.8);
+    border-width: 2px;
+    border-color: rgb(214, 175, 93);
+    border-radius: 12px;
+    padding: 37px;
+    margin: 25px 0;
+    min-height: 275px;
+}
+
+.upgrade-name {
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 65px;
+    color: white;
+    -unity-text-align: middle-center;
+}
+
+.upgrade-level {
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 50px;
+    color: rgb(180, 180, 180);
+    -unity-text-align: middle-center;
+    margin: 20px 0;
+}
+
+.upgrade-button {
+    background-color: rgb(214, 175, 93);
+    color: rgb(41, 41, 41);
+    border-width: 0;
+    border-radius: 12px;
+    padding: 20px 37px;
+    margin: 20px 0;
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 45px;
+    -unity-text-align: middle-center;
+}
+
+.upgrade-button:hover {
+    background-color: rgb(240, 200, 110);
+}
+
+.upgrade-button:active {
+    background-color: rgb(180, 150, 80);
+}
+
+.upgrade-cost {
+    -unity-font: resource('Fonts/ThaleahFat_TTF');
+    -unity-font-definition: none;
+    font-size: 45px;
+    color: rgb(255, 215, 0);
+    -unity-text-align: middle-center;
+}
+
+.button-disabled {
+    background-color: rgb(100, 100, 100);
+    color: rgb(180, 180, 180);
+} 

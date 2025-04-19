@@ -100,9 +100,9 @@ using UnityEngine;
     
 public enum ECamera
 {
-    MainMenu,
     RecipeRun,
-    GrandmasHouse
+    GrandmasHouse,
+    MainMenu
 }
 
 public enum EGrid
@@ -130,7 +130,7 @@ public enum EIngredient
     Lemon,
     Honey,
     Jerky,
-    MelonHoneydew,
+    Honeydew,
     Cherry,
     DragonFruit,
     Avocado,
@@ -157,5 +157,6 @@ public enum EUpgradeType
 {
     MovementSpeed,
     InventorySpace,
-    MaxHearts
+    MaxHearts,
+    LanternPower
 }

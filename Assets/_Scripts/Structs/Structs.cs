@@ -21,3 +21,11 @@ public struct SBushLevelData
     public float GapPercentage;
     public string ColorHex;
 }
+
+public struct SRecipe
+{
+    public int RecipeNumber;
+    public string RecipeName;
+    public Dictionary<EIngredient, int> Ingredients;
+    public string Description;
+}

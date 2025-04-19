@@ -1,20 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance { get; private set; }
-
-    [SerializeField] private GameObject inventoryPanel;
-    [SerializeField] private Transform inventoryContent;
-    [SerializeField] private Transform recipeContent;
-    [SerializeField] private GameObject itemPrefab;
     
     private List<EIngredient> inventory = new List<EIngredient>();
-    private List<EIngredient> currentRecipe = new List<EIngredient>();
-    private bool isInventoryOpen = false;
 
     // Reference to the IngredientItem prefab for dropping
     [SerializeField] private GameObject ingredientPrefab;
@@ -24,166 +15,47 @@ public class InventoryManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
+            Debug.Log("InventoryManager: Instance created and set to persist");
         }
         else
         {
             Destroy(gameObject);
+            Debug.Log("InventoryManager: Duplicate instance destroyed");
         }
+    }
+
+    private void Start()
+    {
+        Debug.Log("InventoryManager: Started with empty inventory");
+    }
+
+    // Static method to ensure an instance exists
+    public static InventoryManager EnsureExists()
+    {
+        if (Instance == null)
+        {
+            GameObject go = new GameObject("InventoryManager");
+            Instance = go.AddComponent<InventoryManager>();
+            Debug.Log("InventoryManager: Created new instance");
+        }
+        return Instance;
     }
 
     public void Initialize(GameObject panel, Transform invContent, Transform recContent, GameObject prefab)
     {
         Debug.Log("InventoryManager: Initialize called");
-        inventoryPanel = panel;
-        inventoryContent = invContent;
-        recipeContent = recContent;
-        itemPrefab = prefab;
-        
-        if (inventoryPanel != null)
-        {
-            Debug.Log("InventoryManager: Setting panel inactive initially");
-            inventoryPanel.SetActive(false);
-            GenerateNewRecipe();
-        }
-        else
-        {
-            Debug.LogError("InventoryManager: inventoryPanel is null during initialization!");
-        }
     }
 
-    private void GenerateNewRecipe()
+    public List<EIngredient> GetInventory()
     {
-        currentRecipe.Clear();
-        
-        int randomIndex = Random.Range(0, RecipeList.AllRecipes.Count);
-        RecipeList.Recipe selectedRecipe = RecipeList.AllRecipes[randomIndex];
-        currentRecipe = new List<EIngredient>(selectedRecipe.Ingredients);
-
-        Debug.Log($"InventoryManager: Generated new recipe with {currentRecipe.Count} ingredients");
-        foreach (var ingredient in currentRecipe)
-        {
-            Debug.Log($"Recipe ingredient: {ingredient}");
-        }
-
-        UpdateRecipeUI();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            Debug.Log("InventoryManager: I key detected");
-            ToggleInventory();
-        }
-    }
-
-    private void ToggleInventory()
-    {
-        if (inventoryPanel == null)
-        {
-            Debug.LogError("InventoryManager: inventoryPanel is null when trying to toggle!");
-            return;
-        }
-
-        isInventoryOpen = !isInventoryOpen;
-        Debug.Log($"InventoryManager: Setting panel {(isInventoryOpen ? "ACTIVE" : "INACTIVE")}");
-        inventoryPanel.SetActive(isInventoryOpen);
-
-        if (isInventoryOpen)
-        {
-            UpdateInventoryUI();
-            UpdateRecipeUI();
-        }
-    }
-
-    private void UpdateInventoryUI()
-    {
-        if (inventoryContent == null)
-        {
-            Debug.LogError("InventoryManager: inventoryContent is null!");
-            return;
-        }
-
-        // Clear existing items
-        foreach (Transform child in inventoryContent)
-        {
-            Destroy(child.gameObject);
-        }
-
-        Debug.Log($"InventoryManager: Updating inventory UI with {inventory.Count} items");
-        
-        // Add title
-        GameObject titleObj = Instantiate(itemPrefab, inventoryContent);
-        TextMeshProUGUI titleText = titleObj.GetComponentInChildren<TextMeshProUGUI>();
-        if (titleText != null)
-        {
-            titleText.text = "Your Inventory:";
-            titleText.fontSize = 20;
-            titleText.fontStyle = FontStyles.Bold;
-        }
-
-        // Add current inventory items
-        foreach (EIngredient item in inventory)
-        {
-            GameObject itemObj = Instantiate(itemPrefab, inventoryContent);
-            TextMeshProUGUI text = itemObj.GetComponentInChildren<TextMeshProUGUI>();
-            if (text != null)
-            {
-                text.text = "• " + item.ToString();
-            }
-        }
-    }
-
-    private void UpdateRecipeUI()
-    {
-        if (recipeContent == null)
-        {
-            Debug.LogError("InventoryManager: recipeContent is null!");
-            return;
-        }
-
-        // Clear existing items
-        foreach (Transform child in recipeContent)
-        {
-            Destroy(child.gameObject);
-        }
-
-        Debug.Log($"InventoryManager: Updating recipe UI with {currentRecipe.Count} items");
-        
-        // Add title
-        GameObject titleObj = Instantiate(itemPrefab, recipeContent);
-        TextMeshProUGUI titleText = titleObj.GetComponentInChildren<TextMeshProUGUI>();
-        if (titleText != null)
-        {
-            titleText.text = "Recipe Needed:";
-            titleText.fontSize = 20;
-            titleText.fontStyle = FontStyles.Bold;
-        }
-
-        // Add current recipe items
-        foreach (EIngredient item in currentRecipe)
-        {
-            GameObject itemObj = Instantiate(itemPrefab, recipeContent);
-            TextMeshProUGUI text = itemObj.GetComponentInChildren<TextMeshProUGUI>();
-            if (text != null)
-            {
-                bool isCollected = inventory.Contains(item);
-                text.text = "• " + item.ToString();
-                text.fontStyle = isCollected ? FontStyles.Strikethrough : FontStyles.Normal;
-                text.color = isCollected ? new Color(0.5f, 0.5f, 0.5f) : Color.white;
-            }
-        }
+        return new List<EIngredient>(inventory);
     }
 
     public void AddItem(EIngredient item)
     {
         inventory.Add(item);
         Debug.Log($"InventoryManager: Added {item} to inventory");
-        if (isInventoryOpen)
-        {
-            UpdateInventoryUI();
-            UpdateRecipeUI(); // Update recipe UI to show collected items
-        }
     }
 
     public void RemoveItem(EIngredient item)
@@ -192,24 +64,7 @@ public class InventoryManager : MonoBehaviour
         {
             inventory.Remove(item);
             Debug.Log($"InventoryManager: Removed {item} from inventory");
-            if (isInventoryOpen)
-            {
-                UpdateInventoryUI();
-                UpdateRecipeUI();
-            }
         }
-    }
-
-    public bool CheckRecipeComplete()
-    {
-        foreach (EIngredient requiredItem in currentRecipe)
-        {
-            if (!inventory.Contains(requiredItem))
-            {
-                return false;
-            }
-        }
-        return true;
     }
 
     private void DropItem()
@@ -243,13 +98,6 @@ public class InventoryManager : MonoBehaviour
         else
         {
             Debug.LogWarning("InventoryManager: No ingredient prefab assigned for dropping items!");
-        }
-
-        // Update UI if inventory is open
-        if (isInventoryOpen)
-        {
-            UpdateInventoryUI();
-            UpdateRecipeUI();
         }
     }
 } 

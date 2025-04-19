@@ -36,9 +36,9 @@ public class IngredientManager : Singleton<IngredientManager>
                 {
                     Name = (EIngredient)Enum.Parse(typeof(EIngredient), csv.GetField("name")),
                     ID = int.Parse(csv.GetField("ID")),
-                    GenLevel = int.Parse(csv.GetField("genLevel")),
-                    AvgVeinSize = int.Parse(csv.GetField("avgVeinSize")),
-                    Description = csv.GetField("description"),
+                    // GenLevel = int.Parse(csv.GetField("genLevel")),
+                    // AvgVeinSize = int.Parse(csv.GetField("avgVeinSize")),
+                    // Description = csv.GetField("description"),
                     PrefabPath = csv.GetField("prefabPath")
                 };
 
@@ -59,9 +59,9 @@ public class IngredientManager : Singleton<IngredientManager>
         return _ingredients[ingredient];
     }
     
-    public void SpawnIngredients(Vector3Int gridPosition)
+    public void SpawnIngredients(Vector3Int gridPosition, EIngredient ingredient)
     {
-        Instantiate(_ingredientPrefabs[_ingredients[EIngredient.Apple].ID],
+        Instantiate(_ingredientPrefabs[_ingredients[ingredient].ID],
             new Vector3(gridPosition.x + 0.5f, gridPosition.y + 0.5f, 0), Quaternion.identity);
     }
 }

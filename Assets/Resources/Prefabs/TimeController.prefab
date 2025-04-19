@@ -52,8 +52,6 @@ MonoBehaviour:
   IsCycleOn: 1
   _globalVolume: {fileID: 4865363831382700539}
   _clockHand: {fileID: 1764817615735536105}
-  _timeSpeed: 1
-  _timeOfDay: 17
   _globalLight: {fileID: 1462706291537614476}
   _dayColor: {r: 1, g: 1, b: 1, a: 0}
   _nightColor: {r: 0, g: 0, b: 0, a: 0}
@@ -72,7 +70,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: ec17b372ccc3f4164b15022e6b3e7cb1, type: 3}
   m_Resource: {fileID: 8300000, guid: ec17b372ccc3f4164b15022e6b3e7cb1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -169,7 +167,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: cdf4ae982511a4f35937208b027d4211, type: 3}
   m_Resource: {fileID: 8300000, guid: cdf4ae982511a4f35937208b027d4211, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

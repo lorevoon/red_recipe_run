@@ -25,17 +25,28 @@ public class Wolf : MonoBehaviour
 
     // audio
     private AudioSource audioSource;
+    public AudioClip howl, close, bite;
 
+    private Animator anim;
+
+    private SpriteRenderer spriteRenderer;
+    private Vector3 prevPos;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         lantern = GameObject.FindGameObjectWithTag("Lantern");
         playerHealth = player.GetComponent<PlayerHealth>();
-        audioSource = GetComponent<AudioSource>();
 
-        Node[] nodes = FindObjectsOfType<Node>();
-        currentNode = FindNearestNode(nodes, transform.position);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = howl;
+        audioSource.Play();
+
+        anim = GetComponent<Animator>();
+
+        // for flip
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        prevPos = transform.position;
     }
 
     private void Update()
@@ -69,9 +80,9 @@ public class Wolf : MonoBehaviour
                 Chase();
                 CreatePath();
                 break;
-            case EWolfStates.Bite:
-                StartCoroutine(Bite());
-                break;
+            // case EWolfStates.Bite:
+            //     StartCoroutine(Bite());
+            //     break;
         }
         
         if (previousState != currentState && path != null)
@@ -79,28 +90,13 @@ public class Wolf : MonoBehaviour
             path.Clear();
         }
 
+        // sfx if close and not biting
+        noiseIfClose();
+
+        // animation and flipping
+        spriteUpdate();
+        prevPos = transform.position;
     }
-
-    private Node FindNearestNode(Node[] nodes, Vector2 position)
-    {
-        Node nearest = null;
-        float minDist = Mathf.Infinity;
-
-        foreach (Node node in nodes)
-        {
-            float dist = Vector2.Distance(position, node.transform.position);
-            if (dist < minDist)
-            {
-                minDist = dist;
-                nearest = node;
-            }
-        }
-
-        return nearest;
-    }
-
-
-
 
     private void OnTriggerEnter2D(Collider2D obj)
     {
@@ -108,6 +104,7 @@ public class Wolf : MonoBehaviour
         if (obj.gameObject.CompareTag("Player"))
         {
             currentState = EWolfStates.Bite;
+            StartCoroutine(Bite());
         }
     }
 
@@ -118,13 +115,6 @@ public class Wolf : MonoBehaviour
 
     void Chase()
     {
-
-        if (AStarManager.Instance == null)
-        {
-            Debug.LogError("AStarManager.Instance is null in Chase!");
-            return;
-        }
-
         if (path == null) return;
         speed = 2;
 
@@ -137,9 +127,12 @@ public class Wolf : MonoBehaviour
     IEnumerator Bite()
     {
         //Debug.Log("Bite player");
+        anim.CrossFade("wolf_attack", 0, 0);
+
+        audioSource.clip = bite;
         audioSource.Play(); 
 
-         if (playerHealth != null){
+        if (playerHealth != null){
             playerHealth.TakeDamage(1, transform.position);
         }
 
@@ -156,36 +149,26 @@ public class Wolf : MonoBehaviour
 
     public void CreatePath()
     {
-        if (currentNode == null)
+        if (path != null)
         {
-            Debug.LogError("currentNode is null in CreatePath()!");
-            return;
-        }
-
-        if (AStarManager.Instance == null)
-        {
-            Debug.LogError("AStarManager.Instance is null in CreatePath()!");
-            return;
-        }
-
-        if (path != null && path.Count > 0)
-        {
-            if (path[0] == null)
+            if (path.Count > 0)
             {
-                Debug.LogWarning("First node in path is null.");
-                return;
+                int x = 0;
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(path[x].transform.position.x, path[x].transform.position.y, -2), speed * Time.deltaTime);
+
+                if (Vector2.Distance(transform.position, path[x].transform.position) < 0.1f)
+                {
+                    currentNode = path[x];
+                    path.RemoveAt(x);
+                }
             }
-
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                new Vector3(path[0].transform.position.x, path[0].transform.position.y, -2),
-                speed * Time.deltaTime
-            );
-
-            if (Vector2.Distance(transform.position, path[0].transform.position) < 0.1f)
+            else
             {
-                currentNode = path[0];
-                path.RemoveAt(0);
+                Node[] nodes = FindObjectsOfType<Node>();
+                while (path.Count == 0)
+                {
+                    path = AStarManager.Instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
+                }
             }
         }
         else
@@ -224,12 +207,10 @@ public class Wolf : MonoBehaviour
 
             if (path == null || path.Count == 0)
             {
-                Debug.LogWarning("Failed to generate path after several attempts.");
-                return;
+                path = AStarManager.Instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
             }
         }
     }
-
 
     // draw path of wolf
     private void OnDrawGizmos()
@@ -244,4 +225,33 @@ public class Wolf : MonoBehaviour
             }
         }
     }
+
+    private void noiseIfClose()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) < 5.0f && currentState != EWolfStates.Bite)
+        {
+            audioSource.clip = close;
+            audioSource.Play();
+        }
+    }
+
+    private void spriteUpdate()
+    {
+        if (currentState != EWolfStates.Bite)
+        {
+            if (transform.position == prevPos)
+            {
+                anim.CrossFade("wolf_idle", 0, 0);
+            }
+            else
+            {
+                anim.CrossFade("wolf_run", 0, 0);
+            }
+        }
+
+        // for flipping
+        spriteRenderer.flipX = transform.position.x > prevPos.x;
+        
+    }
+
 }

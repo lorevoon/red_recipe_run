@@ -15,8 +15,10 @@ public class TimeController : Singleton<TimeController>
 
     [SerializeField] private AudioSource _dayAudioSource;
     [SerializeField] private AudioSource _nightAudioSource;
+    
+    [SerializeField] private GameObject _faceLight;
 
-    private float baseCycleDuration = 120f; // 2 minutes
+    private float baseCycleDuration = 30f; // 2 minutes
     private float cycleIncrement = 30f;
     private int completedCycles = 0;
     private float currentCycleDuration;
@@ -94,12 +96,14 @@ public class TimeController : Singleton<TimeController>
 
         if (timeOfDay >= 18f || timeOfDay < 6f) // Night
         {
+            _faceLight.SetActive(true);
             _globalLight.color = _nightColor;
             _globalLight.intensity = 0.5f;
             IsNight = true;
         }
         else // Day
         {
+            _faceLight.SetActive(false);
             _globalLight.color = _dayColor;
             _globalLight.intensity = 1.0f;
             IsNight = false;
@@ -129,11 +133,13 @@ public class TimeController : Singleton<TimeController>
         {
             if (_nightAudioSource != null) _nightAudioSource.Stop();
             _dayAudioSource.Play();
+            AudioManager.Instance.SwitchToDay();
         }
         else if (_nightAudioSource != null && (timeOfDay >= 18f || timeOfDay < 6f) && !_nightAudioSource.isPlaying)
         {
             if (_dayAudioSource != null) _dayAudioSource.Stop();
             _nightAudioSource.Play();
+            AudioManager.Instance.SwitchToNight();
         }
     }
 

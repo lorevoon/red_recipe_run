@@ -46,6 +46,7 @@ public class BreakableTile : MonoBehaviour
             _spriteRenderer.color = new Color(1f, 1f, 1f, 1f-_currentDurability/_maxDurability);
             PlayAudio(_crackingSounds[Random.Range(0, _crackingSounds.Length)]);
             Instantiate(_breakVFX, new Vector3(_position.x+0.5f, _position.y+0.5f), Quaternion.identity);
+            _playerController.ResetBounce();
         }
         else // durability < 0
         {
@@ -60,7 +61,22 @@ public class BreakableTile : MonoBehaviour
     private void SpawnIngredient()
     {
         if (_mapManager.BushTypeGrid[_position.x, _position.y] != EGrid.Item) return;
-        IngredientManager.Instance.SpawnIngredients(_position);
+        
+        // 0.2 chance of spawning random, 0.8 chance of spawning in recipe
+        EIngredient ingredient;
+        // if (Random.Range(0f, 1f) < 0.2f)
+        // {
+        //     Debug.Log("dropping a random ingredient");
+        //     Array values = Enum.GetValues(typeof(EIngredient));
+        //     ingredient = (EIngredient)values.GetValue(Random.Range(0, values.Length));
+        // }
+        // else
+        // {
+        //     Debug.Log("dropping an ingredient from the recipe");
+        //     ingredient = RecipeManager.Instance.GetRandomIngredientInRecipe();
+        // }
+        ingredient = RecipeManager.Instance.GetRandomIngredientInRecipe();
+        IngredientManager.Instance.SpawnIngredients(_position, ingredient);
     }
     
     private void PlayAudio(AudioClip audioClip, float pitchRange = 0f, float volume = 1f)

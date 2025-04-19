@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Start_Game : MonoBehaviour
 {
+    public GameObject startButton;
     void OnMouseDown()
     {
         Debug.Log("Button clicked!"); // Check Unity Console for this message
@@ -15,5 +16,7 @@ public class Start_Game : MonoBehaviour
             SceneManager.LoadScene("PlayerScene");
         }
     }
+
+
 
 }

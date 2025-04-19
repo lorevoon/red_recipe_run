@@ -23,6 +23,8 @@ public partial class MapGenerator
     private bool isNight = false;
 
     private bool notSpawned = true;
+    private int days = 0;
+    public int increase = 4;
 
         // called at end of GenerateMap() in main MapGenerator file
     void CreateNodes()
@@ -96,8 +98,13 @@ public partial class MapGenerator
 
         if (isNight && notSpawned)
         {
+            days += 1;
+            CreateNodes();
+            amount += Mathf.FloorToInt(days/increase);
             spawnWolves();
             notSpawned = false;
+
+            Debug.Log("day:" + days + " num wolves:" + amount);
         }
         else if (!isNight)
         {
