@@ -85,7 +85,7 @@ public class Wolf : MonoBehaviour
             //     break;
         }
         
-        if (previousState != currentState)
+        if (previousState != currentState && path != null)
         {
             path.Clear();
         }
@@ -136,7 +136,11 @@ public class Wolf : MonoBehaviour
             playerHealth.TakeDamage(1, transform.position);
         }
 
-        path.Clear();
+        if (path != null)
+        {
+            path.Clear();
+        }
+
         yield return new WaitForSeconds(pause);
 
         // go back to chase
@@ -170,7 +174,38 @@ public class Wolf : MonoBehaviour
         else
         {
             Node[] nodes = FindObjectsOfType<Node>();
-            while (path == null)
+            if (nodes.Length == 0)
+            {
+                Debug.LogError("No nodes found in scene.");
+                return;
+            }
+
+            int attempts = 0;
+            int maxAttempts = 10;
+
+            while ((path == null || path.Count == 0) && attempts < maxAttempts)
+            {
+                Node randomNode = nodes[Random.Range(0, nodes.Length)];
+
+                if (randomNode == null)
+                {
+                    Debug.LogWarning("Randomly selected node was null.");
+                    attempts++;
+                    continue;
+                }
+
+                path = AStarManager.Instance.GeneratePath(currentNode, randomNode);
+
+                if (path == null || path.Count == 0)
+                {
+                    Debug.LogWarning($"Path attempt {attempts + 1}: Failed from {currentNode.name} to {randomNode.name}");
+                }
+
+                attempts++;
+            }
+
+
+            if (path == null || path.Count == 0)
             {
                 path = AStarManager.Instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
             }
