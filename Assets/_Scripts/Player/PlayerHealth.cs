@@ -11,6 +11,9 @@ public class PlayerHealth : MonoBehaviour
     private TMP_Text _healthText;
     private GameObject _damageEffectPrefab; 
 
+    private float lastDamageTime = -999f; // New
+    public float damageCooldown = 1.0f;   // New (seconds)
+
     void Start()
     {
         // PlayerEvents.HpChanged += OnPlayerHPChanged;
@@ -24,6 +27,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage, Vector3 wolfPosition)
     {
+        if (Time.time - lastDamageTime < damageCooldown)
+        {
+            return; // Still in cooldown
+        }
+
+        lastDamageTime = Time.time; // Start cooldown
+
         PlayerEvents.HpChanged.Invoke(-damage);
         Health -= damage;
         Health = Mathf.Max(Health, 0); 

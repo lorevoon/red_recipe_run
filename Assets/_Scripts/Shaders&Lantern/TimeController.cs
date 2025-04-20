@@ -18,7 +18,7 @@ public class TimeController : Singleton<TimeController>
     
     [SerializeField] private GameObject _faceLight;
 
-    private float baseCycleDuration = 30f; // 2 minutes
+    private float baseCycleDuration = 120f; // 2 minutes
     private float cycleIncrement = 30f;
     private int completedCycles = 0;
     private float currentCycleDuration;
@@ -76,7 +76,7 @@ public class TimeController : Singleton<TimeController>
             completedCycles = newCycleCount;
 
             // Each cycle adds 30 real-time seconds to the next day/night cycle
-            currentCycleDuration = baseCycleDuration + (completedCycles * cycleIncrement);
+            currentCycleDuration = baseCycleDuration + (cycleIncrement * completedCycles);
 
             SetTimeSpeedForCurrentCycle(); // recalculate time speed
         }
