@@ -86,7 +86,7 @@ public class GrandmasHouse : MonoBehaviour
         
         ingredient.transform.position = end;
         
-        _animator.SetTrigger("TakeItems");
+        _animator.SetTrigger("TakeItem");
 
         yield return new WaitForSeconds(3f);
         duration = 2f;
