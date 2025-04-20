@@ -473,6 +473,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4451807698815451681, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
   m_PrefabInstance: {fileID: 4436422619758401855}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1030811762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7985435448752373314, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+  m_PrefabInstance: {fileID: 1740834877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1322534467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,16 +1046,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
---- !u!82 &1801442716 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8707361774752386231, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-  m_PrefabInstance: {fileID: 2098233599}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1801442717 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6856991939912422656, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-  m_PrefabInstance: {fileID: 2098233599}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1858183438 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4992481537570967070, guid: 398b48eac9f9a415c9abafe691f17972, type: 3}
@@ -1159,25 +1154,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: IsCycleOn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: _dayAudioSource
+      propertyPath: _faceLight
       value: 
-      objectReference: {fileID: 1801442717}
-    - target: {fileID: 9133887844582937489, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: _nightAudioSource
-      value: 
-      objectReference: {fileID: 1801442716}
-    - target: {fileID: 9176391205088270424, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 330
-      objectReference: {fileID: 0}
-    - target: {fileID: 9176391205088270424, guid: 5537736599429408bb7efa34ddce5f11, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 160
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1030811762}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

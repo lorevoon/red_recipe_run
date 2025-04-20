@@ -279,7 +279,7 @@ public class PlayerInventory : MonoBehaviour
         if (dropped != null)
         {
             dropped.enabled = true;
-            dropped.sortingOrder = 999; // On top
+            // dropped.sortingOrder = 999; // On top
         }
 
         Collider2D col = mostRecent.GetComponent<Collider2D>();

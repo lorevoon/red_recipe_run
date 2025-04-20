@@ -7,19 +7,26 @@ public class GrandmasHouse : MonoBehaviour
 {
     private bool _isPlayerInRange;
     private Vector3 _doorPosition;
+    private Vector3 _doorEndPosition;
 
     private PlayerController _playerController;
     private InventoryManager _inventoryManager;
     private RecipeManager _recipeManager;
     
+    [SerializeField] private Transform _handTransform;
+    private Animator _animator;
+    
     private void Start()
     {
         CameraManager.Instance.AllVirtualCameras[(int)ECamera.GrandmasHouse].Follow = transform;
         _doorPosition = transform.position + new Vector3(0.8f, -3.6f, 0);
+        _doorEndPosition = transform.position + new Vector3(0.8f, -2.5f, 0);
 
         _playerController = PlayerController.Instance;
         _inventoryManager = InventoryManager.Instance;
         _recipeManager = RecipeManager.Instance;
+        
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -78,6 +85,22 @@ public class GrandmasHouse : MonoBehaviour
         }
         
         ingredient.transform.position = end;
+        
+        _animator.SetTrigger("TakeItems");
+
+        yield return new WaitForSeconds(3f);
+        duration = 2f;
+        elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            
+            t = t * t * (3f - 2f * t);
+
+            ingredient.transform.position = Vector3.Lerp(end, _doorEndPosition, t);
+            yield return null;
+        }
     }
 
     private IEnumerator CelebrateCompletedRecipeRoutine()
