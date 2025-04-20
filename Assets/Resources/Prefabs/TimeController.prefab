@@ -57,6 +57,7 @@ MonoBehaviour:
   _nightColor: {r: 0, g: 0, b: 0, a: 0}
   _dayAudioSource: {fileID: 6856991939912422656}
   _nightAudioSource: {fileID: 8707361774752386231}
+  _faceLight: {fileID: 0}
 --- !u!82 &6856991939912422656
 AudioSource:
   m_ObjectHideFlags: 0
