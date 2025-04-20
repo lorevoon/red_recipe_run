@@ -13,7 +13,7 @@ public class GrandmasHouse : MonoBehaviour
     private InventoryManager _inventoryManager;
     private RecipeManager _recipeManager;
     
-    [SerializeField] private Transform _handTransform;
+    // [SerializeField] private Transform _handTransform;
     private Animator _animator;
     
     private void Start()
@@ -40,11 +40,12 @@ public class GrandmasHouse : MonoBehaviour
         {
             _isPlayerInRange = true;
             CameraManager.Instance.SwapCamera(CameraManager.Instance.AllVirtualCameras[(int)ECamera.GrandmasHouse]);
-            UIToolkitManager.Instance.ToggleUpgrades();
+            // UIToolkitManager.Instance.ToggleUpgrades();
         }
         else if (other.CompareTag("Ingredient"))
         {
             EIngredient ingredient = other.gameObject.GetComponent<Ingredient>().IngredientType;
+            Debug.Log("trying to put: " + ingredient);
             // if (!_recipeManager.IsInRecipe(ingredient)) return;
             _recipeManager.SubtractFromRecipe(ingredient);
             StartCoroutine(PullIngredientToDoorRoutine(other.gameObject));
@@ -57,14 +58,14 @@ public class GrandmasHouse : MonoBehaviour
         _isPlayerInRange = false;
         CameraManager.Instance.SwapCamera(CameraManager.Instance.AllVirtualCameras[(int)ECamera.RecipeRun]);
 
-        if (UIToolkitManager.Instance != null)
-        {
-            // UIToolkitManager.Instance.ToggleUpgrades();
-        }
-        else
-        {
-            // Debug.LogWarning("UIToolkitManager.Instance is null during OnTriggerExit2D!");
-        }
+        // if (UIToolkitManager.Instance != null)
+        // {
+        //     UIToolkitManager.Instance.ToggleUpgrades();
+        // }
+        // else
+        // {
+        //     Debug.LogWarning("UIToolkitManager.Instance is null during OnTriggerExit2D!");
+        // }
     }
 
 
