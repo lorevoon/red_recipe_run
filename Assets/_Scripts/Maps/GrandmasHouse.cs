@@ -49,8 +49,17 @@ public class GrandmasHouse : MonoBehaviour
     {
         _isPlayerInRange = false;
         CameraManager.Instance.SwapCamera(CameraManager.Instance.AllVirtualCameras[(int)ECamera.RecipeRun]);
-        UIToolkitManager.Instance.ToggleUpgrades();
+
+        if (UIToolkitManager.Instance != null)
+        {
+            UIToolkitManager.Instance.ToggleUpgrades();
+        }
+        else
+        {
+            Debug.LogWarning("UIToolkitManager.Instance is null during OnTriggerExit2D!");
+        }
     }
+
 
     private IEnumerator PullIngredientToDoorRoutine(GameObject ingredient)
     {
