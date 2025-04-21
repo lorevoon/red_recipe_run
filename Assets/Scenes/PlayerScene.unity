@@ -1059,6 +1059,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3352910478514541682, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: ToolSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352910478514541682, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
+      propertyPath: _maxAllowedSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352910478514541682, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       propertyPath: 'healthHearts.Array.data[0]'
       value: 
       objectReference: {fileID: 1858183438}

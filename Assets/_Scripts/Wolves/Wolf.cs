@@ -25,14 +25,31 @@ public class Wolf : MonoBehaviour
 
     // audio
     private AudioSource audioSource;
+    public AudioClip howl, close, bite;
+    private bool playedClose, playedBite;
 
+    private Animator anim;
+
+    private SpriteRenderer spriteRenderer;
+    private Vector3 prevPos;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         lantern = GameObject.FindGameObjectWithTag("Lantern");
         playerHealth = player.GetComponent<PlayerHealth>();
+
         audioSource = GetComponent<AudioSource>();
+        audioSource.clip = howl;
+        audioSource.Play();
+        playedClose = false;
+        playedBite = false;
+
+        anim = GetComponent<Animator>();
+
+        // for flip
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        prevPos = transform.position;
 
         Node[] nodes = FindObjectsOfType<Node>();
         currentNode = FindNearestNode(nodes, transform.position);
@@ -69,9 +86,6 @@ public class Wolf : MonoBehaviour
                 Chase();
                 CreatePath();
                 break;
-            case EWolfStates.Bite:
-                StartCoroutine(Bite());
-                break;
         }
         
         if (previousState != currentState && path != null)
@@ -79,6 +93,12 @@ public class Wolf : MonoBehaviour
             path.Clear();
         }
 
+        // sfx if close and not biting
+        noiseIfClose();
+
+        // animation and flipping
+        spriteUpdate();
+        prevPos = transform.position;
     }
 
     private Node FindNearestNode(Node[] nodes, Vector2 position)
@@ -99,15 +119,13 @@ public class Wolf : MonoBehaviour
         return nearest;
     }
 
-
-
-
     private void OnTriggerEnter2D(Collider2D obj)
     {
         // collides with player --> change state to bite and invoke its function
         if (obj.gameObject.CompareTag("Player"))
         {
             currentState = EWolfStates.Bite;
+            StartCoroutine(Bite());
         }
     }
 
@@ -137,9 +155,16 @@ public class Wolf : MonoBehaviour
     IEnumerator Bite()
     {
         //Debug.Log("Bite player");
-        audioSource.Play(); 
+        anim.CrossFade("wolf_attack", 0, 0);
 
-         if (playerHealth != null){
+        if (!playedBite)
+        {
+            audioSource.clip = bite;
+            audioSource.Play();
+            playedBite = true;
+        }
+
+        if (playerHealth != null){
             playerHealth.TakeDamage(1, transform.position);
         }
 
@@ -152,6 +177,7 @@ public class Wolf : MonoBehaviour
 
         // go back to chase
         currentState = EWolfStates.Chase;
+        playedBite = false;
     }
 
     public void CreatePath()
@@ -244,5 +270,41 @@ public class Wolf : MonoBehaviour
                 Gizmos.DrawLine(path[i].transform.position, path[i - 1].transform.position);
             }
         }
+    }
+
+    private void noiseIfClose()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) < 5.0f && currentState != EWolfStates.Bite)
+        {
+            if (!playedClose)
+            {
+                audioSource.clip = close;
+                audioSource.Play();
+                playedClose = true;
+            }
+        }
+        else
+        {
+            playedClose = false;
+        }
+    }
+
+    private void spriteUpdate()
+    {
+        if (currentState != EWolfStates.Bite)
+        {
+            if (transform.position == prevPos)
+            {
+                anim.CrossFade("wolf_idle", 0, 0);
+            }
+            else
+            {
+                anim.CrossFade("wolf_run", 0, 0);
+            }
+        }
+
+        // for flipping
+        spriteRenderer.flipX = transform.position.x > prevPos.x;
+        
     }
 }
