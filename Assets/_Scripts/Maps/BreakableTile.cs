@@ -79,7 +79,7 @@ public class BreakableTile : MonoBehaviour
         IngredientManager.Instance.SpawnIngredients(_position, ingredient);
     }
     
-    private void PlayAudio(AudioClip audioClip, float pitchRange = 0f, float volume = 1f)
+    private void PlayAudio(AudioClip audioClip, float pitchRange = 0f, float volume = 0.5f)
     {
         _audioSource.pitch = Random.Range(1 - pitchRange, 1 + pitchRange);
         _audioSource.volume = volume;

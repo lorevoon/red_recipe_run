@@ -478,13 +478,6 @@ public class RecipeManager : Singleton<RecipeManager>
 
     public EIngredient GetRandomIngredientInRecipe()
     {
-        if (ingredientsLeft <= 0)
-        {
-            Debug.Log("No ingredients left. Generating a random one");
-            Array values = Enum.GetValues(typeof(EIngredient));
-            return (EIngredient)values.GetValue(Random.Range(0, values.Length-1));
-        }
-        
         List<EIngredient> weightedList = new List<EIngredient>();
 
         foreach (var pair in unspawnedIngredientsInRecipe)
@@ -495,10 +488,9 @@ public class RecipeManager : Singleton<RecipeManager>
             }
         }
         
-        // Safety check: if the weighted list is empty, return a random ingredient
-        if (weightedList.Count == 0)
+        if (ingredientsLeft <= 0 || weightedList.Count <= 0)
         {
-            Debug.LogWarning("weightedList is empty in GetRandomIngredientInRecipe. Using fallback.");
+            Debug.Log("no ingredients left. generating a random one");
             Array values = Enum.GetValues(typeof(EIngredient));
             return (EIngredient)values.GetValue(Random.Range(0, values.Length-1));
         }

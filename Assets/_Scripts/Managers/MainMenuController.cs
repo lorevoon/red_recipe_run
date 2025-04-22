@@ -7,12 +7,13 @@ public class MainMenuController : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public CanvasGroup OptionPanel;
+    private string targetScene = "StartingCutscene";
     
     // Update is called once per frame
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneTransitionManager.Instance.TransitionTo(targetScene);
     }
 
     public void QuitGame() {

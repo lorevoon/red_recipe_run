@@ -82,13 +82,13 @@ public class UIToolkitManager : MonoBehaviour
     private void Update()
     {
         // Toggle Inventory with I key
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             ToggleInventory();
         }
         
         // Toggle Upgrades with U key
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             ToggleUpgrades();
         }
