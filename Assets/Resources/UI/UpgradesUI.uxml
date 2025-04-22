@@ -43,6 +43,14 @@
                     <engine:Button text="Upgrade" name="lantern-button" class="upgrade-button"/>
                     <engine:Label text="Cost: 10" name="lantern-cost" class="upgrade-cost"/>
                 </engine:VisualElement>
+                
+                <!-- Spirit Power Upgrade -->
+                <engine:VisualElement name="spirit-power-upgrade" class="upgrade-item">
+                    <engine:Label text="Spirit Power" class="upgrade-name"/>
+                    <engine:Label text="Level: 0" name="spirit-power-level" class="upgrade-level"/>
+                    <engine:Button text="Upgrade" name="spirit-power-button" class="upgrade-button"/>
+                    <engine:Label text="Cost: 10" name="spirit-power-cost" class="upgrade-cost"/>
+                </engine:VisualElement>
             </engine:VisualElement>
         </engine:ScrollView>
     </engine:VisualElement>

@@ -23,7 +23,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public float _maxAllowedSpeed = 3f;
     private float _dampingFactor = 0.9f;
-    public float ToolSpeed = 3;
+    public float ToolSpeed = 3f;
 
     private Vector2 _lastInputDirection;
     private float _bounceCooldown = 0f;
@@ -48,6 +48,9 @@ public class PlayerController : Singleton<PlayerController>
             
         // Initialize health from UpgradeManager
         UpdateHealthFromUpgrades();
+        
+        // Initialize tool speed from UpgradeManager
+        UpdateToolSpeedFromUpgrades();
     }
   
     private void Update()
@@ -65,6 +68,7 @@ public class PlayerController : Singleton<PlayerController>
 
         // Update properties from upgrades
         UpdateSpeedFromUpgrades();
+        UpdateToolSpeedFromUpgrades();
         
         // Don't process input if player is dead
         if (_isDead) return;
@@ -99,6 +103,15 @@ public class PlayerController : Singleton<PlayerController>
             
             // Update heart display
             UpdateHeartDisplay();
+        }
+    }
+    
+    private void UpdateToolSpeedFromUpgrades()
+    {
+        if (UpgradeManager.Instance != null)
+        {
+            // Update tool speed from upgrade manager
+            ToolSpeed = UpgradeManager.Instance.GetCurrentToolSpeed();
         }
     }
     

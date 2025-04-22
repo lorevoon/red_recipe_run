@@ -16,6 +16,7 @@ public class UpgradeManager : MonoBehaviour
     private int inventoryLevel = 0; 
     private int healthLevel = 0;
     private int lanternLevel = 0;
+    private int spiritPowerLevel = 0;
 
     // Maximum upgrade levels
     private const int MAX_UPGRADE_LEVEL = 5;
@@ -25,6 +26,7 @@ public class UpgradeManager : MonoBehaviour
     private int baseInventorySize = 5;
     private int baseHealth = 3;
     private float baseLanternRange = 5f;
+    private float baseToolSpeed = 3f;
     
     // Speed multiplier per level (1.25 = 25% increase)
     private const float SPEED_MULTIPLIER = 0.25f;
@@ -37,6 +39,9 @@ public class UpgradeManager : MonoBehaviour
     
     // Lantern range multiplier
     private const float LANTERN_MULTIPLIER = 0.25f;
+    
+    // Tool speed multiplier
+    private const float TOOL_SPEED_MULTIPLIER = 0.3f;
 
     private void Awake()
     {
@@ -66,6 +71,7 @@ public class UpgradeManager : MonoBehaviour
         inventoryLevel = 0;
         healthLevel = 0;
         lanternLevel = 0;
+        spiritPowerLevel = 0;
         SaveUpgrades();
         
         Debug.Log($"Upgrades reset. Starting with {coins} mana.");
@@ -123,10 +129,26 @@ public class UpgradeManager : MonoBehaviour
                 // Update the lantern if it exists
                 UpdateLantern();
                 break;
+            case EUpgradeType.SpiritPower:
+                spiritPowerLevel++;
+                Debug.Log($"Spirit Power upgraded to level {spiritPowerLevel}. New tool speed: {GetCurrentToolSpeed()}");
+                // Update player's tool speed
+                UpdateToolSpeed();
+                break;
         }
         
         SaveUpgrades();
         return true;
+    }
+    
+    private void UpdateToolSpeed()
+    {
+        // Update player's tool speed
+        if (PlayerController.Instance != null)
+        {
+            PlayerController.Instance.ToolSpeed = GetCurrentToolSpeed();
+            Debug.Log($"Updated player tool speed to {PlayerController.Instance.ToolSpeed}");
+        }
     }
     
     private void UpdateLantern()
@@ -166,6 +188,7 @@ public class UpgradeManager : MonoBehaviour
             EUpgradeType.InventorySpace => inventoryLevel,
             EUpgradeType.MaxHearts => healthLevel,
             EUpgradeType.LanternPower => lanternLevel,
+            EUpgradeType.SpiritPower => spiritPowerLevel,
             _ => 0
         };
     }
@@ -192,6 +215,7 @@ public class UpgradeManager : MonoBehaviour
         PlayerPrefs.SetInt("InventoryLevel", inventoryLevel);
         PlayerPrefs.SetInt("HealthLevel", healthLevel);
         PlayerPrefs.SetInt("LanternLevel", lanternLevel);
+        PlayerPrefs.SetInt("SpiritPowerLevel", spiritPowerLevel);
         PlayerPrefs.Save();
     }
 
@@ -202,6 +226,7 @@ public class UpgradeManager : MonoBehaviour
         inventoryLevel = PlayerPrefs.GetInt("InventoryLevel", 0);
         healthLevel = PlayerPrefs.GetInt("HealthLevel", 0);
         lanternLevel = PlayerPrefs.GetInt("LanternLevel", 0);
+        spiritPowerLevel = PlayerPrefs.GetInt("SpiritPowerLevel", 0);
     }
 
     // Getters for UIToolkitManager
@@ -210,6 +235,7 @@ public class UpgradeManager : MonoBehaviour
     public int GetInventoryLevel() => inventoryLevel;
     public int GetHealthLevel() => healthLevel;
     public int GetLanternLevel() => lanternLevel;
+    public int GetSpiritPowerLevel() => spiritPowerLevel;
 
     // Getters for game mechanics
     public float GetCurrentSpeed()
@@ -230,5 +256,10 @@ public class UpgradeManager : MonoBehaviour
     public float GetCurrentLanternRange()
     {
         return baseLanternRange * (1f + (lanternLevel * LANTERN_MULTIPLIER));
+    }
+    
+    public float GetCurrentToolSpeed()
+    {
+        return baseToolSpeed * (1f + (spiritPowerLevel * TOOL_SPEED_MULTIPLIER));
     }
 } 
