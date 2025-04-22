@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerScene.unity
     guid: 5c45b78f117674b04bbd530508c264b7
+  - enabled: 1
+    path: Assets/Scenes/StartingCutscene.unity
+    guid: c5c027c7745954434bd26d1c68f74fbd
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

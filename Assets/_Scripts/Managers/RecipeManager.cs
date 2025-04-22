@@ -76,7 +76,7 @@ public class RecipeManager : Singleton<RecipeManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             isRecipeOpen = !isRecipeOpen;
             ToggleRecipe(isRecipeOpen);
@@ -90,7 +90,6 @@ public class RecipeManager : Singleton<RecipeManager>
         //     GenerateNewRecipe();
         //     UpdateRecipeUI();
         // }
-
     }
 
     public void ToggleRecipe(bool isOpen = true)
@@ -113,9 +112,8 @@ public class RecipeManager : Singleton<RecipeManager>
         entry.GetComponent<RecipeUI>().Initialize(currentRecipe);
         if (scrollViewContent.TryGetComponent<RectTransform>(out var rectTransform))
         {
-        LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
         }
-
     }
 
     public SRecipe GetCurrentRecipe()
@@ -137,13 +135,6 @@ public class RecipeManager : Singleton<RecipeManager>
 
     public EIngredient GetRandomIngredientInRecipe()
     {
-        if (ingredientsLeft <= 0)
-        {
-            Debug.Log("no ingredients left. generating a random one");
-            Array values = Enum.GetValues(typeof(EIngredient));
-            return (EIngredient)values.GetValue(Random.Range(0, values.Length-1));
-        }
-        
         List<EIngredient> weightedList = new List<EIngredient>();
 
         foreach (var pair in unspawnedIngredientsInRecipe)
@@ -152,6 +143,13 @@ public class RecipeManager : Singleton<RecipeManager>
             {
                 weightedList.Add(pair.Key);
             }
+        }
+        
+        if (ingredientsLeft <= 0 || weightedList.Count <= 0)
+        {
+            Debug.Log("no ingredients left. generating a random one");
+            Array values = Enum.GetValues(typeof(EIngredient));
+            return (EIngredient)values.GetValue(Random.Range(0, values.Length-1));
         }
         
         EIngredient selected = weightedList[Random.Range(0, weightedList.Count)];
