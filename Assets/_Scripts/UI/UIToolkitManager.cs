@@ -171,7 +171,7 @@ public class UIToolkitManager : MonoBehaviour
     {
         if (upgradesDocument.rootVisualElement == null)
         {
-            Debug.LogError("Upgrades document root is null!");
+            Debug.LogError("Magic UI document root is null!");
             return;
         }
         
@@ -179,11 +179,11 @@ public class UIToolkitManager : MonoBehaviour
         
         if (upgradesRoot == null)
         {
-            Debug.LogError("Failed to find upgrades container element!");
+            Debug.LogError("Failed to find magic container element!");
             return;
         }
         
-        // Get coin display
+        // Get mana display
         coinsDisplay = upgradesRoot.Q<Label>("coins-display");
         
         // Get upgrade level elements
@@ -386,9 +386,9 @@ public class UIToolkitManager : MonoBehaviour
     {
         if (UpgradeManager.Instance == null || coinsDisplay == null) return;
         
-        // Update coins display
-        int coins = UpgradeManager.Instance.GetCoins();
-        coinsDisplay.text = $"Coins: {coins}";
+        // Update mana display
+        int mana = UpgradeManager.Instance.GetCoins();
+        coinsDisplay.text = $"Mana: {mana}";
         
         // Update upgrade levels
         int speedLevel = UpgradeManager.Instance.GetSpeedLevel();
@@ -413,10 +413,10 @@ public class UIToolkitManager : MonoBehaviour
         if (lanternCostText != null) lanternCostText.text = $"Cost: {lanternCost}";
         
         // Update button states
-        if (speedButton != null) UpdateButtonState(speedButton, coins >= speedCost && speedCost > 0);
-        if (inventoryButton != null) UpdateButtonState(inventoryButton, coins >= inventoryCost && inventoryCost > 0);
-        if (healthButton != null) UpdateButtonState(healthButton, coins >= healthCost && healthCost > 0);
-        if (lanternButton != null) UpdateButtonState(lanternButton, coins >= lanternCost && lanternCost > 0);
+        if (speedButton != null) UpdateButtonState(speedButton, mana >= speedCost && speedCost > 0);
+        if (inventoryButton != null) UpdateButtonState(inventoryButton, mana >= inventoryCost && inventoryCost > 0);
+        if (healthButton != null) UpdateButtonState(healthButton, mana >= healthCost && healthCost > 0);
+        if (lanternButton != null) UpdateButtonState(lanternButton, mana >= lanternCost && lanternCost > 0);
     }
     
     private void UpdateButtonState(Button button, bool interactable)

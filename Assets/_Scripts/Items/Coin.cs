@@ -33,7 +33,7 @@ public class Coin : MonoBehaviour
             if (UpgradeManager.Instance != null)
             {
                 UpgradeManager.Instance.AddCoins(value);
-                Debug.Log($"Collected {value} coins!");
+                Debug.Log($"Collected {value} mana!");
             }
             Destroy(gameObject);
         }

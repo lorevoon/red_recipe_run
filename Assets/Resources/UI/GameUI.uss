@@ -71,7 +71,7 @@
     -unity-font: resource('Fonts/ThaleahFat_TTF');
     -unity-font-definition: none;
     font-size: 60px;
-    color: rgb(255, 215, 0);
+    color: rgb(64, 156, 255);
     -unity-text-align: middle-center;
     margin-bottom: 12px;
 }
@@ -198,7 +198,7 @@
     -unity-font: resource('Fonts/ThaleahFat_TTF');
     -unity-font-definition: none;
     font-size: 45px;
-    color: rgb(255, 215, 0);
+    color: rgb(64, 156, 255);
     -unity-text-align: middle-center;
 }
 

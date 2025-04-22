@@ -6,7 +6,7 @@ public class UpgradeManager : MonoBehaviour
     public static UpgradeManager Instance { get; private set; }
 
     [Header("Upgrade Settings")]
-    [SerializeField] private int initialCoins = 200; // Starting coins for testing
+    [SerializeField] private int initialCoins = 200; // Starting mana for testing
     
     // Fixed upgrade costs
     private readonly int[] upgradeCosts = new int[] { 10, 25, 50, 100, 200 };
@@ -58,7 +58,7 @@ public class UpgradeManager : MonoBehaviour
         ResetUpgrades();
     }
     
-    // Reset upgrades and give initial coins
+    // Reset upgrades and give initial mana
     public void ResetUpgrades()
     {
         coins = initialCoins;
@@ -68,7 +68,7 @@ public class UpgradeManager : MonoBehaviour
         lanternLevel = 0;
         SaveUpgrades();
         
-        Debug.Log($"Upgrades reset. Starting with {coins} coins.");
+        Debug.Log($"Upgrades reset. Starting with {coins} mana.");
     }
 
     public void AddCoins(int amount)
@@ -93,11 +93,11 @@ public class UpgradeManager : MonoBehaviour
         
         if (coins < cost)
         {
-            Debug.Log($"Not enough coins. Need {cost}, have {coins}");
+            Debug.Log($"Not enough mana. Need {cost}, have {coins}");
             return false;
         }
 
-        // Subtract coins
+        // Subtract mana
         coins -= cost;
         
         // Increment the appropriate level
@@ -105,21 +105,21 @@ public class UpgradeManager : MonoBehaviour
         {
             case EUpgradeType.MovementSpeed:
                 speedLevel++;
-                Debug.Log($"Speed upgraded to level {speedLevel}. New speed: {GetCurrentSpeed()}");
+                Debug.Log($"Agile Fairy Spell upgraded to level {speedLevel}. New speed: {GetCurrentSpeed()}");
                 break;
             case EUpgradeType.InventorySpace:
                 inventoryLevel++;
-                Debug.Log($"Inventory upgraded to level {inventoryLevel}. New capacity: {GetCurrentInventorySize()}");
+                Debug.Log($"Basket Enlargement upgraded to level {inventoryLevel}. New capacity: {GetCurrentInventorySize()}");
                 break;
             case EUpgradeType.MaxHearts:
                 healthLevel++;
-                Debug.Log($"Health upgraded to level {healthLevel}. New health: {GetCurrentHealth()}");
+                Debug.Log($"Blood Pact upgraded to level {healthLevel}. New health: {GetCurrentHealth()}");
                 // Update the player's heart display
                 UpdatePlayerHealth();
                 break;
             case EUpgradeType.LanternPower:
                 lanternLevel++;
-                Debug.Log($"Lantern upgraded to level {lanternLevel}. New range: {GetCurrentLanternRange()}");
+                Debug.Log($"Sacred Power upgraded to level {lanternLevel}. New range: {GetCurrentLanternRange()}");
                 // Update the lantern if it exists
                 UpdateLantern();
                 break;

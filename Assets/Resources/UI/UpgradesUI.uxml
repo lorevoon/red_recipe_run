@@ -7,14 +7,14 @@
 >
     <engine:VisualElement name="upgrades-container" class="upgrades-container">
         <engine:VisualElement name="upgrades-header" class="header">
-            <engine:Label text="UPGRADES" name="upgrades-title" class="title-text"/>
-            <engine:Label text="Coins: 0" name="coins-display" class="coins-text"/>
+            <engine:Label text="MAGIC" name="upgrades-title" class="title-text"/>
+            <engine:Label text="Mana: 0" name="coins-display" class="coins-text"/>
         </engine:VisualElement>
         <engine:ScrollView name="upgrades-scroll-view" class="scroll-view">
             <engine:VisualElement name="upgrades-content" class="content-container">
                 <!-- Speed Upgrade -->
                 <engine:VisualElement name="speed-upgrade" class="upgrade-item">
-                    <engine:Label text="Speed" class="upgrade-name"/>
+                    <engine:Label text="Agile Fairy Spell" class="upgrade-name"/>
                     <engine:Label text="Level: 0" name="speed-level" class="upgrade-level"/>
                     <engine:Button text="Upgrade" name="speed-button" class="upgrade-button"/>
                     <engine:Label text="Cost: 10" name="speed-cost" class="upgrade-cost"/>
@@ -22,7 +22,7 @@
                 
                 <!-- Inventory Upgrade -->
                 <engine:VisualElement name="inventory-upgrade" class="upgrade-item">
-                    <engine:Label text="Inventory Space" class="upgrade-name"/>
+                    <engine:Label text="Basket Enlargement" class="upgrade-name"/>
                     <engine:Label text="Level: 0" name="inventory-level" class="upgrade-level"/>
                     <engine:Button text="Upgrade" name="inventory-button" class="upgrade-button"/>
                     <engine:Label text="Cost: 10" name="inventory-cost" class="upgrade-cost"/>
@@ -30,7 +30,7 @@
                 
                 <!-- Health Upgrade -->
                 <engine:VisualElement name="health-upgrade" class="upgrade-item">
-                    <engine:Label text="Health" class="upgrade-name"/>
+                    <engine:Label text="Blood Pact" class="upgrade-name"/>
                     <engine:Label text="Level: 0" name="health-level" class="upgrade-level"/>
                     <engine:Button text="Upgrade" name="health-button" class="upgrade-button"/>
                     <engine:Label text="Cost: 10" name="health-cost" class="upgrade-cost"/>
@@ -38,7 +38,7 @@
                 
                 <!-- Lantern Upgrade -->
                 <engine:VisualElement name="lantern-upgrade" class="upgrade-item">
-                    <engine:Label text="Lantern Power" class="upgrade-name"/>
+                    <engine:Label text="Sacred Power" class="upgrade-name"/>
                     <engine:Label text="Level: 0" name="lantern-level" class="upgrade-level"/>
                     <engine:Button text="Upgrade" name="lantern-button" class="upgrade-button"/>
                     <engine:Label text="Cost: 10" name="lantern-cost" class="upgrade-cost"/>
