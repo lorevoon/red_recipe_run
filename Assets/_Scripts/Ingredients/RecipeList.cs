@@ -172,6 +172,13 @@ public static class RecipeList
             Ingredients = new Dictionary<EIngredient, int> { {EIngredient.DragonFruit, 3}, 
                 {EIngredient.Honeydew, 3}, {EIngredient.Lemon, 3}, {EIngredient.Honey, 3} },
             Description = "A vibrant salad featuring refreshing dragon fruit and melon."
+         },
+
+         new SRecipe {
+            RecipeNumber = 21,
+            RecipeName = "Lost Kid",
+            Ingredients = new Dictionary<EIngredient, int> { },
+            Description = "A kid is lost in the forest, find him and bring him home so Grandma can take good care of him... Fufufufu"
          }
 
     };

@@ -191,14 +191,19 @@ public class GameOverManager : MonoBehaviour
     
     public void ShowGameOver(int score)
     {
-        Debug.Log("ShowGameOver called with score: " + score);
+        ShowGameOver(score, "Game Over");
+    }
+    
+    public void ShowGameOver(int score, string customMessage)
+    {
+        Debug.Log($"ShowGameOver called with score: {score}, message: {customMessage}");
         
         // Make sure UI is initialized
         if (gameOverDocument == null || gameOverDocument.rootVisualElement == null || gameOverRoot == null)
         {
             Debug.LogError("Game Over UI not initialized yet - reinitializing");
             SetupUIDocument();
-            StartCoroutine(InitAndShowGameOver(score));
+            StartCoroutine(InitAndShowGameOver(score, customMessage));
             return;
         }
         
@@ -211,6 +216,14 @@ public class GameOverManager : MonoBehaviour
         else
         {
             Debug.LogError("scoreValueLabel is null!");
+        }
+        
+        // Update game over message if we have a title label
+        Label titleLabel = gameOverRoot.Q<Label>("title-label");
+        if (titleLabel != null)
+        {
+            titleLabel.text = customMessage;
+            Debug.Log($"Set title text to: {customMessage}");
         }
         
         // Show the game over screen
@@ -229,7 +242,7 @@ public class GameOverManager : MonoBehaviour
         Time.timeScale = 0f;
     }
     
-    private IEnumerator InitAndShowGameOver(int score)
+    private IEnumerator InitAndShowGameOver(int score, string customMessage = "Game Over")
     {
         // Wait for initialization
         yield return new WaitForEndOfFrame();
@@ -239,6 +252,14 @@ public class GameOverManager : MonoBehaviour
         if (scoreValueLabel != null && gameOverRoot != null)
         {
             scoreValueLabel.text = score.ToString();
+            
+            // Update game over message if we have a title label
+            Label titleLabel = gameOverRoot.Q<Label>("title-label");
+            if (titleLabel != null)
+            {
+                titleLabel.text = customMessage;
+            }
+            
             gameOverRoot.style.display = DisplayStyle.Flex;
             gameOverRoot.AddToClassList("visible");
             Time.timeScale = 0f;

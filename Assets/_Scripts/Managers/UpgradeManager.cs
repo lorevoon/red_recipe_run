@@ -125,13 +125,13 @@ public class UpgradeManager : MonoBehaviour
                 break;
             case EUpgradeType.LanternPower:
                 lanternLevel++;
-                Debug.Log($"Sacred Power upgraded to level {lanternLevel}. New range: {GetCurrentLanternRange()}");
+                Debug.Log($"Sacred Flame upgraded to level {lanternLevel}. New range: {GetCurrentLanternRange()}");
                 // Update the lantern if it exists
                 UpdateLantern();
                 break;
             case EUpgradeType.SpiritPower:
                 spiritPowerLevel++;
-                Debug.Log($"Spirit Power upgraded to level {spiritPowerLevel}. New tool speed: {GetCurrentToolSpeed()}");
+                Debug.Log($"Dark Power upgraded to level {spiritPowerLevel}. New tool speed: {GetCurrentToolSpeed()}");
                 // Update player's tool speed
                 UpdateToolSpeed();
                 break;
