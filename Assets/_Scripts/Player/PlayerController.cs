@@ -197,11 +197,13 @@ public class PlayerController : Singleton<PlayerController>
         if (Input.GetKeyDown(KeyCode.Z))
         {
             // Try to pick up an ingredient
+            if (TimeController.Instance.IsNight) return;
             _playerInventory.TryPickUpIngredient();
         }
 
         if (Input.GetKeyDown(KeyCode.X))
         {
+            if (TimeController.Instance.IsNight) return;
             _playerInventory.DropIngredient();
         }
     }

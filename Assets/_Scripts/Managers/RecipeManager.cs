@@ -289,7 +289,7 @@ public class RecipeManager : Singleton<RecipeManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L) && !waitingForPopupClosure)
+        if (Input.GetKeyDown(KeyCode.A) && !waitingForPopupClosure)
         {
             isRecipeOpen = !isRecipeOpen;
             ToggleRecipe(isRecipeOpen);
