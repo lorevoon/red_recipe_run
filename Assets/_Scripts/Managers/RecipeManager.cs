@@ -235,6 +235,38 @@ public class RecipeManager : Singleton<RecipeManager>
     public void GenerateNewRecipe()
     {
         Debug.Log("Generating new recipe...");
+        
+        // First, make sure the Lost Kid recipe exists
+        SRecipe lostKidRecipe = RecipeList.AllRecipes.FirstOrDefault(r => r.RecipeName == "Lost Kid");
+        if (lostKidRecipe.RecipeName == null)
+        {
+            Debug.LogError("Lost Kid recipe not found in RecipeList.AllRecipes!");
+            // Continue with normal recipe generation
+        }
+        else
+        {
+            // Give the Lost Kid recipe a 50% chance of being selected
+            if (Random.value < 0.5f)
+            {
+                Debug.Log("Selected Lost Kid recipe (50% chance)");
+                currentRecipe = lostKidRecipe;
+                ingredientsLeft = GetTotalIngredients(currentRecipe);
+                
+                // Create a deep copy of the recipe ingredients
+                unspawnedIngredientsInRecipe = new Dictionary<EIngredient, int>();
+                foreach (var pair in currentRecipe.Ingredients)
+                {
+                    unspawnedIngredientsInRecipe[pair.Key] = pair.Value;
+                }
+                
+                Debug.Log("New Recipe Generated: " + currentRecipe.RecipeName);
+                return; // Skip the rest of the method
+            }
+            // 50% chance to continue with normal recipe selection
+            Debug.Log("Not selecting Lost Kid recipe (50% chance)");
+        }
+        
+        // Normal recipe selection process (for the other 50% of the time)
         List<SRecipe> possibleRecipes = new List<SRecipe>();
         
         switch(difficulty)
@@ -264,8 +296,17 @@ public class RecipeManager : Singleton<RecipeManager>
             Debug.LogWarning($"No recipes found for difficulty {difficulty}. Using all recipes.");
             possibleRecipes = RecipeList.AllRecipes;
         }
-
-        // Select random recipe
+        
+        // Make sure we don't select Lost Kid in the normal process
+        possibleRecipes = possibleRecipes.Where(r => r.RecipeName != "Lost Kid").ToList();
+        
+        if (!possibleRecipes.Any())
+        {
+            Debug.LogError("No recipes left after removing Lost Kid! Using all recipes.");
+            possibleRecipes = RecipeList.AllRecipes;
+        }
+        
+        // Select a random recipe from the filtered list
         int randomIndex = Random.Range(0, possibleRecipes.Count);
         currentRecipe = possibleRecipes[randomIndex];
         ingredientsLeft = GetTotalIngredients(currentRecipe);
@@ -280,12 +321,10 @@ public class RecipeManager : Singleton<RecipeManager>
         Debug.Log("New Recipe Generated: " + currentRecipe.RecipeName);
     }
 
-
     private int GetTotalIngredients(SRecipe recipe)
     {
         return recipe.Ingredients.Sum(pair => pair.Value);
     }
-
 
     private void Update()
     {
@@ -418,6 +457,14 @@ public class RecipeManager : Singleton<RecipeManager>
     
     public bool IsRecipeComplete()
     {
+        // Special case for "Lost Kid" recipe which has no ingredients
+        if (currentRecipe.RecipeName == "Lost Kid")
+        {
+            // For the Lost Kid recipe, always return false from this method
+            // The recipe will be marked complete through a different game mechanic
+            return false;
+        }
+        
         // Check if all ingredients have counts of 0
         foreach (var ingredient in currentRecipe.Ingredients)
         {
@@ -468,6 +515,40 @@ public class RecipeManager : Singleton<RecipeManager>
 
         Debug.Log("Generating " + selected);
         return selected;
+    }
+
+    public void ForceCompleteLostKidRecipe()
+    {
+        Debug.Log("Forcing completion of Lost Kid recipe");
+        
+        if (currentRecipe.RecipeName != "Lost Kid")
+        {
+            Debug.LogWarning("Cannot force completion - current recipe is not Lost Kid");
+            return;
+        }
+        
+        // Award mana
+        if (UpgradeManager.Instance != null)
+        {
+            UpgradeManager.Instance.AddCoins(coinsReward);
+            Debug.Log($"Awarded {coinsReward} mana to player");
+            
+            // Play mana reward sound
+            if (AudioManager.Instance != null && rewardSound != null)
+            {
+                AudioManager.Instance.PlaySound(rewardSound);
+            }
+        }
+        
+        // Increase difficulty if not at max
+        if (difficulty < 2)
+        {
+            difficulty += 1;
+            Debug.Log($"Increased difficulty to {difficulty}");
+        }
+        
+        // Show completion popup
+        ShowCompletionPopup();
     }
 }
 
