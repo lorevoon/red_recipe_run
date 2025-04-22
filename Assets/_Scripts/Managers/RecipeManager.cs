@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.UI;
 using System.Linq;
 using Random = UnityEngine.Random;
+using System.Collections;
 
 public class RecipeManager : Singleton<RecipeManager>
 {
@@ -12,23 +14,227 @@ public class RecipeManager : Singleton<RecipeManager>
     [SerializeField] private GameObject recipeEntryPrefab;
     [SerializeField] private GameObject RecipePanel;
     [SerializeField] private Transform scrollViewContent;
+    
+    [Header("Recipe Completion")]
+    [SerializeField] private int coinsReward = 20;
+    [SerializeField] private UIDocument recipeCompletionPopup;
 
+    // Required for properly displaying the UI
+    [SerializeField] private Canvas mainCanvas;
+    [SerializeField] private PanelSettings panelSettings;
 
     private SRecipe currentRecipe;
     public Dictionary<EIngredient, int> unspawnedIngredientsInRecipe;
     private int ingredientsLeft;
     private bool isRecipeOpen = false;
     public int difficulty = 0;
+    
+    // Popup UI elements
+    private VisualElement popupContainer;
+    private UnityEngine.UIElements.Button closeButton;
+    private AudioClip rewardSound;
+    private bool popupReady = false;
+    private bool waitingForPopupClosure = false;
+    private PlayerController playerController;
  
 
 
     void Start()
     {
         GenerateNewRecipe();
+        SetupPopupUI();
+        playerController = PlayerController.Instance;
+        
+        // Load the mana sound effect
+        rewardSound = Resources.Load<AudioClip>("Audio/UI/mana");
+        if (rewardSound == null)
+        {
+            Debug.LogError("Failed to load mana.wav sound effect");
+        }
+    }
+    
+    private void SetupPopupUI()
+    {
+        Debug.Log("Setting up popup UI...");
+        
+        // Find main canvas if not assigned
+        if (mainCanvas == null)
+        {
+            mainCanvas = FindObjectOfType<Canvas>();
+            if (mainCanvas == null)
+            {
+                Debug.LogError("No Canvas found in the scene!");
+                return;
+            }
+        }
+        
+        // Find or load panel settings
+        if (panelSettings == null)
+        {
+            panelSettings = Resources.Load<PanelSettings>("UI/GameUIPanelSettings");
+            if (panelSettings == null)
+            {
+                Debug.LogError("Failed to load PanelSettings!");
+                return;
+            }
+        }
+        
+        // Create popup document if not assigned
+        if (recipeCompletionPopup == null)
+        {
+            GameObject popupUIObj = new GameObject("RecipeCompletionPopup");
+            popupUIObj.transform.SetParent(mainCanvas.transform, false);
+            recipeCompletionPopup = popupUIObj.AddComponent<UIDocument>();
+            
+            // Set panel settings
+            recipeCompletionPopup.panelSettings = panelSettings;
+            
+            // Load visual tree asset
+            VisualTreeAsset visualTree = Resources.Load<VisualTreeAsset>("UI/RecipeCompletedPopup");
+            if (visualTree != null)
+            {
+                recipeCompletionPopup.visualTreeAsset = visualTree;
+                Debug.Log("Loaded popup UXML successfully");
+            }
+            else
+            {
+                Debug.LogError("Failed to load Recipe Completion Popup UXML");
+                return;
+            }
+            
+            // Load and apply stylesheet
+            StyleSheet styleSheet = Resources.Load<StyleSheet>("UI/RecipeCompletedPopup");
+            if (styleSheet != null && recipeCompletionPopup.rootVisualElement != null)
+            {
+                recipeCompletionPopup.rootVisualElement.styleSheets.Add(styleSheet);
+                Debug.Log("Added stylesheet to popup");
+            }
+            else
+            {
+                Debug.LogError("Failed to load Recipe Completion Popup USS");
+                return;
+            }
+        }
+        
+        // Get UI elements after a frame to ensure UIDocument is ready
+        StartCoroutine(InitializePopupUI());
+    }
+    
+    private IEnumerator InitializePopupUI()
+    {
+        Debug.Log("Waiting to initialize popup UI...");
+        yield return null;
+        yield return null; // Wait an extra frame to ensure UIDocument is ready
+        
+        if (recipeCompletionPopup == null)
+        {
+            Debug.LogError("Recipe Completion Popup is null");
+            yield break;
+        }
+        
+        if (recipeCompletionPopup.rootVisualElement == null)
+        {
+            Debug.LogError("Root visual element is null");
+            yield break;
+        }
+        
+        Debug.Log("Root visual element found, searching for popup-container");
+        
+        popupContainer = recipeCompletionPopup.rootVisualElement.Q("popup-container");
+        
+        if (popupContainer == null)
+        {
+            Debug.LogError("Could not find popup-container element");
+            // Debug what elements are available
+            foreach (var element in recipeCompletionPopup.rootVisualElement.Children())
+            {
+                Debug.Log("Found element: " + element.name);
+            }
+            yield break;
+        }
+        
+        Debug.Log("Found popup container, searching for close button");
+        
+        closeButton = popupContainer.Q<UnityEngine.UIElements.Button>("close-button");
+        
+        if (closeButton == null)
+        {
+            Debug.LogError("Could not find close-button element");
+            yield break;
+        }
+        
+        Debug.Log("Found close button, adding click event");
+        
+        closeButton.clicked += () => {
+            Debug.Log("Popup close button clicked");
+            HideCompletionPopup();
+            OnPopupClosed();
+        };
+        
+        // Hide popup initially
+        HideCompletionPopup();
+        popupReady = true;
+        
+        Debug.Log("Popup UI initialized successfully");
+    }
+    
+    private void ShowCompletionPopup()
+    {
+        Debug.Log("Showing completion popup");
+        
+        if (!popupReady)
+        {
+            Debug.LogError("Popup not ready yet");
+            return;
+        }
+        
+        if (popupContainer != null)
+        {
+            // Make sure the popup is display:flex before making it visible
+            popupContainer.style.display = DisplayStyle.Flex;
+            popupContainer.AddToClassList("visible");
+            
+            // Force UI update
+            recipeCompletionPopup.rootVisualElement.MarkDirtyRepaint();
+            
+            waitingForPopupClosure = true;
+            
+            // Disable player movement while popup is visible
+            if (playerController != null)
+            {
+                playerController.EnableMovement(false);
+            }
+            else
+            {
+                Debug.LogError("PlayerController is null");
+            }
+        }
+        else
+        {
+            Debug.LogError("Popup container is null");
+        }
+    }
+    
+    private void HideCompletionPopup()
+    {
+        Debug.Log("Hiding completion popup");
+        
+        if (popupContainer != null)
+        {
+            popupContainer.RemoveFromClassList("visible");
+            waitingForPopupClosure = false;
+            
+            // Re-enable player movement after popup is closed
+            if (playerController != null)
+            {
+                playerController.EnableMovement(true);
+            }
+        }
     }
 
     public void GenerateNewRecipe()
     {
+        Debug.Log("Generating new recipe...");
         List<SRecipe> possibleRecipes = new List<SRecipe>();
         
         switch(difficulty)
@@ -63,8 +269,15 @@ public class RecipeManager : Singleton<RecipeManager>
         int randomIndex = Random.Range(0, possibleRecipes.Count);
         currentRecipe = possibleRecipes[randomIndex];
         ingredientsLeft = GetTotalIngredients(currentRecipe);
-        unspawnedIngredientsInRecipe = currentRecipe.Ingredients;
-        Debug.Log(currentRecipe.RecipeName);
+        
+        // Create a deep copy of the recipe ingredients
+        unspawnedIngredientsInRecipe = new Dictionary<EIngredient, int>();
+        foreach (var pair in currentRecipe.Ingredients)
+        {
+            unspawnedIngredientsInRecipe[pair.Key] = pair.Value;
+        }
+        
+        Debug.Log("New Recipe Generated: " + currentRecipe.RecipeName);
     }
 
 
@@ -76,21 +289,11 @@ public class RecipeManager : Singleton<RecipeManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) && !waitingForPopupClosure)
         {
             isRecipeOpen = !isRecipeOpen;
             ToggleRecipe(isRecipeOpen);
         }
-
-        // if (InventoryManager.Instance.CheckRecipeComplete())
-        // {
-        //     if (difficulty < 2){
-        //         difficulty += 1;
-        //     }
-        //     GenerateNewRecipe();
-        //     UpdateRecipeUI();
-        // }
-
     }
 
     public void ToggleRecipe(bool isOpen = true)
@@ -113,9 +316,8 @@ public class RecipeManager : Singleton<RecipeManager>
         entry.GetComponent<RecipeUI>().Initialize(currentRecipe);
         if (scrollViewContent.TryGetComponent<RectTransform>(out var rectTransform))
         {
-        LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
         }
-
     }
 
     public SRecipe GetCurrentRecipe()
@@ -130,8 +332,100 @@ public class RecipeManager : Singleton<RecipeManager>
 
     public bool SubtractFromRecipe(EIngredient ingredient)
     {
+        Debug.Log($"Subtracting {ingredient} from recipe");
+        
         if (!(currentRecipe.Ingredients.TryGetValue(ingredient, out int count) && count > 0)) return false;
+        
+        // Subtract the ingredient from the recipe
         currentRecipe.Ingredients[ingredient] = count - 1;
+        Debug.Log($"New count for {ingredient}: {currentRecipe.Ingredients[ingredient]}");
+        
+        // Check if recipe is complete after subtracting
+        if (IsRecipeComplete())
+        {
+            Debug.Log("Recipe is complete!");
+            
+            // Award mana
+            if (UpgradeManager.Instance != null)
+            {
+                UpgradeManager.Instance.AddCoins(coinsReward);
+                Debug.Log($"Awarded {coinsReward} mana to player");
+                
+                // Play mana reward sound
+                if (AudioManager.Instance != null && rewardSound != null)
+                {
+                    AudioManager.Instance.PlaySound(rewardSound);
+                }
+                else
+                {
+                    Debug.LogWarning("Could not play reward sound. AudioManager: " + 
+                                    (AudioManager.Instance != null ? "Available" : "Null") + 
+                                    ", Sound: " + (rewardSound != null ? "Available" : "Null"));
+                }
+            }
+            
+            // Increase difficulty if not at max
+            if (difficulty < 2)
+            {
+                difficulty += 1;
+                Debug.Log($"Increased difficulty to {difficulty}");
+            }
+            
+            // Show completion popup - this should freeze the game until player clicks button
+            ShowCompletionPopup();
+            
+            // Note: We don't generate a new recipe here - that happens in OnPopupClosed
+        }
+        else
+        {
+            // Update the UI if the recipe is open
+            if (isRecipeOpen)
+            {
+                UpdateRecipeUI();
+            }
+        }
+        
+        return true;
+    }
+    
+    public void OnPopupClosed()
+    {
+        Debug.Log("Popup closed, generating new recipe");
+        
+        // Generate a new recipe after popup is closed
+        GenerateNewRecipe();
+        
+        // Update UI to show the new recipe
+        UpdateRecipeUI();
+        
+        // Show the recipe UI briefly
+        bool wasRecipeOpen = isRecipeOpen;
+        ToggleRecipe(true);
+        
+        // If it wasn't open before, close it after a delay
+        if (!wasRecipeOpen)
+        {
+            StartCoroutine(CloseRecipeAfterDelay(3f));
+        }
+    }
+    
+    private IEnumerator CloseRecipeAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ToggleRecipe(false);
+        isRecipeOpen = false;
+    }
+    
+    public bool IsRecipeComplete()
+    {
+        // Check if all ingredients have counts of 0
+        foreach (var ingredient in currentRecipe.Ingredients)
+        {
+            if (ingredient.Value > 0)
+            {
+                return false;
+            }
+        }
         return true;
     }
 
@@ -139,7 +433,7 @@ public class RecipeManager : Singleton<RecipeManager>
     {
         if (ingredientsLeft <= 0)
         {
-            Debug.Log("no ingredients left. generating a random one");
+            Debug.Log("No ingredients left. Generating a random one");
             Array values = Enum.GetValues(typeof(EIngredient));
             return (EIngredient)values.GetValue(Random.Range(0, values.Length-1));
         }
@@ -154,6 +448,14 @@ public class RecipeManager : Singleton<RecipeManager>
             }
         }
         
+        // Safety check: if the weighted list is empty, return a random ingredient
+        if (weightedList.Count == 0)
+        {
+            Debug.LogWarning("weightedList is empty in GetRandomIngredientInRecipe. Using fallback.");
+            Array values = Enum.GetValues(typeof(EIngredient));
+            return (EIngredient)values.GetValue(Random.Range(0, values.Length-1));
+        }
+        
         EIngredient selected = weightedList[Random.Range(0, weightedList.Count)];
         
         unspawnedIngredientsInRecipe[selected]--;
@@ -164,7 +466,7 @@ public class RecipeManager : Singleton<RecipeManager>
 
         ingredientsLeft--;
 
-        Debug.Log("generating " + selected);
+        Debug.Log("Generating " + selected);
         return selected;
     }
 }

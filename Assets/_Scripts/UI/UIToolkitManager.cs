@@ -29,14 +29,17 @@ public class UIToolkitManager : MonoBehaviour
     private Label inventoryLevelText;
     private Label healthLevelText;
     private Label lanternLevelText;
+    private Label spiritPowerLevelText;
     private Label speedCostText;
     private Label inventoryCostText;
     private Label healthCostText;
     private Label lanternCostText;
+    private Label spiritPowerCostText;
     private Button speedButton;
     private Button inventoryButton;
     private Button healthButton;
     private Button lanternButton;
+    private Button spiritPowerButton;
     
     // State
     private bool isInventoryVisible = false;
@@ -171,7 +174,7 @@ public class UIToolkitManager : MonoBehaviour
     {
         if (upgradesDocument.rootVisualElement == null)
         {
-            Debug.LogError("Upgrades document root is null!");
+            Debug.LogError("Magic UI document root is null!");
             return;
         }
         
@@ -179,11 +182,11 @@ public class UIToolkitManager : MonoBehaviour
         
         if (upgradesRoot == null)
         {
-            Debug.LogError("Failed to find upgrades container element!");
+            Debug.LogError("Failed to find magic container element!");
             return;
         }
         
-        // Get coin display
+        // Get mana display
         coinsDisplay = upgradesRoot.Q<Label>("coins-display");
         
         // Get upgrade level elements
@@ -191,24 +194,28 @@ public class UIToolkitManager : MonoBehaviour
         inventoryLevelText = upgradesRoot.Q<Label>("inventory-level");
         healthLevelText = upgradesRoot.Q<Label>("health-level");
         lanternLevelText = upgradesRoot.Q<Label>("lantern-level");
+        spiritPowerLevelText = upgradesRoot.Q<Label>("spirit-power-level");
         
         // Get upgrade cost elements
         speedCostText = upgradesRoot.Q<Label>("speed-cost");
         inventoryCostText = upgradesRoot.Q<Label>("inventory-cost");
         healthCostText = upgradesRoot.Q<Label>("health-cost");
         lanternCostText = upgradesRoot.Q<Label>("lantern-cost");
+        spiritPowerCostText = upgradesRoot.Q<Label>("spirit-power-cost");
         
         // Get upgrade buttons
         speedButton = upgradesRoot.Q<Button>("speed-button");
         inventoryButton = upgradesRoot.Q<Button>("inventory-button");
         healthButton = upgradesRoot.Q<Button>("health-button");
         lanternButton = upgradesRoot.Q<Button>("lantern-button");
+        spiritPowerButton = upgradesRoot.Q<Button>("spirit-power-button");
         
         // Add button event handlers
         if (speedButton != null) speedButton.clicked += () => PurchaseUpgrade(EUpgradeType.MovementSpeed);
         if (inventoryButton != null) inventoryButton.clicked += () => PurchaseUpgrade(EUpgradeType.InventorySpace);
         if (healthButton != null) healthButton.clicked += () => PurchaseUpgrade(EUpgradeType.MaxHearts);
         if (lanternButton != null) lanternButton.clicked += () => PurchaseUpgrade(EUpgradeType.LanternPower);
+        if (spiritPowerButton != null) spiritPowerButton.clicked += () => PurchaseUpgrade(EUpgradeType.SpiritPower);
         
         // Initial refresh
         RefreshUpgradesUI();
@@ -386,37 +393,42 @@ public class UIToolkitManager : MonoBehaviour
     {
         if (UpgradeManager.Instance == null || coinsDisplay == null) return;
         
-        // Update coins display
-        int coins = UpgradeManager.Instance.GetCoins();
-        coinsDisplay.text = $"Coins: {coins}";
+        // Update mana display
+        int mana = UpgradeManager.Instance.GetCoins();
+        coinsDisplay.text = $"Mana: {mana}";
         
         // Update upgrade levels
         int speedLevel = UpgradeManager.Instance.GetSpeedLevel();
         int inventoryLevel = UpgradeManager.Instance.GetInventoryLevel();
         int healthLevel = UpgradeManager.Instance.GetHealthLevel();
         int lanternLevel = UpgradeManager.Instance.GetLanternLevel();
+        int spiritPowerLevel = UpgradeManager.Instance.GetSpiritPowerLevel();
         
         if (speedLevelText != null) speedLevelText.text = $"Level: {speedLevel}";
         if (inventoryLevelText != null) inventoryLevelText.text = $"Level: {inventoryLevel}";
         if (healthLevelText != null) healthLevelText.text = $"Level: {healthLevel}";
         if (lanternLevelText != null) lanternLevelText.text = $"Level: {lanternLevel}";
+        if (spiritPowerLevelText != null) spiritPowerLevelText.text = $"Level: {spiritPowerLevel}";
         
         // Update upgrade costs
         int speedCost = UpgradeManager.Instance.GetUpgradeCost(EUpgradeType.MovementSpeed);
         int inventoryCost = UpgradeManager.Instance.GetUpgradeCost(EUpgradeType.InventorySpace);
         int healthCost = UpgradeManager.Instance.GetUpgradeCost(EUpgradeType.MaxHearts);
         int lanternCost = UpgradeManager.Instance.GetUpgradeCost(EUpgradeType.LanternPower);
+        int spiritPowerCost = UpgradeManager.Instance.GetUpgradeCost(EUpgradeType.SpiritPower);
         
         if (speedCostText != null) speedCostText.text = $"Cost: {speedCost}";
         if (inventoryCostText != null) inventoryCostText.text = $"Cost: {inventoryCost}";
         if (healthCostText != null) healthCostText.text = $"Cost: {healthCost}";
         if (lanternCostText != null) lanternCostText.text = $"Cost: {lanternCost}";
+        if (spiritPowerCostText != null) spiritPowerCostText.text = $"Cost: {spiritPowerCost}";
         
         // Update button states
-        if (speedButton != null) UpdateButtonState(speedButton, coins >= speedCost && speedCost > 0);
-        if (inventoryButton != null) UpdateButtonState(inventoryButton, coins >= inventoryCost && inventoryCost > 0);
-        if (healthButton != null) UpdateButtonState(healthButton, coins >= healthCost && healthCost > 0);
-        if (lanternButton != null) UpdateButtonState(lanternButton, coins >= lanternCost && lanternCost > 0);
+        if (speedButton != null) UpdateButtonState(speedButton, mana >= speedCost && speedCost > 0);
+        if (inventoryButton != null) UpdateButtonState(inventoryButton, mana >= inventoryCost && inventoryCost > 0);
+        if (healthButton != null) UpdateButtonState(healthButton, mana >= healthCost && healthCost > 0);
+        if (lanternButton != null) UpdateButtonState(lanternButton, mana >= lanternCost && lanternCost > 0);
+        if (spiritPowerButton != null) UpdateButtonState(spiritPowerButton, mana >= spiritPowerCost && spiritPowerCost > 0);
     }
     
     private void UpdateButtonState(Button button, bool interactable)

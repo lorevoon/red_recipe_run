@@ -46,10 +46,19 @@ public class GrandmasHouse : MonoBehaviour
         {
             EIngredient ingredient = other.gameObject.GetComponent<Ingredient>().IngredientType;
             Debug.Log("trying to put: " + ingredient);
-            // if (!_recipeManager.IsInRecipe(ingredient)) return;
-            _recipeManager.SubtractFromRecipe(ingredient);
-            StartCoroutine(PullIngredientToDoorRoutine(other.gameObject));
-            // hand grab animation
+            
+            // Only accept ingredients that are part of the recipe
+            if (_recipeManager.IsInRecipe(ingredient))
+            {
+                // First start the animation to pull the ingredient to the door
+                StartCoroutine(PullIngredientToDoorRoutine(other.gameObject, ingredient));
+                // hand grab animation
+            }
+            else
+            {
+                // Optional: Add some visual feedback that this ingredient is not needed
+                Debug.Log("Ingredient not needed for current recipe: " + ingredient);
+            }
         }
     }
 
@@ -69,7 +78,7 @@ public class GrandmasHouse : MonoBehaviour
     }
 
 
-    private IEnumerator PullIngredientToDoorRoutine(GameObject ingredient)
+    private IEnumerator PullIngredientToDoorRoutine(GameObject ingredient, EIngredient ingredientType)
     {
         float duration = 1.2f; // time to reach the door
         float elapsed = 0f;
@@ -97,6 +106,10 @@ public class GrandmasHouse : MonoBehaviour
         ingredient.transform.position = end;
         
         _animator.SetTrigger("TakeItem");
+        
+        // Only subtract from recipe after the witch has taken the ingredient
+        // The SubtractFromRecipe method now handles showing the popup and won't immediately generate a new recipe
+        _recipeManager.SubtractFromRecipe(ingredientType);
 
         yield return new WaitForSeconds(3f);
         duration = 2f;
@@ -111,6 +124,9 @@ public class GrandmasHouse : MonoBehaviour
             ingredient.transform.position = Vector3.Lerp(end, _doorEndPosition, t);
             yield return null;
         }
+        
+        // Destroy the ingredient after it's been taken
+        Destroy(ingredient);
     }
 
     private IEnumerator CelebrateCompletedRecipeRoutine()
