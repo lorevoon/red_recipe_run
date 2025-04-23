@@ -1,14 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
->
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <engine:VisualElement name="popup-container" class="popup-container">
         <engine:VisualElement name="popup-content" class="popup-content">
-            <engine:Label text="This is placeholder grandma text. Now onto another recipe my little useless Red. Take some coins" name="popup-message" class="popup-message"/>
-            <engine:Button text="Umm.. okay" name="close-button" class="close-button"/>
+            <engine:Label text="Thank you, Red! I will bestow upon you some mana. Now onto the next recipe!" name="popup-message" class="popup-message" />
+            <engine:Button text="Umm.. okay" name="close-button" class="close-button" />
         </engine:VisualElement>
     </engine:VisualElement>
-</engine:UXML> 
+</engine:UXML>

@@ -246,7 +246,7 @@ public class RecipeManager : Singleton<RecipeManager>
         else
         {
             // Give the Lost Kid recipe a 50% chance of being selected
-            if (Random.value < 0.5f)
+            if (Random.value < 0f)
             {
                 Debug.Log("Selected Lost Kid recipe (50% chance)");
                 currentRecipe = lostKidRecipe;

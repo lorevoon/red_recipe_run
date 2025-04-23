@@ -203,7 +203,7 @@ public class PlayerController : Singleton<PlayerController>
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            if (TimeController.Instance.IsNight) return;
+            // if (TimeController.Instance.IsNight) return;
             _playerInventory.DropIngredient();
         }
     }
