@@ -18,8 +18,8 @@ public class PlayerInventory : MonoBehaviour
     private int _maxIngredients = 5; // Base inventory size, will be modified by upgrades
     private int _currIngredients;
 
-    private float _slowing_factor = 0.8f; // each 
-    private float _quickening_factor = 1.2f;
+    private float _slowing_factor = 0.9f; // each 
+    private float _quickening_factor = 1.1f;
     
     private void Start()
     {

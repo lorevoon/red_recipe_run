@@ -22,7 +22,8 @@ public class UpgradeManager : MonoBehaviour
     private const int MAX_UPGRADE_LEVEL = 5;
 
     // Base player stats
-    private float baseSpeed = 3f;
+    //private float baseSpeed = _playerController._maxSpeed;
+    private PlayerController _playerController;
     private int baseInventorySize = 5;
     private int baseHealth = 3;
     private float baseLanternRange = 5f;
@@ -59,6 +60,7 @@ public class UpgradeManager : MonoBehaviour
 
     private void Start()
     {
+
         // Make sure we have proper values on start
         ResetUpgrades();
     }
@@ -240,7 +242,12 @@ public class UpgradeManager : MonoBehaviour
     // Getters for game mechanics
     public float GetCurrentSpeed()
     {
-        return baseSpeed * (1f + (speedLevel * SPEED_MULTIPLIER));
+        if (_playerController == null)
+            _playerController = PlayerController.Instance;
+
+        //return baseSpeed * (1f + (speedLevel * SPEED_MULTIPLIER));
+        return _playerController != null ? _playerController._maxSpeed * (1f + (speedLevel * SPEED_MULTIPLIER)) : 0f;
+
     }
 
     public int GetCurrentInventorySize()

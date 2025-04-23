@@ -792,6 +792,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lantern
       objectReference: {fileID: 0}
+    - target: {fileID: 2227756394152185495, guid: 8d792bdf5f0df4d68bccc8c311aa3695, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4965503916550675609, guid: 8d792bdf5f0df4d68bccc8c311aa3695, type: 3}
       propertyPath: m_ShadowsEnabled
       value: 0

@@ -67,7 +67,7 @@ public class PlayerController : Singleton<PlayerController>
             LastFacingDirection = moveY > 0 ? 0 : 2;
 
         // Update properties from upgrades
-        UpdateSpeedFromUpgrades();
+        //UpdateSpeedFromUpgrades();
         UpdateToolSpeedFromUpgrades();
         
         // Don't process input if player is dead
