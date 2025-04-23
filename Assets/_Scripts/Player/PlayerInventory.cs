@@ -18,8 +18,8 @@ public class PlayerInventory : MonoBehaviour
     private int _maxIngredients = 5; // Base inventory size, will be modified by upgrades
     private int _currIngredients;
 
-    private float _slowing_factor = 0.9f; // each 
-    private float _quickening_factor = 1.1f;
+    private float _slowing_factor = 0.8f; // each 
+    private float _quickening_factor = 1.2f;
     
     private void Start()
     {
@@ -126,29 +126,7 @@ public class PlayerInventory : MonoBehaviour
 
    public void PickUpIngredient(GameObject ingredient)
    { 
-    //    AddItem(ingredient);
-    //    Transform basketTransform = PlayerController.Instance.Basket.transform; 
-    //    basketTransform.localScale *= 1.05f; // Increase basket size by 5%
 
-    //     _playerController._maxSpeed *= _slowing_factor;
-    //     _playerController._moveForce *= _slowing_factor;
-
-    //    ingredient.transform.SetParent(basketTransform);
-    //    //ingredient.SetActive(false);
-
-    //    // Hide it but disable collider
-    //     SpriteRenderer ing = ingredient.GetComponent<SpriteRenderer>();
-    //     if (ing != null) ing.enabled = false;
-
-    //     Collider2D col = ingredient.GetComponent<Collider2D>();
-    //     if (col != null) col.enabled = false;
-
-    //    // Add the ingredient to the InventoryManager
-    //    Ingredient ingredientComponent = ingredient.GetComponent<Ingredient>();
-    //    if (ingredientComponent != null)
-    //    {
-    //        InventoryManager.Instance.AddItem(ingredientComponent.IngredientType);
-    //    }
         AddItem(ingredient);
         // 🔊 Play pickup sound
         if (_audioSource != null && pickupSound != null)
@@ -158,7 +136,7 @@ public class PlayerInventory : MonoBehaviour
         }
 
         Transform basketTransform = PlayerController.Instance.Basket.transform; 
-        basketTransform.localScale *= 1.05f; // Increase basket size by 5%
+        basketTransform.localScale *= 1.15f; // Increase basket size by 5%
 
         _playerController._maxSpeed *= _slowing_factor;
         _playerController._moveForce *= _slowing_factor;
@@ -221,7 +199,7 @@ public class PlayerInventory : MonoBehaviour
         }
 
         Transform basketTransform = PlayerController.Instance.Basket.transform; 
-        basketTransform.localScale *= 0.95f; // Decrease basket size by 5%
+        basketTransform.localScale /= 1.15f; // Decrease basket size by 5%
 
         if (_playerController._maxSpeed < _playerController._maxAllowedSpeed)
         {
