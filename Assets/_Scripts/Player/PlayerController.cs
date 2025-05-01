@@ -20,7 +20,7 @@ public class PlayerController : Singleton<PlayerController>
     private bool _isMovementEnabled = true;
     public float _moveForce = 10f;
     public float _maxSpeed = 3f; // speed for player with empty basket
-
+    public float _baseSpeed = 3f; // base speed without inventory weight
     public float _maxAllowedSpeed = 3f;
     private float _dampingFactor = 0.9f;
     public float ToolSpeed = 3f;
@@ -51,6 +51,9 @@ public class PlayerController : Singleton<PlayerController>
         
         // Initialize tool speed from UpgradeManager
         UpdateToolSpeedFromUpgrades();
+        
+        // Initialize base speed
+        _baseSpeed = _maxSpeed;
     }
   
     private void Update()
@@ -67,7 +70,7 @@ public class PlayerController : Singleton<PlayerController>
             LastFacingDirection = moveY > 0 ? 0 : 2;
 
         // Update properties from upgrades
-        //UpdateSpeedFromUpgrades();
+        UpdateSpeedFromUpgrades();
         UpdateToolSpeedFromUpgrades();
         
         // Don't process input if player is dead
@@ -85,12 +88,14 @@ public class PlayerController : Singleton<PlayerController>
         HandlePickup();
     }
     
-    private void UpdateSpeedFromUpgrades()
+    public void UpdateSpeedFromUpgrades()
     {
         if (UpgradeManager.Instance != null)
         {
-            // Update max speed from upgrade manager
-            _maxSpeed = UpgradeManager.Instance.GetCurrentSpeed();
+            // Update base speed from upgrade manager
+            _baseSpeed = 3f * (1f + (UpgradeManager.Instance.GetSpeedLevel() * 0.25f));
+            // Apply inventory weight effect to get final max speed
+            _maxSpeed = _baseSpeed * Mathf.Pow(0.9f, _playerInventory.GetCurrentIngredients());
         }
     }
     

@@ -293,9 +293,27 @@ public class UIToolkitManager : MonoBehaviour
                     // Get and update the name and count labels
                     Label nameLabel = itemContainer.Q<Label>("item-name");
                     Label countLabel = itemContainer.Q<Label>("item-count");
+                    VisualElement iconElement = itemContainer.Q<VisualElement>("item-icon");
                     
-                    if (nameLabel != null && countLabel != null)
+                    if (nameLabel != null && countLabel != null && iconElement != null)
                     {
+                        // Load and set the sprite using the same path as the recipe UI
+                        string spritePath = $"FoodSprites/{itemGroup.Ingredient}";
+                        Debug.Log($"Attempting to load sprite from path: {spritePath}");
+                        Sprite sprite = Resources.Load<Sprite>(spritePath);
+                        
+                        if (sprite != null)
+                        {
+                            Debug.Log($"Successfully loaded sprite for {itemGroup.Ingredient}");
+                            iconElement.style.backgroundImage = new StyleBackground(sprite);
+                            iconElement.style.unityBackgroundScaleMode = ScaleMode.ScaleToFit;
+                        }
+                        else
+                        {
+                            Debug.LogError($"Failed to load sprite for {itemGroup.Ingredient} at path: {spritePath}");
+                            Debug.LogError($"Make sure sprite exists in Assets/Resources/FoodSprites/ with name matching the ingredient enum");
+                        }
+                        
                         nameLabel.text = itemGroup.Ingredient.ToString();
                         countLabel.text = $"x{itemGroup.Count}";
                     }
@@ -313,6 +331,18 @@ public class UIToolkitManager : MonoBehaviour
                     // Create icon element
                     VisualElement iconElement = new VisualElement();
                     iconElement.AddToClassList("item-icon");
+                    
+                    // Load and set the sprite
+                    string spritePath = $"Ingredients/{itemGroup.Ingredient}";
+                    Sprite sprite = Resources.Load<Sprite>(spritePath);
+                    if (sprite != null)
+                    {
+                        iconElement.style.backgroundImage = new StyleBackground(sprite);
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"Failed to load sprite for ingredient {itemGroup.Ingredient} at path: {spritePath}");
+                    }
                     
                     // Create details container
                     VisualElement detailsContainer = new VisualElement();
