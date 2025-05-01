@@ -24,8 +24,8 @@
 .upgrades-container {
     left: 20px;
     top: 50px;
-    width: 875px;
-    height: 1125px;
+    width: 656px;  /* Reduced from 875px by 25% */
+    height: 844px; /* Reduced from 1125px by 25% */
     background-color: rgb(41, 41, 41);
     border-color: rgb(214, 175, 93);
 }
@@ -52,7 +52,7 @@
 .title-text {
     -unity-font: resource('Fonts/ThaleahFat_TTF');
     -unity-font-definition: none;
-    font-size: 80px;
+    font-size: 60px; /* Reduced from 80px by 25% */
     -unity-text-align: middle-center;
     margin-top: 15px;
 }
@@ -70,7 +70,7 @@
 .coins-text {
     -unity-font: resource('Fonts/ThaleahFat_TTF');
     -unity-font-definition: none;
-    font-size: 60px;
+    font-size: 45px; /* Reduced from 60px by 25% */
     color: rgb(64, 156, 255);
     -unity-text-align: middle-center;
     margin-bottom: 12px;
@@ -118,6 +118,9 @@
     border-radius: 10px;
     border-width: 2px;
     border-color: rgb(95, 67, 32); /* Brown border */
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    padding: 12px;
 }
 
 .item-details {
@@ -159,7 +162,7 @@
 .upgrade-name {
     -unity-font: resource('Fonts/ThaleahFat_TTF');
     -unity-font-definition: none;
-    font-size: 65px;
+    font-size: 49px; /* Reduced from 65px by 25% */
     color: white;
     -unity-text-align: middle-center;
 }
@@ -167,7 +170,7 @@
 .upgrade-level {
     -unity-font: resource('Fonts/ThaleahFat_TTF');
     -unity-font-definition: none;
-    font-size: 50px;
+    font-size: 38px; /* Reduced from 50px by 25% */
     color: rgb(180, 180, 180);
     -unity-text-align: middle-center;
     margin: 20px 0;
@@ -178,11 +181,11 @@
     color: rgb(41, 41, 41);
     border-width: 0;
     border-radius: 12px;
-    padding: 20px 37px;
-    margin: 20px 0;
+    padding: 15px 28px; /* Reduced padding proportionally */
+    margin: 15px 0; /* Reduced margin proportionally */
     -unity-font: resource('Fonts/ThaleahFat_TTF');
     -unity-font-definition: none;
-    font-size: 45px;
+    font-size: 34px; /* Reduced from 45px by 25% */
     -unity-text-align: middle-center;
 }
 
@@ -197,7 +200,7 @@
 .upgrade-cost {
     -unity-font: resource('Fonts/ThaleahFat_TTF');
     -unity-font-definition: none;
-    font-size: 45px;
+    font-size: 34px; /* Reduced from 45px by 25% */
     color: rgb(64, 156, 255);
     -unity-text-align: middle-center;
 }

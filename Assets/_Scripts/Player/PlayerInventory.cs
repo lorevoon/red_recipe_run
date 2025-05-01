@@ -126,7 +126,6 @@ public class PlayerInventory : MonoBehaviour
 
    public void PickUpIngredient(GameObject ingredient)
    { 
-
         AddItem(ingredient);
         // 🔊 Play pickup sound
         if (_audioSource != null && pickupSound != null)
@@ -138,8 +137,8 @@ public class PlayerInventory : MonoBehaviour
         Transform basketTransform = PlayerController.Instance.Basket.transform; 
         basketTransform.localScale *= 1.15f; // Increase basket size by 5%
 
-        _playerController._maxSpeed *= _slowing_factor;
-        _playerController._moveForce *= _slowing_factor;
+        // Update speed based on new inventory count
+        _playerController.UpdateSpeedFromUpgrades();
 
         // Start the movement coroutine
 
@@ -201,12 +200,8 @@ public class PlayerInventory : MonoBehaviour
         Transform basketTransform = PlayerController.Instance.Basket.transform; 
         basketTransform.localScale /= 1.15f; // Decrease basket size by 5%
 
-        if (_playerController._maxSpeed < _playerController._maxAllowedSpeed)
-        {
-            float potential_speed = _playerController._maxSpeed * _quickening_factor;
-            _playerController._maxSpeed = Mathf.Min(potential_speed, _playerController._maxAllowedSpeed);
-            _playerController._moveForce *= _quickening_factor;
-        }
+        // Update speed based on new inventory count
+        _playerController.UpdateSpeedFromUpgrades();
 
         // random offset calculation 
         //Vector2 randomDirection = Random.insideUnitCircle.normalized;

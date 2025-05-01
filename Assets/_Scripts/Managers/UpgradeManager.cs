@@ -245,9 +245,8 @@ public class UpgradeManager : MonoBehaviour
         if (_playerController == null)
             _playerController = PlayerController.Instance;
 
-        //return baseSpeed * (1f + (speedLevel * SPEED_MULTIPLIER));
-        return _playerController != null ? _playerController._maxSpeed * (1f + (speedLevel * SPEED_MULTIPLIER)) : 0f;
-
+        // Return just the speed level since actual speed calculation is handled in PlayerController
+        return speedLevel;
     }
 
     public int GetCurrentInventorySize()
