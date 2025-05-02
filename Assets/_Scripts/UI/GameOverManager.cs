@@ -278,31 +278,56 @@ public class GameOverManager : MonoBehaviour
         }
     }
     
+    private void DestroyPersistentManagers()
+    {
+        if (GameManager.Instance != null) Destroy(GameManager.Instance.gameObject);
+        if (UIManager.Instance != null) Destroy(UIManager.Instance.gameObject);
+        if (UpgradeManager.Instance != null) Destroy(UpgradeManager.Instance.gameObject);
+        if (InventoryManager.Instance != null) Destroy(InventoryManager.Instance.gameObject);
+        if (PlayerController.Instance != null) Destroy(PlayerController.Instance.gameObject);
+        if (TimeController.Instance != null) Destroy(TimeController.Instance.gameObject);
+        if (AudioManager.Instance != null) Destroy(AudioManager.Instance.gameObject);
+        // Add any other persistent singletons (e.g., MusicManager, etc.)
+    }
+    
     private void OnPlayAgainClicked()
     {
         Debug.Log("Play Again clicked");
-        
-        // Resume normal time scale
         Time.timeScale = 1f;
-        
-        // Hide game over screen
         HideGameOverScreen();
-        
-        // Reload the current level
-        SceneManager.LoadScene(gameplaySceneName);
+        DestroyPersistentManagers();
+        SceneManager.LoadScene("PlayerScene");
     }
     
     private void OnMainMenuClicked()
     {
         Debug.Log("Main Menu clicked");
-        
-        // Resume normal time scale
         Time.timeScale = 1f;
-        
-        // Hide game over screen
         HideGameOverScreen();
-        
-        // Load the main menu scene
-        SceneManager.LoadScene(mainMenuSceneName);
+        DestroyPersistentManagers();
+        SceneManager.sceneLoaded += RemoveExtraAudioListeners;
+        SceneManager.sceneLoaded += EnsureEventSystemAndUnpause;
+        SceneManager.LoadScene("MenuUpdated");
+    }
+
+    private void RemoveExtraAudioListeners(Scene scene, LoadSceneMode mode)
+    {
+        var listeners = Object.FindObjectsOfType<UnityEngine.AudioListener>();
+        for (int i = 1; i < listeners.Length; i++) {
+            Destroy(listeners[i]);
+        }
+        SceneManager.sceneLoaded -= RemoveExtraAudioListeners;
+    }
+
+    private void EnsureEventSystemAndUnpause(Scene scene, LoadSceneMode mode)
+    {
+        // Ensure EventSystem exists
+        if (FindObjectOfType<UnityEngine.EventSystems.EventSystem>() == null)
+        {
+            var es = new GameObject("EventSystem", typeof(UnityEngine.EventSystems.EventSystem), typeof(UnityEngine.EventSystems.StandaloneInputModule));
+        }
+        // Extra safeguard: ensure game is unpaused
+        Time.timeScale = 1f;
+        SceneManager.sceneLoaded -= EnsureEventSystemAndUnpause;
     }
 } 

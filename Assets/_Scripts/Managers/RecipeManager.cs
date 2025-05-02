@@ -245,10 +245,10 @@ public class RecipeManager : Singleton<RecipeManager>
         }
         else
         {
-            // Give the Lost Kid recipe a 50% chance of being selected
-            if (Random.value < 0f)
+            // Give the Lost Kid recipe a 90% chance of being selected
+            if (Random.value < 0.9f)
             {
-                Debug.Log("Selected Lost Kid recipe (50% chance)");
+                Debug.Log("Selected Lost Kid recipe (90% chance)");
                 currentRecipe = lostKidRecipe;
                 ingredientsLeft = GetTotalIngredients(currentRecipe);
                 
@@ -262,11 +262,11 @@ public class RecipeManager : Singleton<RecipeManager>
                 Debug.Log("New Recipe Generated: " + currentRecipe.RecipeName);
                 return; // Skip the rest of the method
             }
-            // 50% chance to continue with normal recipe selection
-            Debug.Log("Not selecting Lost Kid recipe (50% chance)");
+            // 10% chance to continue with normal recipe selection
+            Debug.Log("Not selecting Lost Kid recipe (10% chance)");
         }
         
-        // Normal recipe selection process (for the other 50% of the time)
+        // Normal recipe selection process (for the other 10% of the time)
         List<SRecipe> possibleRecipes = new List<SRecipe>();
         
         switch(difficulty)
@@ -541,6 +541,11 @@ public class RecipeManager : Singleton<RecipeManager>
         
         // Show completion popup
         ShowCompletionPopup();
+        
+        // Generate a new recipe
+        GenerateNewRecipe();
     }
+
+    public bool IsWaitingForPopupClosure => waitingForPopupClosure;
 }
 

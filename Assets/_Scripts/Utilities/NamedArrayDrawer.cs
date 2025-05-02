@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 
@@ -27,3 +28,4 @@ public class NamedArrayDrawer : PropertyDrawer
         EditorGUI.PropertyField(position, property, label, property.isExpanded);
     }
 }
+#endif
