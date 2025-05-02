@@ -73,7 +73,7 @@ public class UpgradeManager : MonoBehaviour
         inventoryLevel = 0;
         healthLevel = 0;
         lanternLevel = 0;
-        spiritPowerLevel = 0;
+        spiritPowerLevel = 4;
         SaveUpgrades();
         
         Debug.Log($"Upgrades reset. Starting with {coins} mana.");

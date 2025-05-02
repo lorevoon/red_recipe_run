@@ -11,17 +11,36 @@ public class PlayerHealth : MonoBehaviour
     private TMP_Text _healthText;
     private GameObject _damageEffectPrefab; 
 
-    private float lastDamageTime = -999f; // New
-    public float damageCooldown = 1.0f;   // New (seconds)
+    private float lastDamageTime = -999f;
+    public float damageCooldown = 1.0f;
 
     void Start()
     {
-        // PlayerEvents.HpChanged += OnPlayerHPChanged;
-        _playerTransform = PlayerController.Instance.gameObject.transform;
-        _heartImage = GameManager.Instance.gameObject.GetComponentInChildren<Image>();
-        _healthText = GameManager.Instance.gameObject.GetComponentInChildren<TMP_Text>();
+        ResetHealth();
+        
+        // Get player transform
+        if (PlayerController.Instance != null)
+        {
+            _playerTransform = PlayerController.Instance.gameObject.transform;
+        }
+        
+        // Try to get UI references
+        if (GameManager.Instance != null)
+        {
+            _heartImage = GameManager.Instance.gameObject.GetComponentInChildren<Image>();
+            _healthText = GameManager.Instance.gameObject.GetComponentInChildren<TMP_Text>();
+        }
+        
+        // Load damage effect
         _damageEffectPrefab = Resources.Load("Prefabs/VFXs/TakeDamageVFX").GameObject();
         
+        UpdateHealthDisplay();
+    }
+
+    public void ResetHealth()
+    {
+        Health = 3; // Reset to default health
+        lastDamageTime = -999f;
         UpdateHealthDisplay();
     }
 
@@ -39,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
         Health = Mathf.Max(Health, 0); 
         UpdateHealthDisplay();
 
-        if (_damageEffectPrefab != null && Health > 0)
+        if (_damageEffectPrefab != null && Health > 0 && _playerTransform != null)
         {
             var playerPosition = _playerTransform.position;
             Vector3 direction = wolfPosition - playerPosition;
@@ -50,11 +69,19 @@ public class PlayerHealth : MonoBehaviour
         if (Health <= 0)
         {
             Debug.Log("Player is dead!");
+            if (PlayerController.Instance != null)
+            {
+                PlayerController.Instance.TestGameOver();
+            }
         }
     }
 
     void UpdateHealthDisplay()
     {
-        _healthText.text = Health.ToString();
+        // Only update if we have a valid text component
+        if (_healthText != null)
+        {
+            _healthText.text = Health.ToString();
+        }
     }
 }

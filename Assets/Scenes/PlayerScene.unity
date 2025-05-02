@@ -216,7 +216,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8783408852478597615, guid: 16fe35ba61cae4134aaad5ef830cab70, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6140097938713928495, guid: 16fe35ba61cae4134aaad5ef830cab70, type: 3}
     m_AddedGameObjects:
@@ -450,18 +451,6 @@ MonoBehaviour:
   walkRightFootBack: {fileID: 1567486018, guid: d4aec602cb0894c189317fad16a0e972, type: 3}
   stepInterval: 0.3
   moveThreshold: 0.1
---- !u!114 &515182115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515182099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd7e924ef85b2c4c8e712442acde2de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &627472796 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2075160176038043214, guid: 16fe35ba61cae4134aaad5ef830cab70, type: 3}
@@ -1129,7 +1118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1558547084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1985,9 +1974,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2940092690503372454, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 515182106}
-    - targetCorrespondingSourceObject: {fileID: 2940092690503372454, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 515182115}
   m_SourcePrefab: {fileID: 100100000, guid: a3cf14589e67344c08d6228116aec2b0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -95,51 +95,66 @@ public class LostKidManager : Singleton<LostKidManager>
         int width = mapManager.BushTypeGrid.GetLength(0);
         int height = mapManager.BushTypeGrid.GetLength(1);
         
-        // Try 50 random positions to find an empty spot
-        for (int i = 0; i < 50; i++)
-        {
-            int x = Random.Range(1, width - 1);
-            int y = Random.Range(1, height - 1);
-            
-            // Check if position is empty (no bush, wall, etc.)
-            if (mapManager.BushTypeGrid[x, y] == EGrid.Empty)
-            {
-                // Convert grid position to world position
-                position = new Vector3(x + 0.5f, y + 0.5f, 0);
-                
-                // Check if not too close to player
-                float distToPlayer = Vector3.Distance(position, PlayerController.Instance.transform.position);
-                
-                if (distToPlayer > 10f)
-                {
-                    // Good position found
-                    return position;
-                }
-            }
-        }
+        // Create a list to store valid spawn positions
+        List<Vector3> validPositions = new List<Vector3>();
         
-        // If no good positions found in the random attempts, do a more thorough search
+        // First, find all valid positions
         for (int x = 1; x < width - 1; x++)
         {
             for (int y = 1; y < height - 1; y++)
             {
+                // Check if position is empty and not near breakable blocks
                 if (mapManager.BushTypeGrid[x, y] == EGrid.Empty)
                 {
-                    position = new Vector3(x + 0.5f, y + 0.5f, 0);
+                    bool isValid = true;
                     
-                    // Check if not too close to player
-                    float distToPlayer = Vector3.Distance(position, PlayerController.Instance.transform.position);
-                    
-                    if (distToPlayer > 10f)
+                    // Check surrounding 3x3 area for breakable blocks
+                    for (int dx = -1; dx <= 1; dx++)
                     {
-                        // Good position found
-                        return position;
+                        for (int dy = -1; dy <= 1; dy++)
+                        {
+                            int checkX = x + dx;
+                            int checkY = y + dy;
+                            
+                            if (checkX >= 0 && checkX < width && checkY >= 0 && checkY < height)
+                            {
+                                // If any surrounding tile is a breakable block, this position is invalid
+                                if (mapManager.BushTypeGrid[checkX, checkY] == EGrid.Bush)
+                                {
+                                    isValid = false;
+                                    break;
+                                }
+                            }
+                        }
+                        if (!isValid) break;
+                    }
+                    
+                    if (isValid)
+                    {
+                        Vector3 pos = new Vector3(x + 0.5f, y + 0.5f, 0);
+                        
+                        // Check if not too close to player
+                        float distToPlayer = Vector3.Distance(pos, PlayerController.Instance.transform.position);
+                        if (distToPlayer > 10f)
+                        {
+                            validPositions.Add(pos);
+                        }
                     }
                 }
             }
         }
         
-        Debug.LogWarning("Couldn't find ideal spawn position for Lost Kid, using last checked position");
+        // If we found valid positions, randomly select one
+        if (validPositions.Count > 0)
+        {
+            int randomIndex = Random.Range(0, validPositions.Count);
+            position = validPositions[randomIndex];
+        }
+        else
+        {
+            Debug.LogWarning("No valid spawn positions found for Lost Kid! Using default position.");
+        }
+        
         return position;
     }
 } 
