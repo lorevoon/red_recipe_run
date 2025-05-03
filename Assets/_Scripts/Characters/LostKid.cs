@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class LostKid : MonoBehaviour
 {
+    private enum EDirection
+    {
+        East,
+        West,
+        South,
+        North
+    }
+    
     // Configuration
     [Header("Movement")]
     [SerializeField] private float followSpeed = 1.5f;
@@ -19,6 +27,12 @@ public class LostKid : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    private EDirection prevDirection = EDirection.South;
+    private static readonly int faceNorth = Animator.StringToHash("faceNorth");
+    private static readonly int faceSouth = Animator.StringToHash("faceSouth");
+    private static readonly int faceWest = Animator.StringToHash("faceWest");
+    private static readonly int faceEast = Animator.StringToHash("faceEast");
+    private static readonly int IsWalking = Animator.StringToHash("isWalking");
     
     // State
     private bool isFollowing = false;
@@ -32,7 +46,7 @@ public class LostKid : MonoBehaviour
     
     private bool isCutsceneActive = false;
     private GrandmasHouse grandmasHouseInRange = null;
-    
+
     void Start()
     {
         if (animator == null)
@@ -52,26 +66,26 @@ public class LostKid : MonoBehaviour
         currentHealth = maxHealth;
         
         // Set up animations
-        if (animator != null)
-        {
-            animator.CrossFade("kid_idle", 0, 0);
-        }
+        // if (animator != null)
+        // {
+        //     animator.CrossFade("kid_idle", 0, 0);
+        // }
     }
     
-    void FixedUpdate()
+    void Update()
     {
         if (isFollowing)
         {
-            // Calculate direction to player
-            Vector3 direction = (playerTransform.position - transform.position).normalized;
-            
-            // Move towards player while maintaining follow distance
-            float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+            Vector2 direction = (playerTransform.position - transform.position).normalized;
+            float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+
             if (distanceToPlayer > followDistance)
             {
-                // Move towards player using Rigidbody2D
-                Vector2 targetPosition = playerTransform.position - direction * followDistance;
-                rb.MovePosition(Vector2.MoveTowards(rb.position, targetPosition, followSpeed * Time.fixedDeltaTime));
+                rb.linearVelocity = direction * followSpeed;
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
             }
 
             // Update animation based on movement
@@ -108,40 +122,49 @@ public class LostKid : MonoBehaviour
         if (animator == null) return;
         
         // Determine if moving
-        bool isMoving = (transform.position - prevPosition).sqrMagnitude > 0.001f;
+        bool isMoving = rb.linearVelocity != Vector2.zero;
         
         // Set animation based on movement
         if (isMoving)
         {
+            animator.SetBool(IsWalking, true);
             // Direction animations
-            Vector2 movement = transform.position - prevPosition;
-            
-            // Check left/right for flipping
-            spriteRenderer.flipX = movement.x < 0;
+            Vector2 movement = rb.linearVelocity;
             
             // Determine if moving more horizontally or vertically
             if (Mathf.Abs(movement.y) > Mathf.Abs(movement.x))
             {
                 // Vertical movement
-                if (movement.y > 0)
+                if (movement.y > 0 && prevDirection != EDirection.North)
                 {
-                    animator.CrossFade("kid_walk_back", 0, 0);
+                    prevDirection = EDirection.North;
+                    animator.SetTrigger(faceNorth);
                 }
-                else
+                else if (movement.y < 0 && prevDirection != EDirection.South)
                 {
-                    animator.CrossFade("kid_walk_front", 0, 0);
+                    prevDirection = EDirection.South;
+                    animator.SetTrigger(faceSouth);
                 }
             }
             else
             {
                 // Horizontal movement
-                animator.CrossFade("kid_walk_side", 0, 0);
+                if (movement.x > 0 && prevDirection != EDirection.East)
+                {
+                    prevDirection = EDirection.East;
+                    animator.SetTrigger(faceEast);
+                }
+                else if (movement.x < 0 && prevDirection != EDirection.West)
+                {
+                    prevDirection = EDirection.West;
+                    animator.SetTrigger(faceWest);
+                }
             }
         }
         else
         {
             // Idle animation
-            animator.CrossFade("kid_idle", 0, 0);
+            animator.SetBool(IsWalking, false);
         }
         
         prevPosition = transform.position;
@@ -227,7 +250,8 @@ public class LostKid : MonoBehaviour
         // Play death animation
         if (animator != null)
         {
-            animator.CrossFade("kid_idle", 0, 0); // We'll use idle as "death" pose
+            // animator.CrossFade("idle_south", 0, 0); // We'll use idle as "death" pose
+            animator.SetBool(IsWalking, false);
         }
         
         // Show game over screen with special message
